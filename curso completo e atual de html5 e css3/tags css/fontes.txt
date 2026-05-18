@@ -1,0 +1,149 @@
+--------- MUDAR A FONTE ---------
+
+
+
+font-family...
+
+
+
+--------- MUDAR O TAMANHO DA FONTE ---------
+
+
+font- size...
+
+
+
+--------- MUDAR A COR DA LETRA ---------
+
+
+color
+
+
+
+--------- CAPTURANDO FONTES USADAS EM SITES ---------
+
+
+
+só baixar a extensão:
+
+-https://chromewebstore.google.com/detail/fonts-ninja/eljapbgkmlngdpckoiiibecpemleclhh
+
+
+
+--------- CAPTURANDO FONTES USADAS EM IMAGENS --------- 
+
+
+
+sites:
+
+https://www.whatfontis.com
+
+https://www.myfonts.com/pt/pages/whatthefont
+
+https://www.fontsquirrel.com/matcherator?token=d0nmwv41exr65o7n
+
+
+
+--------- COMO CARREGAR FONTES IMCOMPÁTIVEIS EM DISPOSITIVOS DIFERENTES? ---------
+
+
+
+- site para averiguar as combinações seguras de fonte
+
+https://www.w3schools.com/cssref/css_websafe_fonts.php
+
+<--NA FONT-FAMILY VAI TER 3 OPÇÕES DE FONTE, PRIMEIRO VAI CARREGAR A ARIAL, CASO, O DISPOSITIVO NÃO TENHA ARIAL, VAI CARREGAR HELVETICA E ASSIM SUCESSIVAMENTE-->
+
+  <title>Fontes em CSS</title>
+    <!--font-family: Arial, Helvetica, sans-serif; 
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif
+        }
+
+
+
+--------- COMO CARREGAR FONTES BAIXADAS ---------
+
+
+
+- @font face + enter
+
+- é o parametro criado para permitir fontes baixadas
+
+- tipos de format()
+ - opentype (otf)
+ - truetype (ttf)
+ - embedded - opentype
+ - truetype-aat (Apple Advanced Typography)
+ - svg
+
+ - todos os nomes da fonte devem ser iguais
+ - se quando baixar, vier mais um arquivo, coloque a url dos dois arquivos
+
+
+<title>Fontes Externas</title>
+    <style>
+        @font-face {
+            font-family:'FutureTech';
+            src: url('FutureTech.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        h1 {
+            font-family: 'FutureTech', Times, serif;
+            font-size: 3em;
+        }
+
+    </style>
+
+
+
+--------- NEGRITO, ITÁLICO, SUBLINHADO ---------
+
+
+
+-   negrito:   lighter, normal,  bold , bolder: peso das fontes, nem todas as fontes tem todos esses
+- itálico: font-style: italic;
+- sublinhado: text-decoration: underline;
+
+
+ <title>Fontes em CSS</title>
+    <!--font-family: Arial, Helvetica, sans-serif; 
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        body {
+            font-family: 'Work Sans', Arial, Helvetica; 
+            font-size: 1em ;
+            font-weight: bolder;
+            font-style: italic;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+
+
+--------- SHORTHAND = MÃOZINHA ---------
+
+
+é uma maozinha que ao inves de usar 4 linhas voce usa só uma, mas tem que ser nessa ordem, tem varios tipos de shorthands
+
+
+    <title>Fontes em CSS</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        body {
+            /* shorthand font:
+            - font-style font-weight font-size font-family */
+            font: italic bolder 1em 'Work Sans', sans-serif
+        }
+    </style>
+</head>
+<body>

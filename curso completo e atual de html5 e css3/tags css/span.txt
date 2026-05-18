@@ -1,0 +1,44 @@
+------------ TAG <SPAN> ---------
+
+
+É UMA TAG HTML INLINE, SERVE PARA MARCAR UMA PEQUENA PARTE DO TEXTO, NORMALMENTE UMA PALAVRA OU TRECHO, PARA DEPOIS ESTILIZAR COM CSS.
+
+
+
+exemplo:
+
+<p>Eu gosto de <span>Android</span>.</p>
+
+
+
+resultado:
+
+A palavra Android fica separada do restante do texto para receber estilo.
+
+
+
+EXEMPLO COM CLASS:
+
+<p>Eu gosto de <span class="destaque">Android</span>.</p>
+
+<style>
+    .destaque {
+        color: green;
+        font-weight: bold;
+    }
+</style>
+
+
+
+resultado:
+
+A palavra Android ficará verde e em negrito.
+
+
+
+QUANDO USAR:
+
+✔ destacar palavra
+✔ colorir parte do texto
+✔ aplicar class em trecho pequeno
+✔ aplicar id em palavra específica

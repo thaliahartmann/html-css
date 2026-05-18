@@ -1,0 +1,29 @@
+------------SÍMBOLOS ESPECIAIS------------
+
+
+
+https://github.com/gustavoguanabara/html-css/blob/master/aulas-pdf/05%20-%20Caracteres%2C%20parágrafos%20e%20quebras%20de%20linha.pdf
+
+
+
+------------EMOJIS------------
+
+
+
+https://emojipedia.org 
+
+exemplo: copia o código, não o emoji direto, pq nem todo navegador consegue carregar o emoji, tipo o código da caveirinha 1F480
+
+&#x1F480
+
+
+
+------------FAVICON------------
+
+O favicon fica encima do título da página
+
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> <!--só 
+clicar link + favicon que aparece-->
+
+favicon.io
+

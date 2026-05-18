@@ -1,0 +1,74 @@
+------------LINKS EXTERNOS (BLANK) (PARA O SEU SITE NÃO SER FECHADO AO CLICAR NO LINK)-----------
+
+
+
+<a> para abrir a tag para marcar o texto selecionado como LINK.
+
+exemplo:<p>Você pode acessar o meu <a href="https://gustavoguanabara.github.io/" target="_blank" rel="external">repositório público no GITHUB</a></p>
+
+resultado: Você pode acessar o meu repositório público no GITHUB.
+
+
+
+------------LINKS para DOWNLOAD (formato de lista)-----------
+
+
+
+<a> para abrir a tag para marcar o texto selecionado como LINK.
+
+exemplo:ul><li><a href="livro/meu livro.pdf" download="meulivro.pdf" type="aplication/pdf">Baixar o livro em PDF</a></li>
+        <li><a href="livro/meu livro.zip" download="meulivro.zip" type="aplication/zip">Livro compactado em ZIP</a></li>
+
+resultado: -Baixar o livro em PDF
+	   -Livro compactado em ZIP
+
+
+
+------------LINK PARA DEFINIR QUE ESTÁ ABRINDO UM LINK DA SUA PRÓPRIA PÁGINA-----------
+
+
+
+SELF = NA PROPRIA ABA
+
+<a> para abrir a tag para marcar o texto selecionado como LINK.
+
+<p>Você também pode acessar a <a href="noticias/pag003.html" rel="next" target="_self">nossa página de noticias</a></p>                                                    
+
+resultado: Você também pode acessar a nossa página de noticias
+
+
+
+------------LINK FOLLOW E NOFOLLOW---------------------
+
+
+
+LINK FOLLOW
+
+link normal
+passa autoridade SEO para outro site
+
+<a href="site.com.
+
+LINK NOFOLLOW
+
+não passa autoridade SEO
+
+<a href="site.com" rel="nofollow">
+
+
+
+------------DEFINIR PRIMEIRA E SEGUNDA PÁGINA-----------
+
+
+
+<a> para abrir a tag para marcar o texto selecionado como LINK.
+
+PREV
+
+exemplo:<p><a href="index.html" rel="prev">Voltar para a primeira página</a></p>
+
+NEXT
+
+<p>Está é a primeira página do site. Se você quiser acessar a minha <a href="pag002.html" rel="next">segunda página.</a></p>
+
+

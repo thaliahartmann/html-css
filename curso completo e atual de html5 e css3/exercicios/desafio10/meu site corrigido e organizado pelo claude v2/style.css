@@ -1,0 +1,247 @@
+
+* {
+    box-sizing: border-box;
+}
+
+
+@font-face {
+    font-family: 'idroid';
+    src: url('idroid.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BebasNeue-Regular';
+    src: url('BebasNeue-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OpenSans-Regular';
+    src: url('OpenSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body {
+    margin: 0;
+    background-color: rgba(255, 254, 183, 0.647);
+}
+
+
+header {
+    background-image: linear-gradient(180deg, #46c77f, #317f53, #0e5d30, #033e19);
+    padding: 10px;
+    width: 100%;
+    margin: auto;
+    box-shadow: 0px 7px 7px rgb(0 0 0 / 20%);
+}
+
+main {
+    background-color: #ffffff;
+    padding: 10px;
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+    margin-bottom: 30px;
+    box-shadow: 1px 3px 20px 0px rgb(150, 150, 150);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+div.video {
+    background-color: #006e30;
+    margin: 0px -10px 30px -10px;
+    padding: 20px;
+    padding-bottom: 55.45%;
+    position: relative;
+}
+
+div.video > iframe {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+
+}
+
+
+aside {
+    background-color: #00db94;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: 'OpenSans-Regular', 'Courier New', Courier, monospace;
+    box-shadow: 3px 3px 8px rgba (0, 0, 0, 8.281)
+}
+
+aside > h3 {
+    font-family: 'OpenSans-Regular', 'Courier New', Courier, monospace;
+    background-color: #033e19;
+    color: white;
+    padding: 10px;
+    margin: -10px -10px 0px -10px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+aside > ul {
+    list-style-type: '\2714\00A0\00A0';
+    list-style-position: inside;
+    columNs: 2;
+}
+
+footer {
+    background-color: #045528;
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 3px;
+}
+
+
+.titulo-site {
+    font-family: 'BebasNeue-Regular', 'Courier New', Courier, monospace;
+    font-style: normal;
+    font-weight: lighter;
+    font-size: 50px;
+    color: white;
+    text-shadow: 0px 2px #00000042;
+}
+
+
+.subtitulo-cabecalho {
+    font-family: 'OpenSans-Regular', 'Courier New', Courier, monospace;
+    font-style: normal;
+    color: rgb(255, 255, 255);
+}
+
+
+.titulo-secao {
+    font-family: 'idroid', 'Courier New', Courier, monospace;
+    font-style: normal;
+    font-weight: lighter;
+    text-indent: 35px;
+    color: #0b4a26;
+}
+
+
+.titulo-secao--destaque {
+    background-image: linear-gradient(to right, #00db94, #73dfa373, #ffffff);
+    width: 100%;
+}
+
+
+.texto-corpo {
+    font-family: 'OpenSans-Regular', 'Courier New', Courier, monospace;
+    font-style: normal;
+    color: rgb(0, 0, 0);
+}
+
+
+
+.paragrafo {
+    text-align: justify;
+    text-indent: 35px;
+    font-weight: lighter;
+    font-size: 15px;
+    line-height: 2em;
+    color: #000000;
+}
+
+
+.destaque-verde {
+    font-weight: bold;
+    color: #0f512c;
+}
+
+
+.centralizado {
+    text-align: center;
+}
+
+
+nav.links-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: flex-start;
+    padding: 8px;
+}
+
+.img-responsiva {
+    display: block;
+    margin: auto;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+
+.img-pequena {
+    max-width: 350px;
+    display: block;
+    margin: auto;
+}
+
+nav.links-nav a {
+    font-family: 'OpenSans-Regular', 'Courier New', Courier, monospace;
+    font-style: normal;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 4px 10px;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+nav.links-nav a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+nav.links-nav a:hover {
+    color: rgb(0, 95, 22);
+    background-color: #00ff6e;
+    border-radius: 5px;
+    padding: 4px 10px;
+    transition-duration: 1s;
+}
+
+nav.links-nav a:active {
+    color: blueviolet;
+}
+
+
+.link-inline a {
+    font-family: 'OpenSans-Regular', 'Courier New', Courier, monospace;
+    font-style: normal;
+    font-weight: bold;
+    color: rgb(5, 65, 38);
+    background-color: #00daa3;
+    text-decoration: none;
+}
+
+.link-inline a:hover {
+    text-decoration: underline;
+}
+
+.link-inline::after {
+    background-color: #00daa3;
+    content: '🔗';
+}
+
+
+footer a {
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: #23bd66;
+}
+

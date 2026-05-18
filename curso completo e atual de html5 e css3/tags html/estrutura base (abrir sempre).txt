@@ -1,0 +1,89 @@
+DICAS DO VSCODE:
+
+
+
+ctrl + L: limpa o terminal
+
+ctrl + shift + p: abre a janelinha de pesquisas
+
+crtl + espaço: abre as opções dentro de algo
+
+como abrir e COLOCAR uma tag mais rápido:
+
+ctrl + shift + p , wrapWithAbbreviation e seleciona a tag, tipo, i, ai só apertar enter
+
+Ctrl + D → seleciona a variável, ou texto qualquer que tiver o mesmo nome, seleciona todos e altera todos
+
+colocar # em uma tag que você ainda não decidiu o que vai ter dentro, é como deixar ela funcionando só que sem nada por enquanto.
+
+EXTENSÃO PARA VER COMO SEU SITE FICARIA EM DIFERENTE DISPOSITIVOS
+
+- Windows Resizer
+
+
+------------ABRIR ESTRUTURA------------
+
+
+
+! e clicar abre a estrutura ja
+
+
+
+<!D0CTYPE html> #Vou desenvolver em HTML 5
+<html lang=”pt-br”> #Linguagem
+	<head>      #configurações site
+		<meta charset=“UTF-8”> #comando que suporta acentos
+		<meta name=“viewport”> #significa que o site vai ocupar 100% da tela disponível dada ao navegador
+		content=”width=device,
+		initial-scale=1.0”>
+		<title>document</tille>
+	</head>
+	<body>      #conteúdo do site
+		<h1>Olá mundo!</h1>
+	</body>
+</html>
+
+
+
+------------COMENTÁRIO------------
+
+
+
+<!--
+
+
+
+
+------------LINHA HORIZONTAL------------
+
+
+
+<hr> #cria uma linha tipo assim
+
+Olá, Mundo!
+
+
+
+------------QUEBRAR O TEXTO------------
+
+
+
+<br> #tag usada para quebrar o texto em algum lugar especifico.
+
+exemplo:
+
+Se precisar quebrar o texto em algum lugar específico
+como esse daí, você pode usar a tag BR!.
+
+
+
+------------LT E GT------------
+
+
+
+LT E GT: para a tag <p>, </p> apareceram como texto, não como tag, mesma coisa com BR.
+
+Você pode escrever um parágrafo
+de qualquer jeito! Basta escrever
+tudo no meio do par de TAGS,&lt;p&gt;/p&gt; <!-- LT = LESS THAN = MENOR QUE e / GT = GREATER THAN = MAIOR QUE-->
+

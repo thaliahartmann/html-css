@@ -1,0 +1,87 @@
+--------- PSEUDO CLASSES ---------
+
+
+
+ Representam ESTADOS do elemento 
+
+:hover    /* mouse em cima */
+:active   /* clicando */
+:visited  /* link já visitado */
+
+
+ Não criam nada novo, só mudam comportamento
+
+
+
+--------- PSEUDO ELEMENTOS ---------
+
+
+
+ Representam PARTES do elemento ou criam conteúdo 
+
+::before  /* antes do conteúdo */
+::after   /* depois do conteúdo */
+::first-letter /* primeira letra */
+
+
+ Podem adicionar conteúdo com content
+
+
+=========================
+   	DIFERENÇA
+=========================
+
+/* :  → estado / PSEUDO CLASSES
+/* :: → parte ou conteúdo /PSEUDO ELEMENTOS
+
+
+
+--------- LINKS PSEUDOS CLASSES ---------
+
+
+
+  a:visited → link que o usuário JÁ clicou 
+
+a:visited {
+    color: darkred;
+}
+
+
+
+  a:hover → quando o mouse está em cima do link 
+
+a:hover {
+    color: black;
+    text-decoration: underline; *sem a linha de baixo*
+}
+
+
+
+  a:active → no momento do clique (quando está sendo pressionado)
+ 
+a:active {
+    color: blueviolet;
+}
+
+
+
+--------- LINKS PSEUDOS ELEMENTOS ---------
+
+
+
+  ::before → adiciona algo ANTES do conteúdo do elemento
+
+.especial::before {
+    content: '→ ';
+}
+
+
+
+  ::after → adiciona algo DEPOIS do conteúdo do elemento 
+
+.especial::after {
+    content: ' ←';
+    text-decoration: none;
+    font-weight: normal;
+    color: rgb(255, 124, 211);
+}

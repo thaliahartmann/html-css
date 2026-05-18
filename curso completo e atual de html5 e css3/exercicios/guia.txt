@@ -1,0 +1,60 @@
+ex1 = Introdução ao HTML primeira aula 9/02/2026
+
+ex2 = Aula de testes,adicionando emojis, quebrando paragrafo, adicionando símbolos especiais, parágrafos 10/02/2026
+
+ex3 = aprendendo a formatar imagens em png, jpeg e diminuir o tamanho delas 18/02/2026
+
+ex4 = colocando as imagens no site, de varias maneiras, como em subpastas e links 18/02/2026
+
+ex5 = colocando o ícone do site (favicon) 18/02/2026
+
+ex6 = aprendendo a hierarquia de títulos, como funciona o <h1> e suas variantes, além de <p> e Lorem 18/02/2026
+
+ex7 = aula focada no significado ATUAL do HTML (5) 24/02/2026
+
+comentário de inscrito: aula de grande valor, pra quem não entendeu: 
+<!--Essas tags eram do HTML4, elas se tornaram obsoletas porque o HTML5 veio com a proposta de ser uma linguagem completamente focada na SEMÂNTICA (no significado de cada elemento) e não na FORMA (colorir, centralizar etc.), isso ficou exclusivamente (na prática não, mas quem segue boas práticas respeita) na mão das CSS
+
+ex8 = Aula focada em TAGS semânticas e não semânticas: negrito, Strong, itálico, ênfase, texto marcado (mark) big (não é mais usado, agora é em CSS), small, del, ins, sup e sub. 24/02/2026
+
+ex8b = Aula focada em TAGS de FORMA e TAGS de SENTIDO, código fonte, pré formatação, citação simples e composta, como uma palavra ex: VLW e o sentido da abreviação quando passa o mouse encima, escrever ao contrário 25/02/2026
+
+ex9 = Aula focada em listas, ordenadas, não ordenadas, aninhamento de listas e lista de definição.
+
+ex10 = Aula focada em links, internos, externos e para download.
+
+ex11 = Aula focada em imagens dinâmicas e áudio em sites.
+
+ex12 = Aula focada em vídeos em sites.
+
+ex13 = Aula focada em CSS INLINE.
+
+ex14 = Aula focada em CSS interno/local.
+
+ex15 = Aula focada em CSS externo.
+
+ex16 = Aula focada em cores, gradiente, psicologia das cores..
+
+ex17= Aula focada em tipografia, testando fontes e aprendendo sobre as formatações.
+
+ex18 = Aula focada em formas de inserir fontes e pesquisar fontes.
+
+ex19 = 
+
+
+
+
+
+
+
+
+
+
+
+
+
+desafio05 = Site sobre mim
+
+desafio06 = Site sobre Tags HTML
+
+desafio09 = Site sobre suas recomendações de vídeos preferidos

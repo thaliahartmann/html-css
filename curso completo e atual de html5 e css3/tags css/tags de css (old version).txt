@@ -1,0 +1,1515 @@
+------------ESTILOS EM CSS---------
+
+
+
+DICAS DO VSCODE + DICA DE RUBI:
+
+
+
+DICA DE RUBI:
+
+
+-quando for alterar o tamanho, borda e tals, da para alterar
+no inspecionar da pagina no navegador, nao altera no arquivo original
+mt foda
+
+
+
+@: tags com arroba geralmente se chamam de regras, como UTF-8
+
+segura o ALT e clica, você seleciona e escreve em todos os locais selecionados
+
+ctrl + click: pode ser usado para criar um arquivo que não existe
+
+ctrl + L: limpa o terminal
+
+ctrl + shift + p: abre a janelinha de pesquisas
+
+crtl + espaço: abre as opções dentro de algo
+
+como abrir e COLOCAR uma tag mais rápido:
+
+ctrl + shift + p , wrapWithAbbreviation e seleciona a tag, tipo, i, ai só apertar enter
+
+Ctrl + D → seleciona a variável, ou texto qualquer que tiver o mesmo nome, seleciona todos e altera todos
+
+colocar # em uma tag que você ainda não decidiu o que vai ter dentro, é como deixar ela funcionando só que sem nada por enquanto.
+
+
+
+---------TAGS ESSENCIAIS---------
+
+
+
+--------- CONFIGURAÇÃO GLOBAL DE CS ---------
+
+
+
+-ainda não sei muito sobre isso..
+
+ <style>
+        * { 
+            height: 100%; **********************************************************
+         }
+        body {
+            background-image: linear-gradient(to top, white, blue);
+        }
+
+
+
+--------- LOREM---------
+
+
+Sobre o atalho LOREM
+
+lorem + entender vai encher uma linguiça
+
+exemplo: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores voluptates eum inventore velit nesciunt provident, quo excepturi ea temporibus pariatur ab non cupiditate. Labore, ab animi a omnis excepturi est!
+
+Adicionando ao conteúdo: Para gerar textos, insira após a palavra Lorem um número que será referente a quantidade de palavras que você deseja. Ou seja, Lorem100 irá gerar um texto com 100 palavras. Lorem1000, 1000 palavras.
+
+--------- MUDAR A COR DO FUNDO ---------
+
+
+
+background-color
+
+
+
+--------- MUDAR A COR DO FUNDO DEGRADE ---------
+
+
+
+background-image: linear-gradiente
+
+
+exemplo:
+
+background-image: linear-gradient(to right, white, blue);
+
+
+
+--------- MUDAR A COR DO FUNDO DEGRADE 45 GRAUS ---------
+
+
+
+    <title>Gradiente em CSS</title>
+    <style>
+        * { 
+            height: 100%;
+         }
+        body {
+            background-image: linear-gradient(45deg, #4411cf, #8342B7, #BF328D, #EA4852, #FFDC83); ***********************************************
+            background-attachment: fixed;
+        }
+    </style>
+
+
+
+--------- MUDAR A COR DO FUNDO DEGRADE CIRCULO ---------
+
+
+
+<title>Gradiente em CSS</title>
+    <style>
+        * { 
+            height: 100%;
+         }
+        body {
+            background-image: radial-gradient(circle, #4411cf, #8342B7, #BF328D, #EA4852, #FFDC83); *************************************************
+            background-attachment: fixed;
+        }
+    </style>
+
+
+
+--------- PARA O DEGRADE FICAR INFINITO MEMOS ROLANDO A PÁGINA ---------
+
+
+
+    <title>Gradiente em CSS</title>
+    <style>
+        * { 
+            height: 100%;
+         }
+        body {
+            background-image: linear-gradient(to bottom, #0E5981, #082738);
+            background-attachment: fixed; ***********************************************************************************
+        }
+    </style>
+
+
+
+
+--------- MUDAR A FONTE ---------
+
+
+
+font-family...
+
+
+
+--------- MUDAR O TAMANHO DA FONTE ---------
+
+
+font- size...
+
+
+--------- MUDAR A COR DA LETRA ---------
+
+
+color
+
+
+
+
+------- ESTILOS EM CSS --------
+
+
+
+
+------------ESTILOS EM CSS INLINE---------
+
+
+
+O ESTILO É FEITO NA MESMA LINHA DO HTML, NÃO POSSUI ORGANIZAÇÃO, É CONFUSO E É POUCO USADO, USO MUITO ESPECIFICO.
+
+
+
+<title>Estilos Inline</title>
+</head>
+<body style="background-color: lightskyblue; font-family: Arial, Helvetica, sans-serif; font-size: 20px;">
+    <h1 style="color: mediumblue; background-color: dodgerblue; font-size: 1.5em;">Capítulo 1</h1>
+    <h2 style="color: darkred; font-size: 1.2em;">Capítulo 1.1</h2>
+    <p style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit assumenda itaque vitae optio modi quaerat aperiam perspiciatis dignissimos sit repudiandae asperiores ipsam officiis aliquid explicabo quis fuga nesciunt, esse possimus.</p>
+
+    <h2 style="color: darkred; font-size: 1.2em;">Capítulo 1.2</h2>
+    <p style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel debitis omnis illo sunt, accusantium quaerat provident quam eius consequuntur quae veritatis id alias laudantium porro natus expedita, hic et recusandae?</p>
+
+    <h1 style="color: mediumblue; font-size: 1.5em; background-color: dodgerblue;">Capítulo 2</h1>
+    <h2 style="color: darkred; font-size: 1.2em;">Capítulo 2.1</h2>
+    <p style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus blanditiis earum molestiae quasi, repellendus quis assumenda nesciunt quo, ullam animi aspernatur deserunt aliquam deleniti totam aut culpa dolorem reprehenderit facere?</p>
+</body>
+
+
+
+exemplo:<body style="background-color: aqua;"><!--Mudar a cor de fundo da página inteira -->
+
+resultado: ta ao contrario, preguiça de de escrever
+
+
+OLHA COMO FICA CONFUSO
+
+<body style="background-color: rgb(152, 147, 147);font-family: Arial, Helvetica, sans-serif;"><!--Mudar a cor de fundo da página inteira-->
+    <h1 style="color: rgb(255, 68, 0);">Capítulo 1</h1><!--Mudar a cor da frase, sim no inline tem que fazer um por 1-->
+    <h2 style="color: rgb(92, 26, 2);">Capitulo 1.1</h2>
+    <p style="text-align:justify;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat deserunt corrupti neque cupiditate nulla illo dolorum, consequatur reiciendis porro facere assumenda soluta rem cumque molestiae dolore nesciunt similique accusantium voluptate.</p>
+    <h1 style="color: rgb(255, 68, 0);">Capítulo 2</h1><!--Mudar a cor da frase, sim no inline tem que fazer um por 1-->
+    <h2 style="color: rgb(92, 26, 2);">Capítulo 2.1</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor vel aspernatur deserunt ducimus quas impedit nobis quasi itaque dignissimos totam, excepturi id ipsam in soluta asperiores consequuntur ea nemo? Optio.</p>
+</body>
+
+E OLHA QUE NEM MUDEI O TAMANHO DAS LETRAS
+
+
+
+------------ TAG <SPAN> ---------
+
+
+É UMA TAG HTML INLINE, SERVE PARA MARCAR UMA PEQUENA PARTE DO TEXTO, NORMALMENTE UMA PALAVRA OU TRECHO, PARA DEPOIS ESTILIZAR COM CSS.
+
+
+
+exemplo:
+
+<p>Eu gosto de <span>Android</span>.</p>
+
+
+
+resultado:
+
+A palavra Android fica separada do restante do texto para receber estilo.
+
+
+
+EXEMPLO COM CLASS:
+
+<p>Eu gosto de <span class="destaque">Android</span>.</p>
+
+<style>
+    .destaque {
+        color: green;
+        font-weight: bold;
+    }
+</style>
+
+
+
+resultado:
+
+A palavra Android ficará verde e em negrito.
+
+
+
+QUANDO USAR:
+
+✔ destacar palavra
+✔ colorir parte do texto
+✔ aplicar class em trecho pequeno
+✔ aplicar id em palavra específica
+
+
+
+------------ ESTILOS EM CSS INTERNO/LOCAL ---------
+
+
+
+É MELHOR QUE INLINE, MAS É PIOR QUE CSS EXTERNO, ESSA É MELHOR QUANDO VOCE VAI MODIFICAR SÓ UM DOCUMENTO, SÓ UMA PAGINA
+
+
+
+exemplo:
+
+    <title>Estilos internos/locais</title>
+    <!--o parametro que estiver dentro de style será alterado-->
+    <style>
+        body {
+            background-color: lightsteelblue;  ========================================================================================================================
+            font-family: Arial, Helvetica, sans-serif; ================================================================================================================
+            font-size: 20px; ==========================================================================================================================================
+        }   
+        h1 {
+            color:darkblue;
+            background-color:lightblue;
+        }
+        h2 {
+            color:darkred;
+        }
+        p {
+            text-align: justify;
+        }
+    </style>
+
+
+
+------------ ESTILOS EM CSS EXTERNO (DOCUMENTO ESPECIFICO PARA CSS) ---------
+
+
+
+É OTIMO PARA GUARDAR ESTILOS E USAR QUANDO QUISER, ALTERA EM TODOS AS PAGINAS, NÃO PRECISA ALTERAR UMA PAGINA POR VEZ
+
+
+
+TAG USADA NO  CSS EXTERNO:
+
+
+
+ <link rel="stylesheet" href="style.css">!--tag para definir o caminho do ARQUIVO CSS-->
+
+
+
+exemplo:
+
+
+    <title>Segunda página</title>
+    <link rel="stylesheet" href="style.css">!--tag para definir o caminho do ARQUIVO CSS-->
+</head>
+<body>
+    <h1>Segunda página</h1>
+    <h2>Teste de estilos</h2>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus soluta corporis aperiam quaerat odio totam quae, aspernatur incidunt saepe nobis quibusdam, recusandae excepturi deserunt eveniet! At animi non quibusdam ullam.</p>
+    <p><a href="index.html">Voltar</a></p>
+</body>
+</html>
+
+
+
+--------- PODE USAR CSS INTERNO, EXTERNO E INLINE JUNTOS? ---------
+
+
+
+
+SIM PODE
+
+
+
+
+ordem de prevalecimento (NÃO É ORDEM DE MELHOR)
+
+1:Inline (coisas muito especificas, alterar uma coisa MUITO MAS MUITO ESPECIFICA, USE SÓ PARA ISSO)
+2:Local/ interno (bom para quando é só uma página, mas se aumentar é so copiar e fazer um documento css)
+3:Externo (foda dms)
+
+
+
+--------- CAPTURANDO FONTES USADAS EM SITES ---------
+
+
+
+só baixar a extensão:
+
+-https://chromewebstore.google.com/detail/fonts-ninja/eljapbgkmlngdpckoiiibecpemleclhh
+
+
+
+--------- CAPTURANDO FONTES USADAS EM IMAGENS --------- 
+
+
+
+sites:
+
+https://www.whatfontis.com
+
+https://www.myfonts.com/pt/pages/whatthefont
+
+https://www.fontsquirrel.com/matcherator?token=d0nmwv41exr65o7n
+
+
+
+--------- COMO CARREGAR FONTES IMCOMPÁTIVEIS EM DISPOSITIVOS DIFERENTES? ---------
+
+
+
+- site para averiguar as combinações seguras de fonte
+
+https://www.w3schools.com/cssref/css_websafe_fonts.php
+
+<--NA FONT-FAMILY VAI TER 3 OPÇÕES DE FONTE, PRIMEIRO VAI CARREGAR A ARIAL, CASO, O DISPOSITIVO NÃO TENHA ARIAL, VAI CARREGAR HELVETICA E ASSIM SUCESSIVAMENTE-->
+
+  <title>Fontes em CSS</title>
+    <!--font-family: Arial, Helvetica, sans-serif; 
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif
+        }
+
+
+
+--------- COMO CARREGAR FONTES BAIXADAS ---------
+
+
+
+- @font face + enter
+
+- é o parametro criado para permitir fontes baixadas
+
+- tipos de format()
+ - opentype (otf)
+ - truetype (ttf)
+ - embedded - opentype
+ - truetype-aat (Apple Advanced Typography)
+ - svg
+
+ - todos os nomes da fonte devem ser iguais
+ - se quando baixar, vier mais um arquivo, coloque a url dos dois arquivos
+
+
+<title>Fontes Externas</title>
+    <style>
+        @font-face {
+            font-family:'FutureTech';
+            src: url('FutureTech.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        h1 {
+            font-family: 'FutureTech', Times, serif;
+            font-size: 3em;
+        }
+
+    </style>
+
+
+
+
+--------- ALINHAMENTO DE TEXTOS --------- 
+
+
+
+text-align + left, center, right , justify
+
+
+center: centro
+left: esquerda
+right: direita
+justify: parágrafo de redação
+indent: tamanho do parágrafo
+
+
+ <title>Alinhamentos</title>
+    <style> 
+        body {
+            font: normal 16px Arial, Verdana, serif;
+            text-align: left; ************************ esquerda
+        }
+        h1 {
+            text-align: center; *********************** centro
+
+        }
+        h2 {
+            text-align: right; ************************ direita
+        }
+        p {
+            text-align: justify; ********************** parágrafo de redação
+            text-indent: 35px;   ********************** tamanho do parágrafo
+        }
+    </style>
+</head>
+<body>
+
+
+
+
+
+
+--------- MEDIDAS (TAMANHOS DA LETRA) EM CSS ---------
+
+
+
+SITE PARA FONTES: https://fonts.google.com
+
+
+
+--------- MEDIDAS (TAMANHOS DA LETRA) EM CSS ---------
+
+
+
+📏 MEDIDAS ABSOLUTAS
+(são fixas, não mudam dependendo da tela)
+
+px (pixels)
+→ unidade mais comum em telas
+→ representa pontos na tela
+→ MUITO usada para tamanhos
+
+cm (centímetros)
+→ unidade real de medida física (pouco usada em telas)
+
+mm (milímetros)
+→ menor que cm, também baseada em medida real
+
+in (polegada)
+→ 1 polegada = 2.54 cm
+
+pt (points)
+→ usado mais em impressão (1pt ≈ 1/72 de polegada)
+
+pc (picas)
+→ usado em tipografia (1pc = 12pt)
+
+⚠️ Observação:
+Na prática, o mais usado é:
+→ px
+
+
+
+📐 MEDIDAS RELATIVAS
+(se adaptam ao tamanho da tela ou elemento)
+
+em
+→ relativo ao tamanho da fonte do elemento pai
+→ Ex: se o pai tem 16px, 1em = 16px
+
+rem (root em)
+→ relativo ao tamanho da fonte do elemento raiz (html)
+→ mais previsível que em
+
+ex
+→ relativo à altura da letra "x" (pouco usado)
+
+vw (viewport width)
+→ relativo à largura da tela
+→ 1vw = 1% da largura da tela
+
+vh (viewport height)
+→ relativo à altura da tela
+→ 1vh = 1% da altura da tela
+
+%
+→ relativo ao tamanho do elemento pai
+
+---
+
+📌 MEDIDAS MAIS RECOMENDADAS PARA FONT-SIZE
+
+px
+→ simples e direto
+→ muito usado para iniciantes
+
+em
+→ mais flexível
+→ bom para layouts adaptáveis
+
+rem
+→ melhor controle geral
+→ muito usado profissionalmente
+
+
+
+🧠 RESUMO
+
+Medidas absolutas → tamanho fixo
+Medidas relativas → tamanho adaptável
+
+px → padrão simples
+em/rem → padrão moderno e responsivo
+
+
+QUEM É PAI?
+
+Elemento pai = elemento que envolve outro elemento (filho)
+
+Exemplo:
+
+<div>
+    <p>Texto</p>
+</div>
+
+div → pai
+p → filho
+
+---
+
+IMPORTÂNCIA:
+
+Algumas medidas dependem do pai:
+
+em → usa o tamanho do pai
+% → usa o tamanho do pai
+
+rem → NÃO usa o pai (usa o html)
+
+---
+
+RESUMO:
+
+pai = elemento de fora
+filho = elemento de dentro
+
+
+
+--------- NEGRITO, ITÁLICO, SUBLINHADO ---------
+
+
+
+-   negrito:   lighter, normal,  bold , bolder: peso das fontes, nem todas as fontes tem todos esses
+- itálico: font-style: italic;
+- sublinhado: text-decoration: underline;
+
+
+ <title>Fontes em CSS</title>
+    <!--font-family: Arial, Helvetica, sans-serif; 
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        body {
+            font-family: 'Work Sans', Arial, Helvetica; 
+            font-size: 1em ;
+            font-weight: bolder; ****************************************** 
+            font-style: italic; *******************************************
+            text-decoration: underline; **********************************
+        }
+    </style>
+</head>
+<body>
+
+
+--------- SHORTHAND = MÃOZINHA ---------
+
+
+é uma maozinha que ao inves de usar 4 linhas voce usa só uma, mas tem que ser nessa ordem, tem varios tipos de shorthands
+
+
+    <title>Fontes em CSS</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        body {
+            /* shorthand font: é uma maozinha que ao inves de usar 4 linhas voce usa só uma, mas tem que ser nessa ordem, tem varios tipos de shorthands
+            - font-style font-weight font-size font-family */
+            font: italic bolder 1em 'Work Sans', sans-serif
+        }
+    </style>
+</head>
+<body>
+
+
+--------- SELETORES ------------
+
+--------- ID ---------
+
+
+
+- é usado quando queremos alterar somente uma tag, por exemplo o h1.
+- ai voce nomeia 
+
+exemplo:
+
+html:
+
+<h1 id="principal">Criando Sites com HTML e CSS</h1>
+
+id="" o nome é da sua escolha
+
+no css fica:
+
+h1#principal {
+    text-align: center;
+    background-color: #e4ccc8ac;
+    color: #3C3375
+    }
+
+
+EXEMPLOS:
+
+
+    <h1 id="principal">Criando Sites com HTML e CSS</h1> *******************************************
+    <h1>Aprendendo HTML</h1>
+    <h2>HTML básico</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis architecto assumenda cum, sequi laboriosam dolorum laborum, eos quis quia officiis alias, adipisci sapiente qui cumque nemo repudiandae vitae. Enim, inventore!</p>
+    <h2>HTML intermediário</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus amet perferendis eveniet qui assumenda debitis voluptate? Quisquam velit perspiciatis voluptate reiciendis animi dolorem illo, ex est veritatis. Neque, enim ullam.</p>
+    <h2>HTML avançado</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda tenetur, minus fugiat recusandae numquam omnis voluptate quasi dolorem facilis cupiditate id illo dolore, quis veritatis esse repellendus veniam vitae obcaecati?</p>
+    <h1>Aprendendo CSS</h1>
+    <h2>CSS básico</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere voluptate nostrum ducimus nihil laudantium, deleniti iure minus fuga, ipsum id quibusdam dolores unde libero ipsa eius magni doloremque quasi ratione.</p>
+    <h2>CSS intermediário</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto recusandae expedita laborum at voluptate commodi molestiae consequuntur ut fuga natus culpa, ipsa, eum cum? Sed velit repellendus delectus natus optio.</p>
+    <h2>CSS avançado</h2>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis dolore rem numquam, optio vel expedita iure consequatur, magni harum, quibusdam unde tempora architecto. Culpa deserunt quaerat asperiores incidunt similique ea.</p>
+</body>
+</html>
+
+
+style
+
+@charset "UTF-8";
+
+/*
+ ID (HTML) : # (CSS)
+ CLASS (HTML) : . (CSS)
+ */
+
+body {
+    background-color:#ece9ff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    color: #3C3375;
+}
+
+h1#principal { *************************************************
+    text-align: center;
+    background-color: #e4ccc8ac;
+    color: #3C3375
+}
+
+h2 {
+    color: #9d6058;
+}
+
+
+
+--------- CLASS ---------
+
+
+
+- é usado quando queremos alterar alterar varias tags juntas.
+- pode ser usado com id e vice e versa
+- ai voce nomeia 
+
+exemplo:
+
+html:
+
+<h1 class="destaque">Aprendendo HTML</h1>
+
+class ="" o nome é da sua escolha
+
+no css fica:
+
+- não deve botar h1 antes de ".destaque" ou qualquer outra tag
+
+.destaque {
+    background-color: #cfcaa496 ;
+}
+
+resultado:
+
+- todas as tags com a class destaque ficam com tal cor de fundo
+
+
+EXEMPLOS:
+
+HTML
+
+<body>
+    <h1 id="principal" class="destaque">Criando Sites com HTML e CSS</h1>
+    <h1 class="destaque">Aprendendo HTML</h1>
+    <h2 class="basico">HTML básico</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis architecto assumenda cum, sequi laboriosam dolorum laborum, eos quis quia officiis alias, adipisci sapiente qui cumque nemo repudiandae vitae. Enim, inventore!</p>
+    <h2 class="intermediário">HTML intermediário</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus amet perferendis eveniet qui assumenda debitis voluptate? Quisquam velit perspiciatis voluptate reiciendis animi dolorem illo, ex est veritatis. Neque, enim ullam.</p>
+    <h2 class="avançado">HTML avançado</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda tenetur, minus fugiat recusandae numquam omnis voluptate quasi dolorem facilis cupiditate id illo dolore, quis veritatis esse repellendus veniam vitae obcaecati?</p>
+    <h1 class="destaque">Aprendendo CSS</h1>
+    <h2 class="basico">CSS básico</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere voluptate nostrum ducimus nihil laudantium, deleniti iure minus fuga, ipsum id quibusdam dolores unde libero ipsa eius magni doloremque quasi ratione.</p>
+    <h2 class="intermediário">CSS intermediário</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto recusandae expedita laborum at voluptate commodi molestiae consequuntur ut fuga natus culpa, ipsa, eum cum? Sed velit repellendus delectus natus optio.</p>
+    <h2 class="avançado destaque">CSS avançado</h2>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis dolore rem numquam, optio vel expedita iure consequatur, magni harum, quibusdam unde tempora architecto. Culpa deserunt quaerat asperiores incidunt similique ea.</p>
+</body>
+</html>
+
+
+CSS
+
+
+}
+
+.basico {
+    color: #3C3475
+}
+
+.intermediario {
+    color: #CAC49C;
+}
+
+.avançado {
+    color: #a19966;
+}
+
+.destaque {
+    background-color: #cfcaa496 ;
+}
+
+
+
+--------- PSEUDO CLASSES ---------
+
+
+
+ Representam ESTADOS do elemento 
+
+:hover    /* mouse em cima */
+:active   /* clicando */
+:visited  /* link já visitado */
+
+
+ Não criam nada novo, só mudam comportamento
+
+
+
+--------- PSEUDO ELEMENTOS ---------
+
+
+
+ Representam PARTES do elemento ou criam conteúdo 
+
+::before  /* antes do conteúdo */
+::after   /* depois do conteúdo */
+::first-letter /* primeira letra */
+
+
+ Podem adicionar conteúdo com content
+
+
+=========================
+   	DIFERENÇA
+=========================
+
+/* :  → estado / PSEUDO CLASSES
+/* :: → parte ou conteúdo /PSEUDO ELEMENTOS
+
+
+
+--------- LINKS PSEUDOS CLASSES ---------
+
+
+
+  a:visited → link que o usuário JÁ clicou 
+
+a:visited {
+    color: darkred;
+}
+
+
+
+  a:hover → quando o mouse está em cima do link 
+
+a:hover {
+    color: black;
+    text-decoration: underline; *sem a linha de baixo*
+}
+
+
+
+  a:active → no momento do clique (quando está sendo pressionado)
+ 
+a:active {
+    color: blueviolet;
+}
+
+
+
+--------- LINKS PSEUDOS ELEMENTOS ---------
+
+
+
+  ::before → adiciona algo ANTES do conteúdo do elemento
+
+.especial::before {
+    content: '→ ';
+}
+
+
+
+  ::after → adiciona algo DEPOIS do conteúdo do elemento 
+
+.especial::after {
+    content: ' ←';
+    text-decoration: none;
+    font-weight: normal;
+    color: rgb(255, 124, 211);
+}
+
+
+
+--------- 📦 MODELOS DE CAIXA ---------
+
+
+
+DICA DE RUBI:
+
+-quando for alterar o tamanho, borda e tals, da para alterar
+no inspecionar da pagina no navegador, nao altera no arquivo original
+mt foda
+
+Parâmetros:
+
+
+height  -> altura
+width   -> largura
+border  -> borda
+padding -> espaço interno (entre conteúdo e borda)
+margin  -> espaço externo (fora da borda)
+outline -> contorno externo (não ocupa espaço)
+
+
+Tipos de caixas:
+
+🔷 Block-level:
+
+- Começa em nova linha
+- Ocupa toda a largura do elemento pai
+- Ex: <div>, <h1>, <p>, <main>, <section>, <article>, <header>, <footer>
+
+🔶 Inline-level:
+
+- Não quebra linha
+- Ocupa apenas o tamanho do conteúdo
+- Ex: <span>, <a>, <strong>, <em>, <small>
+
+🟡 Inline-block (extra):
+
+- Fica na mesma linha
+- Aceita width e height
+- Ex: <button>, <input>, <select>
+
+
+
+--------- PROPRIEDADES DE BORDA (border) ---------
+
+
+
+largura  -> border-width: 10px;
+
+estilo   -> border-style:
+             solid   (linha sólida)
+             dashed  (tracejada)
+             dotted  (pontilhada)
+             double  (dupla)
+             groove  (efeito 3D)
+
+cor      -> border-color: red;
+
+
+🔹 SHORTHAND:
+border: 10px solid red;   (largura | estilo | cor)
+
+
+
+--------- PROPRIEDADES DE PADDING (espaço interno) ---------
+
+
+
+padding-top: 10px;      (topo)
+padding-right: 10px;    (direita)
+padding-bottom: 10px;   (baixo)
+padding-left: 10px;     (esquerda)
+
+🔹 SHORTHAND:
+
+padding: 15px 10px 15px 10px;   (top, right, bottom, left)
+padding: 10px;                  (todos iguais)
+padding: 15px 10px;             (cima/baixo | lados)
+
+
+
+--------- PROPRIEDADES DE MARGEM (margin) ---------
+
+
+
+margin-top: 10px;
+margin-right: 10px;
+margin-bottom: 10px;
+margin-left: 10px;
+
+
+🔹 SHORTHAND:
+
+margin: 15px 10px 15px 10px;   (sentido horário: top, right, bottom e left)
+margin: 10px;                  (nos 4 lados iguais a 10px)
+margin: 15px 10px;             (cima e baixo 15px; esquerda e direita 10px)
+margin: 15px 10px 25px;        (cima 15px; esquerda e direita 10px; baixo 25px)
+margin: 10px auto 15px auto;   (cima 10px; lados auto; baixo 15px)
+
+
+📌 Centralizar horizontalmente caixa na tela:
+
+- precisa ter width definido
+- centraliza esquerda e direita
+
+margin: auto;
+margin: 0 auto;   (forma mais comum)
+
+
+
+📦 PROPRIEDADES DE OUTLINE (semelhantes à borda)
+
+
+⚠️ Diferença importante:
+
+- NÃO ocupa espaço
+- fica por fora da borda
+
+outline-width: 5px;
+outline-style: dashed;
+outline-color: salmon;
+
+
+🔹 SHORTHAND:
+
+outline: 5px dashed salmon;   (largura, estilo, cor)
+
+
+
+📦 DISPLAY (tipo de caixa)
+
+
+🔹 Transformar box-level em inline-level e vice-versa:
+
+h1 {              → era originalmente block (box)
+  display: inline;
+}
+
+a {               → era originalmente inline
+  display: block;
+}
+
+🔹 display: inline-block;
+- fica na mesma linha (inline)
+- mas aceita largura e altura (block)
+
+
+
+--------- GROUPING TAGS (TAGS DE AGRUPAMENTO)  ---------
+
+
+
+🔹 O QUE SÃO:
+
+Servem para organizar e estruturar o conteúdo da página
+(dividem o site em partes lógicas)
+
+inves de so colocar tudo em baixo do outro, voce organiza com as TAGS DE AGRUPAMETO
+
+
+
+📌 RESUMO RÁPIDO
+
+div → genérico (sem significado)
+header → topo
+nav → navegação
+main → conteúdo principal
+section → divisão por tema
+article → conteúdo independente
+aside → lateral
+footer → rodapé
+
+
+
+============================================
+ENTENDIMENTO RÁPIDO:
+
+DIV = caixa sem etiqueta 📦
+header/nav/main = caixas com etiqueta 🏷️
+=========================================
+
+
+📦 TAG GENÉRICA
+
+<div> → contêiner genérico (sem significado semântico)
+
+ex:
+
+<div>
+    <p>Texto</p>
+</div>
+
+resultado:
+
+apenas agrupa elementos (usado para layout/estilo)
+
+
+
+📦 TAGS SEMÂNTICAS (com significado)
+
+🔹 <header> → topo
+
+usado para:
+
+- título
+- logo
+- navegação
+
+ex:
+
+<header>
+    <h1>Meu site</h1>
+</header>
+
+resultado:
+
+define o cabeçalho da página/seção
+
+
+
+🔹 <nav> → navegação
+
+ex:
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Contato</a>
+</nav>
+
+resultado:
+
+área de links do site
+
+
+
+🔹 <main> → conteúdo principal
+
+ex:
+
+<main>
+    <p>Conteúdo principal</p>
+</main>
+
+resultado:
+
+parte mais importante da página (1 por página)
+
+
+
+🔹 <section> → seção temática
+
+ex:
+
+<section>
+    <h2>Notícias</h2>
+</section>
+
+resultado:
+
+divide o conteúdo em partes com tema
+
+
+
+🔹 <article> → conteúdo independente
+
+ex:
+
+<article>
+    <h2>Post</h2>
+    <p>Texto...</p>
+</article>
+
+resultado:
+
+conteúdo que pode existir sozinho (ex: post, notícia)
+
+
+
+🔹 <aside> → conteúdo lateral
+
+ex:
+<aside>
+    <p>Publicidade</p>
+</aside>
+
+resultado:
+
+conteúdo secundário (relacionado, mas não principal)
+
+
+
+🔹 <footer> → rodapé
+
+ex:
+<footer>
+    <p>© 2026</p>
+</footer>
+
+resultado:
+
+parte final da página
+
+
+
+📦 TAGS DE FORMULÁRIO
+
+
+🔹 <fieldset> → agrupa campos
+
+ex:
+<fieldset>
+    <legend>Dados</legend>
+</fieldset>
+
+resultado:
+
+organiza inputs com um título
+
+
+
+🔹 <optgroup> → agrupa opções
+
+ex:
+<select>
+    <optgroup label="Frutas">
+        <option>Maçã</option>
+    </optgroup>
+</select>
+
+resultado:
+
+agrupa opções dentro do select
+
+
+
+--------- EXEMPLO ----------
+
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo de Estrutura</title>
+</head>
+<body>
+
+    <header>
+        <h1>Meu Site</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Notícias</a>
+            <a href="#">Contato</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>Notícias</h2>
+
+            <article>
+                <h3>Notícia 1</h3>
+                <p>Conteúdo da notícia...</p>
+            </article>
+
+            <article>
+                <h3>Notícia 2</h3>
+                <p>Outro conteúdo...</p>
+            </article>
+
+        </section>
+
+        <aside>
+            <p>Publicidade ou conteúdo extra</p>
+        </aside>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Meu Site</p>
+    </footer>
+
+</body>
+</html>
+
+
+
+--------- TAGS DE AGRUPAMENTO + ID E CLASS ---------
+
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo</title>
+    <style>
+        #topo {
+            background-color: lightgray;
+        }
+
+        .menu {
+            color: blue;
+        }
+
+        .noticia {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        #principal {
+            background-color: lightyellow;
+        }
+    </style>
+</head>
+<body>
+    <header id="topo">
+        <h1>Meu Site</h1>
+        <nav class="menu">
+            <a href="#">Home</a>
+            <a href="#">Contato</a>
+        </nav>
+    </header>
+    <main id="principal">
+        <section>
+            <article class="noticia">
+                <h2>Notícia 1</h2>
+                <p>Conteúdo da notícia...</p>
+            </article>
+            <article class="noticia">
+                <h2>Notícia 2</h2>
+                <p>Outro conteúdo...</p>
+            </article>
+        </section>
+        <aside>
+            <p>Publicidade</p>
+        </aside>
+    </main>
+    <footer>
+        <p>© 2026</p>
+    </footer>
+</body>
+</html>
+
+
+
+--------- BOX SHADOW ---------
+
+
+
+
+- Cria sombra ao redor de um elemento (caixa)
+
+- A melhor forma de configurar é pelo inspecionar
+
+
+
+🔹 INSPECIONANDO:
+
+- box-shadow: ☐ 1px 1px 1px black;
+- tem que clicar nesse quadradinho para abrir as configurações de sombra
+
+
+🔹 SINTAXE:
+
+box-shadow: deslocamento-x deslocamento-y desfoque espalhamento cor;
+
+
+🔹 EXEMPLO BÁSICO
+
+box-shadow: 5px 5px 10px black;
+
+resultado:
+sombra deslocada para direita (5px) e para baixo (5px), com leve desfoque
+
+
+
+🔹 EXPLICANDO CADA PARTE
+
+box-shadow: 5px 5px 10px 0px black;
+             |   |   |    |   |
+             x   y  blur spread cor
+
+x → move para direita (negativo = esquerda)
+y → move para baixo (negativo = cima)
+blur → desfoque (quanto maior, mais suave)
+spread → aumenta ou diminui o tamanho da sombra
+cor → cor da sombra
+
+
+
+🔹 EXEMPLO COMPLETO
+
+box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
+
+resultado:
+
+sombra mais suave, maior e com transparência
+
+
+
+🔹 SOMBRA INTERNA
+
+box-shadow: inset 5px 5px 10px black;
+
+resultado:
+
+sombra fica DENTRO da caixa
+
+
+
+🔹 SEM DESFOQUE (sombra dura)
+
+box-shadow: 5px 5px 0px black;
+
+resultado:
+
+sombra sólida, sem suavização
+
+
+
+🔹 VÁRIAS SOMBRAS
+
+box-shadow: 5px 5px 10px black, -5px -5px 10px gray;
+
+resultado:
+
+duas sombras (uma em cada direção)
+
+
+
+--------- BORDER-RADIUS(BORDAS ARREDONDADAS) ---------
+
+
+
+🔹 O QUE É:
+
+Arredonda os cantos de uma caixa
+
+
+
+🔹 EXEMPLO BÁSICO
+
+border-radius: 10px;
+
+resultado:
+todos os cantos ficam arredondados igualmente
+
+
+
+🔹 ARREDONDANDO CANTOS ESPECÍFICOS
+
+border-top-left-radius: 10px;
+border-top-right-radius: 20px;
+border-bottom-right-radius: 30px;
+border-bottom-left-radius: 40px;
+
+resultado:
+
+cada canto com um arredondamento diferente
+
+
+
+🔹 SHORTHAND (forma resumida)
+
+border-radius: 10px 20px 30px 40px;
+
+ordem:
+
+top-left → top-right → bottom-right → bottom-left
+
+resultado:
+
+cada canto recebe um valor diferente
+
+
+
+🔹 OUTRAS FORMAS DE SHORTHAND
+
+border-radius: 10px;
+resultado:
+todos iguais
+
+border-radius: 10px 20px;
+resultado:
+top-left + bottom-right = 10px
+top-right + bottom-left = 20px
+
+border-radius: 10px 20px 30px;
+resultado:
+top-left = 10px
+top-right + bottom-left = 20px
+bottom-right = 30px
+
+
+
+🔹 FAZER UM CÍRCULO
+
+border-radius: 50%;
+
+⚠️ precisa que largura = altura
+
+ex:
+width: 100px;
+height: 100px;
+
+resultado:
+vira um círculo perfeito
+
+
+
+🔹 FAZER UM BOTÃO ARREDONDADO
+
+border-radius: 20px;
+
+resultado:
+bordas suaves (muito usado em botões)
+
+
+
+🔹 DICA
+
+valores maiores → mais arredondado
+valores menores → menos arredondado
+
+
+
+
+
+
+

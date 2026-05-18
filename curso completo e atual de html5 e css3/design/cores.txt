@@ -1,0 +1,113 @@
+-------- Harmonia de cores --------
+
+
+
+-SITE BOM PARA DEFINIR CORES DO SITE
+
+https://color.adobe.com/pt/create/color-wheel
+
+
+-SITE BOM PARA VER COMO FICARIA NO SITE
+
+
+https://paletton.com/#uid=12m0i0kwEgqFL9+vwaytooJlkm7
+
+
+-EXTENSÃO PARA COPIAR A COR DE UM SITE OU OUTRA COISA AFIM
+
+https://chromewebstore.google.com/detail/colorzilla/bhlhnicpbhignbdhedgjhgdocnmhomnp
+
+
+
+CORES PRIMÁRIAS:
+
+- AMARELO
+
+- VERMELHO
+
+- AZUL
+
+
+
+CORES SECUNDÁRIAS:
+
+- LARANJA
+
+- ROXO/VIOLETA
+
+- VERDE
+
+
+
+CORES TERCIÁRIA:
+
+- CORES ENTRE PRIMÁRIAS E SECUNDÁRIASS
+
+- quando for nomear, coloque primeiro o nome da cor principal e depois da cor secundária
+
+exemplo:
+
+- amarelo-esverdeado
+primária-secundária
+
+São elas:
+
+Amarelo-esverdeado: Amarelo + Verde
+Amarelo-alaranjado: Amarelo + Laranja
+Vermelho-alaranjado: Vermelho + Laranja
+Vermelho-arroxeado: Vermelho + Roxo/Violeta
+Azul-arroxeado: Azul + Roxo/Violeta
+Azul-esverdeado: Azul + Verde
+
+
+
+CORES FRIAS E CORES QUENTES:
+
+
+
+REPRESENTAR COISAS QUENTES = CORES QUENTES
+REPRESENTAR COISAS FRIAS = CORES FRIAS
+
+
+CORES QUENTES:
+
+- amarelo, vermelho, laranja, vermelho-alaranjado, laranja-amarelado
+
+
+CORES FRIAS:
+
+- azul, verde, violeta, azul-esverdeado, verde-amarelado, roxo-azulado
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

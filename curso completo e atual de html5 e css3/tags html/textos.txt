@@ -1,0 +1,165 @@
+│   ------------SOBRE A FORMATAÇÃO DE TEXTO------------
+│
+│   <h1>
+│   <h2>
+│   <h3>
+│   <h4>
+│
+│   quanto maior o número, menor vai ficar as letras?
+│
+│   não é isso exatamente...
+│
+│   Níveis hierárquicos seguem a sequência:
+│
+│   <h1>, <h2>, <h3>, <h4>, <h5>, <h6>
+│	- Não deve-se pular a sequência;	
+│	- Não são usados para definir tamanho da letra. Isso é feito em CSS;
+│
+│
+│   ------------TÍTULO------------
+│
+│   <h1> inicia o titulo
+│   </h1> termina o titulo
+│
+│   exemplo:
+│
+│   <h1>Exemplo de título</h1>
+│
+│
+│   ------------SUBTÍTULO------------
+│
+│   <h2> inicia o subtítulo
+│   </h2> termina o subtítulo
+│
+│
+│   ------------PARÁGRAFO------------
+│
+│   <p> inicia o parágrafo
+│   </p> termina o parágrafo
+│
+│   exemplo:
+│
+│   <p> Exemplo de parágrafo </p>
+│
+│
+│   ------------NEGRITO------------
+│
+│   <b> para abrir a tag para escrever em negrito
+│
+│   exemplo:
+│
+│   <p>Nessa frase temos um <b>termo em negrito usando a tag B</b></p>
+│
+│
+│   ------------STRONG------------
+│
+│   <strong> para abrir a tag para escrever em strong
+│
+│   exemplo:
+│
+│   <p>Nessa frase temos um <strong>termo em destaque usando a tag STRONG</strong></p>
+│
+│	
+faz a mesma coisa que o NEGRITO, mas com um significado diferente e com SEMANTICA, é usado para dar um sentido para a frase: "TERMO FORTE, TERMO DE DESTAQUE".
+│   ------------ITÁLICO------------
+│
+│   <i> para abrir a tag para escrever em itálico
+│
+│   exemplo:
+│
+│   <p>Nessa frase temos um <i>termo em destaque usando a tag I</i></p>
+│
+│
+│   ------------ENFÂSE------------
+│
+│   <em> para abrir a tag para escrever em enfase
+│
+│   exemplo:
+│
+│   <p>Nessa frase temos um <em>termo em destaque usando a tag I</em></p>
+│
+│
+│   ------------MARK------------
+│
+│   <mark> para abrir a tag para marcar uma frase
+│
+│   exemplo:
+│
+│   <p>Podemos criar um texto marcado <mark>usando a tag MARK.</mark></p>
+│
+│
+│   Escolhendo a cor:
+│
+│   <mark style="background-color:aqua">
+│
+│
+│   Mudando a cor de todos os MARKS:
+│
+│   <style>
+│   mark {
+│       background-color: coral;
+│   }
+│   </style>
+│
+│
+│   ------------BIG------------
+│
+│   <big> para abrir a tag para escrever "MAIOR"
+│
+│   exemplo:
+│
+│   Estamos criando um <big>texto grande</big>
+│
+│
+│   ------------SMALL------------
+│
+│   <small> para abrir a tag para escrever "menor"
+│
+│   exemplo:
+│
+│   <small>texto pequeno</small>
+│
+│
+│   ------------TEXTO DELETADO------------
+│
+│   <del> para abrir a tag para marcar como deletado
+│
+│   exemplo:
+│
+│   <p>Podemos marcar <del>um texto como excluído</del></p>
+│
+│
+│   ------------TEXTO INSERIDO------------
+│
+│   <ins> para abrir a tag para marcar como inserido
+│
+│   exemplo:
+│
+│   <p>Podemos marcar <ins>um texto como inserido</ins></p>
+│
+│
+│   ------------TEXTO SOBRESCRITO------------
+│
+│   <sup> para abrir a tag para DESCER letras/números que precisam dessa marcação, como H20 (finge que o 2 tá para baixo)
+│
+│   exemplo:
+│
+│   <p>Para inserir coisas do tipo x<sup>20</sup>+3.</p>
+│
+│
+│   ------------TEXTO SUBSCRITO------------
+│
+│   <sub>
+│
+│   exemplo:
+│
+│   <p>Para inserir coisas do tipo H<sub>2</sub>0.</p>
+│
+│
+│   ------------TEXTO INVERTIDO------------
+│
+│   <bdo dir="rtl">
+│
+│   exemplo:
+│
+│   <p><bdo dir="rtl">Esta tudo ao contrário!!!</bdo></p>

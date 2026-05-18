@@ -1,0 +1,653 @@
+--------- 📦 MODELOS DE CAIXA ---------
+
+
+
+DICA DE RUBI:
+
+-quando for alterar o tamanho, borda e tals, da para alterar
+no inspecionar da pagina no navegador, nao altera no arquivo original
+mt foda
+
+Parâmetros:
+
+
+height  -> altura
+width   -> largura
+border  -> borda
+padding -> espaço interno (entre conteúdo e borda)
+margin  -> espaço externo (fora da borda)
+outline -> contorno externo (não ocupa espaço)
+
+
+Tipos de caixas:
+
+🔷 Block-level:
+
+- Começa em nova linha
+- Ocupa toda a largura do elemento pai
+- Ex: <div>, <h1>, <p>, <main>, <section>, <article>, <header>, <footer>
+
+🔶 Inline-level:
+
+- Não quebra linha
+- Ocupa apenas o tamanho do conteúdo
+- Ex: <span>, <a>, <strong>, <em>, <small>
+
+🟡 Inline-block (extra):
+
+- Fica na mesma linha
+- Aceita width e height
+- Ex: <button>, <input>, <select>
+
+
+--------- BOX-SIZING: BORDER-BOX ---------
+
+
+
+box-sizing: border-box
+  Por padrao o CSS calcula o tamanho de um elemento sem contar
+  padding e borda. Com border-box isso muda: padding e borda
+  passam a fazer parte do tamanho definido.
+
+  Exemplo:
+    sem border-box -> div com width:200px + padding:20px = 240px
+    com border-box -> div com width:200px + padding:20px = 200px
+
+  Aplicar no * garante esse comportamento em todos os elementos.
+
+
+margin: 0 no body
+  Todo navegador aplica uma margem padrao no body, criando um
+  espaco branco nas bordas da tela. Zerar essa margem garante
+  que o layout comeca do canto exato da pagina.
+
+
+
+--------- PROPRIEDADES DE BORDA (border) ---------
+
+
+
+largura  -> border-width: 10px;
+
+estilo   -> border-style:
+             solid   (linha sólida)
+             dashed  (tracejada)
+             dotted  (pontilhada)
+             double  (dupla)
+             groove  (efeito 3D)
+
+cor      -> border-color: red;
+
+
+🔹 SHORTHAND:
+border: 10px solid red;   (largura | estilo | cor)
+
+
+
+--------- PROPRIEDADES DE PADDING (espaço interno) ---------
+
+
+
+padding-top: 10px;      (topo)
+padding-right: 10px;    (direita)
+padding-bottom: 10px;   (baixo)
+padding-left: 10px;     (esquerda)
+
+🔹 SHORTHAND:
+
+padding: 15px 10px 15px 10px;   (top, right, bottom, left)
+padding: 10px;                  (todos iguais)
+padding: 15px 10px;             (cima/baixo | lados)
+
+
+
+--------- PROPRIEDADES DE MARGEM (margin) ---------
+
+
+
+margin-top: 10px;
+margin-right: 10px;
+margin-bottom: 10px;
+margin-left: 10px;
+
+
+🔹 SHORTHAND:
+
+margin: 15px 10px 15px 10px;   (sentido horário: top, right, bottom e left)
+margin: 10px;                  (nos 4 lados iguais a 10px)
+margin: 15px 10px;             (cima e baixo 15px; esquerda e direita 10px)
+margin: 15px 10px 25px;        (cima 15px; esquerda e direita 10px; baixo 25px)
+margin: 10px auto 15px auto;   (cima 10px; lados auto; baixo 15px)
+
+
+📌 Centralizar horizontalmente caixa na tela:
+
+- precisa ter width definido
+- centraliza esquerda e direita
+
+margin: auto;
+margin: 0 auto;   (forma mais comum)
+
+
+
+📦 PROPRIEDADES DE OUTLINE (semelhantes à borda)
+
+
+⚠️ Diferença importante:
+
+- NÃO ocupa espaço
+- fica por fora da borda
+
+outline-width: 5px;
+outline-style: dashed;
+outline-color: salmon;
+
+
+🔹 SHORTHAND:
+
+outline: 5px dashed salmon;   (largura, estilo, cor)
+
+
+
+📦 DISPLAY (tipo de caixa)
+
+
+🔹 Transformar box-level em inline-level e vice-versa:
+
+h1 {              → era originalmente block (box)
+  display: inline;
+}
+
+a {               → era originalmente inline
+  display: block;
+}
+
+🔹 display: inline-block;
+- fica na mesma linha (inline)
+- mas aceita largura e altura (block)
+
+
+
+--------- GROUPING TAGS (TAGS DE AGRUPAMENTO)  ---------
+
+
+
+🔹 O QUE SÃO:
+
+Servem para organizar e estruturar o conteúdo da página
+(dividem o site em partes lógicas)
+
+inves de so colocar tudo em baixo do outro, voce organiza com as TAGS DE AGRUPAMETO
+
+
+
+📌 RESUMO RÁPIDO
+
+div → genérico (sem significado)
+header → topo
+nav → navegação
+main → conteúdo principal
+section → divisão por tema
+article → conteúdo independente
+aside → lateral
+footer → rodapé
+
+
+
+============================================
+ENTENDIMENTO RÁPIDO:
+
+DIV = caixa sem etiqueta 📦
+header/nav/main = caixas com etiqueta 🏷️
+=========================================
+
+
+📦 TAG GENÉRICA
+
+<div> → contêiner genérico (sem significado semântico)
+
+ex:
+
+<div>
+    <p>Texto</p>
+</div>
+
+resultado:
+
+apenas agrupa elementos (usado para layout/estilo)
+
+
+
+📦 TAGS SEMÂNTICAS (com significado)
+
+🔹 <header> → topo
+
+usado para:
+
+- título
+- logo
+- navegação
+
+ex:
+
+<header>
+    <h1>Meu site</h1>
+</header>
+
+resultado:
+
+define o cabeçalho da página/seção
+
+
+
+🔹 <nav> → navegação
+
+ex:
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Contato</a>
+</nav>
+
+resultado:
+
+área de links do site
+
+
+
+🔹 <main> → conteúdo principal
+
+ex:
+
+<main>
+    <p>Conteúdo principal</p>
+</main>
+
+resultado:
+
+parte mais importante da página (1 por página)
+
+
+
+🔹 <section> → seção temática
+
+ex:
+
+<section>
+    <h2>Notícias</h2>
+</section>
+
+resultado:
+
+divide o conteúdo em partes com tema
+
+
+
+🔹 <article> → conteúdo independente
+
+ex:
+
+<article>
+    <h2>Post</h2>
+    <p>Texto...</p>
+</article>
+
+resultado:
+
+conteúdo que pode existir sozinho (ex: post, notícia)
+
+
+
+🔹 <aside> → conteúdo lateral
+
+ex:
+<aside>
+    <p>Publicidade</p>
+</aside>
+
+resultado:
+
+conteúdo secundário (relacionado, mas não principal)
+
+
+
+🔹 <footer> → rodapé
+
+ex:
+<footer>
+    <p>© 2026</p>
+</footer>
+
+resultado:
+
+parte final da página
+
+
+
+📦 TAGS DE FORMULÁRIO
+
+
+🔹 <fieldset> → agrupa campos
+
+ex:
+<fieldset>
+    <legend>Dados</legend>
+</fieldset>
+
+resultado:
+
+organiza inputs com um título
+
+
+
+🔹 <optgroup> → agrupa opções
+
+ex:
+<select>
+    <optgroup label="Frutas">
+        <option>Maçã</option>
+    </optgroup>
+</select>
+
+resultado:
+
+agrupa opções dentro do select
+
+
+
+--------- EXEMPLO ----------
+
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo de Estrutura</title>
+</head>
+<body>
+
+    <header>
+        <h1>Meu Site</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Notícias</a>
+            <a href="#">Contato</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>Notícias</h2>
+
+            <article>
+                <h3>Notícia 1</h3>
+                <p>Conteúdo da notícia...</p>
+            </article>
+
+            <article>
+                <h3>Notícia 2</h3>
+                <p>Outro conteúdo...</p>
+            </article>
+
+        </section>
+
+        <aside>
+            <p>Publicidade ou conteúdo extra</p>
+        </aside>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Meu Site</p>
+    </footer>
+
+</body>
+</html>
+
+
+
+--------- TAGS DE AGRUPAMENTO + ID E CLASS ---------
+
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo</title>
+    <style>
+        #topo {
+            background-color: lightgray;
+        }
+
+        .menu {
+            color: blue;
+        }
+
+        .noticia {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        #principal {
+            background-color: lightyellow;
+        }
+    </style>
+</head>
+<body>
+    <header id="topo">
+        <h1>Meu Site</h1>
+        <nav class="menu">
+            <a href="#">Home</a>
+            <a href="#">Contato</a>
+        </nav>
+    </header>
+    <main id="principal">
+        <section>
+            <article class="noticia">
+                <h2>Notícia 1</h2>
+                <p>Conteúdo da notícia...</p>
+            </article>
+            <article class="noticia">
+                <h2>Notícia 2</h2>
+                <p>Outro conteúdo...</p>
+            </article>
+        </section>
+        <aside>
+            <p>Publicidade</p>
+        </aside>
+    </main>
+    <footer>
+        <p>© 2026</p>
+    </footer>
+</body>
+</html>
+
+
+
+--------- BOX SHADOW ---------
+
+
+
+
+- Cria sombra ao redor de um elemento (caixa)
+
+- A melhor forma de configurar é pelo inspecionar
+
+
+
+🔹 INSPECIONANDO:
+
+- box-shadow: ☐ 1px 1px 1px black;
+- tem que clicar nesse quadradinho para abrir as configurações de sombra
+
+
+🔹 SINTAXE:
+
+box-shadow: deslocamento-x deslocamento-y desfoque espalhamento cor;
+
+
+🔹 EXEMPLO BÁSICO
+
+box-shadow: 5px 5px 10px black;
+
+resultado:
+sombra deslocada para direita (5px) e para baixo (5px), com leve desfoque
+
+
+
+🔹 EXPLICANDO CADA PARTE
+
+box-shadow: 5px 5px 10px 0px black;
+             |   |   |    |   |
+             x   y  blur spread cor
+
+x → move para direita (negativo = esquerda)
+y → move para baixo (negativo = cima)
+blur → desfoque (quanto maior, mais suave)
+spread → aumenta ou diminui o tamanho da sombra
+cor → cor da sombra
+
+
+
+🔹 EXEMPLO COMPLETO
+
+box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
+
+resultado:
+
+sombra mais suave, maior e com transparência
+
+
+
+🔹 SOMBRA INTERNA
+
+box-shadow: inset 5px 5px 10px black;
+
+resultado:
+
+sombra fica DENTRO da caixa
+
+
+
+🔹 SEM DESFOQUE (sombra dura)
+
+box-shadow: 5px 5px 0px black;
+
+resultado:
+
+sombra sólida, sem suavização
+
+
+
+🔹 VÁRIAS SOMBRAS
+
+box-shadow: 5px 5px 10px black, -5px -5px 10px gray;
+
+resultado:
+
+duas sombras (uma em cada direção)
+
+
+
+--------- BORDER-RADIUS(BORDAS ARREDONDADAS) ---------
+
+
+
+🔹 O QUE É:
+
+Arredonda os cantos de uma caixa
+
+
+
+🔹 EXEMPLO BÁSICO
+
+border-radius: 10px;
+
+resultado:
+todos os cantos ficam arredondados igualmente
+
+
+
+🔹 ARREDONDANDO CANTOS ESPECÍFICOS
+
+border-top-left-radius: 10px;
+border-top-right-radius: 20px;
+border-bottom-right-radius: 30px;
+border-bottom-left-radius: 40px;
+
+resultado:
+
+cada canto com um arredondamento diferente
+
+
+
+🔹 SHORTHAND (forma resumida)
+
+border-radius: 10px 20px 30px 40px;
+
+ordem:
+
+top-left → top-right → bottom-right → bottom-left
+
+resultado:
+
+cada canto recebe um valor diferente
+
+
+
+🔹 OUTRAS FORMAS DE SHORTHAND
+
+border-radius: 10px;
+resultado:
+todos iguais
+
+border-radius: 10px 20px;
+resultado:
+top-left + bottom-right = 10px
+top-right + bottom-left = 20px
+
+border-radius: 10px 20px 30px;
+resultado:
+top-left = 10px
+top-right + bottom-left = 20px
+bottom-right = 30px
+
+
+
+🔹 FAZER UM CÍRCULO
+
+border-radius: 50%;
+
+⚠️ precisa que largura = altura
+
+ex:
+width: 100px;
+height: 100px;
+
+resultado:
+vira um círculo perfeito
+
+
+
+🔹 FAZER UM BOTÃO ARREDONDADO
+
+border-radius: 20px;
+
+resultado:
+bordas suaves (muito usado em botões)
+
+
+
+🔹 DICA
+
+valores maiores → mais arredondado
+valores menores → menos arredondado
+
+
+
+
+
+

@@ -1,0 +1,204 @@
+============================================================
+IMAGENS EM HTML E CSS
+============================================================
+
+
+------------------------------------------------------------
+1. IMAGEM SIMPLES
+------------------------------------------------------------
+
+<img src="foto.png" alt="Exemplo de foto">
+
+src  → caminho da imagem
+alt  → texto que aparece se a imagem não carregar
+       também ajuda leitores de tela (acessibilidade)
+
+
+------------------------------------------------------------
+2. IMAGENS ADAPTÁVEIS (RESPONSIVAS)
+------------------------------------------------------------
+
+Imagine que você tem um site com uma foto grande e bonita.
+No computador fica ótimo, mas no celular a foto fica pesada
+e demora pra carregar.
+
+A solução é ter 3 versões da mesma foto:
+    fotop.png → versão pequena (para celular)
+    fotom.png → versão média  (para tablet)
+    fotog.png → versão grande (para computador)
+
+E deixar o navegador escolher qual usar automaticamente.
+É isso que a tag <picture> faz.
+
+
+COMO ESCREVER:
+
+    <picture>
+        <source media="(max-width: 750px)"  srcset="imagens/fotop.png">
+        <source media="(max-width: 1050px)" srcset="imagens/fotom.png">
+        <img src="imagens/fotog.png" alt="Imagem flexível">
+    </picture>
+
+
+O QUE CADA PARTE FAZ:
+
+    <picture>
+    → abre o container que vai controlar qual imagem aparece.
+    → ele não aparece visualmente, é só um organizador.
+
+    <source media="(max-width: 750px)" srcset="imagens/fotop.png">
+    → se a tela tiver ATÉ 750px de largura, usa fotop.png
+    → (celular)
+
+    <source media="(max-width: 1050px)" srcset="imagens/fotom.png">
+    → se a tela tiver ATÉ 1050px de largura, usa fotom.png
+    → (tablet)
+
+    <img src="imagens/fotog.png" alt="Imagem flexível">
+    → se nenhuma condição acima funcionar, usa fotog.png
+    → (computador / tela grande)
+    → é o plano B, sempre coloque por último
+
+
+RESULTADO:
+    📱 tela até 750px  → fotop.png (pequena)
+    💻 tela até 1050px → fotom.png (média)
+    🖥 tela maior      → fotog.png (grande)
+
+
+⚠️ A ORDEM DOS <source> IMPORTA!
+O navegador lê de cima para baixo e usa o PRIMEIRO que encaixar.
+Sempre coloque:
+    → menor tamanho primeiro
+    → maior tamanho depois
+
+
+------------------------------------------------------------
+3. ERRO MUITO COMUM COM <picture>
+------------------------------------------------------------
+
+Muita gente coloca a class no <picture> pensando que vai
+estilizar a imagem. Mas não funciona porque quem aparece
+na tela de verdade é o <img>, não o <picture>.
+
+❌ ERRADO:
+    <picture class="imagem">
+        <source media="(max-width: 750px)" srcset="imagens/fotop.png">
+        <img src="imagens/fotog.png" alt="Foto">
+    </picture>
+
+    .imagem { width: 300px; }  ← não vai funcionar direito
+
+
+✅ CERTO:
+    <picture>
+        <source media="(max-width: 750px)" srcset="imagens/fotop.png">
+        <img class="imagem" src="imagens/fotog.png" alt="Foto">
+    </picture>
+
+    .imagem { width: 300px; }  ← agora funciona!
+
+Regra:
+    <picture> → decide QUAL imagem usar
+    <img>     → é quem aparece na tela, então o CSS vai aqui
+
+
+------------------------------------------------------------
+4. DEIXAR A IMAGEM RESPONSIVA NO CSS
+------------------------------------------------------------
+
+A forma mais usada para imagem se adaptar à tela:
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    width: 100%  → ocupa todo o espaço disponível
+    height: auto → a altura se ajusta sozinha (não distorce)
+
+
+LIMITAR O TAMANHO MÁXIMO:
+    img {
+        width: 100%;
+        max-width: 800px;
+        height: auto;
+    }
+    → a imagem cresce até no máximo 800px, depois para
+
+
+------------------------------------------------------------
+5. CENTRALIZAR IMAGEM
+------------------------------------------------------------
+
+JEITO MAIS USADO:
+    img {
+        display: block;
+        margin: auto;
+    }
+    → centraliza horizontalmente
+
+
+COM TAMANHO FIXO:
+    img {
+        display: block;
+        width: 300px;
+        margin: auto;
+    }
+    → centraliza e fixa a largura em 300px
+
+
+COM FLEXBOX (centraliza nos dois sentidos):
+    body {
+        display: flex;
+        justify-content: center;  ← horizontal
+        align-items: center;      ← vertical
+        height: 100vh;
+    }
+
+
+------------------------------------------------------------
+6. IMAGEM OCUPANDO A TELA INTEIRA
+------------------------------------------------------------
+
+    img {
+        width: 100vw;   ← 100% da largura da tela
+        height: 100vh;  ← 100% da altura da tela
+        object-fit: cover;
+    }
+
+
+O QUE É object-fit?
+    É como a imagem se comporta dentro do espaço dela.
+
+    object-fit: cover;
+    → preenche tudo, cortando o que sobrar (não distorce)
+    → igual a uma foto de fundo de tela
+
+    object-fit: contain;
+    → mostra a imagem inteira, sem cortar nada
+    → pode sobrar espaço vazio nas laterais
+
+    object-fit: fill;
+    → força preencher o espaço todo
+    → pode distorcer a imagem
+
+
+============================================================
+RESUMO RÁPIDO
+============================================================
+
+<img>              → imagem simples
+<picture>          → escolhe qual imagem usar por tamanho de tela
+<source>           → define a condição de tamanho
+alt=""             → texto alternativo
+width: 100%        → imagem responsiva
+height: auto       → não distorce
+max-width: 800px   → limita o tamanho máximo
+display: block     → permite centralizar com margin: auto
+margin: auto       → centraliza horizontalmente
+object-fit: cover  → preenche sem distorcer
+100vw / 100vh      → largura / altura total da tela
+
+⚠️ Sempre coloque o CSS no <img>, não no <picture>!
+⚠️ Nos <source>, coloque o menor tamanho primeiro!

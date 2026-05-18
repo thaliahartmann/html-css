@@ -1,0 +1,66 @@
+
+DICAS DO VSCODE + DICA DE RUBI:
+
+
+
+DICA DE RUBI:
+
+
+-quando for alterar o tamanho, borda e tals, da para alterar
+no inspecionar da pagina no navegador, nao altera no arquivo original
+mt foda
+
+
+
+@: tags com arroba geralmente se chamam de regras, como UTF-8
+
+segura o ALT e clica, você seleciona e escreve em todos os locais selecionados
+
+ctrl + click: pode ser usado para criar um arquivo que não existe
+
+ctrl + L: limpa o terminal
+
+ctrl + shift + p: abre a janelinha de pesquisas
+
+crtl + espaço: abre as opções dentro de algo
+
+como abrir e COLOCAR uma tag mais rápido:
+
+ctrl + shift + p , wrapWithAbbreviation e seleciona a tag, tipo, i, ai só apertar enter
+
+Ctrl + D → seleciona a variável, ou texto qualquer que tiver o mesmo nome, seleciona todos e altera todos
+
+colocar # em uma tag que você ainda não decidiu o que vai ter dentro, é como deixar ela funcionando só que sem nada por enquanto.
+
+
+
+---------TAGS ESSENCIAIS---------
+
+
+
+--------- CONFIGURAÇÃO GLOBAL DE CS ---------
+
+
+
+-ainda não sei muito sobre isso..
+
+ <style>
+        * { 
+            height: 100%; **********************************************************
+         }
+        body {
+            background-image: linear-gradient(to top, white, blue);
+        }
+
+
+
+--------- LOREM---------
+
+
+Sobre o atalho LOREM
+
+lorem + entender vai encher uma linguiça
+
+exemplo: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores voluptates eum inventore velit nesciunt provident, quo excepturi ea temporibus pariatur ab non cupiditate. Labore, ab animi a omnis excepturi est!
+
+Adicionando ao conteúdo: Para gerar textos, insira após a palavra Lorem um número que será referente a quantidade de palavras que você deseja. Ou seja, Lorem100 irá gerar um texto com 100 palavras. Lorem1000, 1000 palavras.

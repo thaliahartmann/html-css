@@ -1,0 +1,202 @@
+___________CONCEITOS HTML______________
+
+
+HTML E CSS NÃO SÃO LINGUAGENS DE PROGRAMAÇÃO, SÃO LINGUAGENS, VOCE DESENVOLVE, NÃO PROGRAMA
+
+HTML: LINGUAGEM DE MARCAÇÃO DE HIPERTEXTO, LINGUAGEM FOCADA EM CONTEÚDO: TEXTO, IMAGEM, VIDEOS, LISTAS, MATERIA  (SENTIDO)
+CSS: DESIGN, PARTE VISUAL QUE DA A ATRAÇÃO PARA O SITE, CORES, SOMBRAS, TAMANHO (FORMA)
+JAVA SCRIPT: INTERAÇÃO DO SITE, BOTÕES E TALS, É A PROGRAMAÇÃO MESMO
+
+
+
+--------BITS E BYTES--------
+
+
+1 bit é um 0 ou um 1
+
+1 byte é igual a 8 bits
+
+MB ≠ mb
+MEGABYTES       megabits
+
+ARMAZENAMENTO   transmissão
+
+
+
+--------MEDIDAS DE ARMAZENAMENTO--------
+
+
+1024 bytes = 1 kb
+1024 kb = 1mb
+1024 mb = gb
+1024 gb = tb
+
+
+
+--------COMO A INTERNET FUNCIONA--------
+
+
+Cliente: você abre o Chrome, digita um site, isso é o cliente fazendo um pedido.
+
+Modem: transforma o sinal da operadora (fibra, cabo, etc.) em dados que seus dispositivos entendem e faz o caminho inverso também.
+
+Internet: É a rede gigante que conecta vários computadores (servidores) no mundo.
+
+Servidor: Um computador que guarda sites, sistemas, dados (servidor do Googlem servidor do Instagram, servidor de um site qualquer)
+
+IP: endereço/CPF do servidor
+
+DNS: agenda que encontra o servidor, recebe o nome do site (google.com), procura qual IP pertence a esse nome e devolve o IP pro navegador.
+
+ Como tudo funciona junto (bem rápido)
+
+1️⃣ Você (cliente) digita google.com
+2️⃣ O navegador pergunta ao DNS:
+“qual o IP desse site?”
+3️⃣ O DNS responde com o IP
+4️⃣ Seu computador se conecta ao servidor pelo IP
+5️⃣ O servidor envia o site
+6️⃣ Você vê a página 🎉
+
+
+
+
+--------DOMÍNIO DE SITE--------
+
+
+ nome que identifica o seu site, é um nome único, só tem um para você.
+-pago anualmente, tem uns grátis mas são limitados
+-vários TLDS com subtítulos;
+-GTLDS (G DE GENERICO): .GOV .STORE ETC
+-CCTLDS (C DE COUNTY = PAÍS) .br .us
+ 
+                                    domínio    url
+URL: endereço do site: exemplo  www.github.com/gustavoguanabara se tiver / se chama caminho
+                                sub dominio  TLD generica (GTLDS)
+
+
+
+--------HOSPEDAGEM--------
+
+
+ local onde está armazenado seu site.
+-GitHub é de graça
+-pago anualmente
+
+
+
+--------FRONT END E BACK END DIFERENÇAS--------
+
+
+🖥️ Front-end = o que você vê
+🧠 Back-end = o que pensa e decide
+
+Front-end: Motorista de ônibus
+Back-end: Cobrador
+Full stack: Motorista que cobra a passagem
+
+
+
+--------DIREITOS AUTORAIS--------
+
+
+Você tem o direito de usar qualquer imagem no seu site?
+
+LICENÇAS DE IMAGENS (RESUMO RÁPIDO)
+
+Sem filtro:  uso incerto, pode ter direitos autorais.
+Marcadas para reutilização c/ modificação:  pode editar e usar comercialmente.
+Marcadas para reutilização:  pode usar, sem editar, uso comercial permitido.
+Marcadas para reutilização não comercial c/ modificação:  pode editar, sem ganhar dinheiro.
+Marcadas para reutilização não comercial:  pode usar, sem editar e sem ganhar dinheiro.
+
+sites para banco de imagens (preferidas do guanabara) que podem ser utilizadas:
+
+-https://unsplash.com/pt-br
+-https://www.pexels.com/pt-br/
+
+sites gerais do PDF do guanabara:
+
+-https://br.freepik.com
+-https://www.rawpixel.com
+-https://pixabay.com/pt/
+-https://libreshot.com
+-https://commons.wikimedia.org/wiki/Main_Page
+
+
+
+--------DIFERENTES FORMATAÇÕES DE IMAGEM--------
+
+
+- JPEG:  alta compactação, menor qualidade;
+- PNG:  média compactação, maior qualidade, permite transparência;
+- GIF:  baixa qualidade, permite transparência e animação (menos usado)
+
+Transparencia: arquivos sem fundo
+
+
+
+Compactação é o processo de diminuir o tamanho do arquivo da imagem, pra ela:
+
+
+-ocupar menos espaço 💾
+-carregar mais rápido na internet 🚀
+-ser mais fácil de enviar (WhatsApp, site, email)
+ou seja:  mesma imagem “visualmente parecida”, porém mais leve.
+
+
+
+RESUMO RÁPIDO
+
+
+Compactação =  deixar a imagem mais leve
+
+Pode perder qualidade ou não
+
+JPEG  perde um pouco → fica bem menor
+
+PNG não perde →  fica maior
+
+
+
+--------CORTAR IMAGEM MAIS FACIL--------
+
+
+
+-para cortar a imagens transparentes mais facilmente no GIMP, é só clicar com o botão direito do mouse na imagem
+e depois clicar na opção "cortar com cuidado".
+
+
+
+--------IMAGENS DINAMICAS E ADAPTADAS PARA CADA TIPO DE TELA--------
+
+
+
+CELULAR: 300X300 l/a E 80X80 resolução
+
+TABLET: 700X700 l/a E 80x80 resolução
+
+TABLET: 1000x1000 l/a E 80x80 resolução
+
+
+
+--------FORMATOS DE VIDEO MAIS UTILIZADOS PELOS NAVEGADORES--------
+
+
+
+-MP4
+-WEBM
+
+
+-MV4 é uma outra versão do MP4, mas se for para escolher, escolha mp4
+
+
+
+
+
+
+
+
+
+
+

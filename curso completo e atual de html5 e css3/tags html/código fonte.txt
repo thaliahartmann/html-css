@@ -1,0 +1,44 @@
+------------CODIGO FONTE/ PRÉ FORMATAÇÃO------------
+
+
+
+<code> para abrir a tag para alterar a fonte da frase, para ficar igual a códigos, tipo, uma visualização fiel de um código de programação.
+
+exemplo: <p>O comando <code>document.getElementById('teste')</code> é escrito em linguagem Java Script.</p>
+
+resultado: O comando document.getElementById('teste') é escrito em linguagem Java Script. (finge que saiu do jeito que era para sair)
+
+<pre> é para manter a formatação do código
+
+
+
+exemplo: 
+
+<pre>
+
+<code>
+
+&nbsp;   num = int(input('Digite um número:''))
+
+&nbsp;   if num % 2 == 0:
+
+&nbsp;      print(f'O número {num} é par.')
+
+&nbsp;   else:
+
+&nbsp;      print(f'O número {num} é ímpar.')
+
+&nbsp;   print('Fim do programa.)
+
+</code>
+
+
+resultado:
+
+ num = int(input('Digite um número:''))
+ if num % 2 == 0:
+    print(f'O número {num} é par.')
+ else:
+    print(f'O número {num} é ímpar.')
+ print('Fim do programa')
+

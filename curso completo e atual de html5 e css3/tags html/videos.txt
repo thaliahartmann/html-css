@@ -1,0 +1,156 @@
+========VIDEOS========
+
+
+
+<video> para abrir a tag para colocar um vídeo no site.
+
+exemplo: <video src="midia/meu-video1.mp4" width="500" poster="imagens/gato-capa-png.jpg" controls></video>
+
+adendo: <!--width para ajustar a largura, pq sem o width o video tinha ocupado a tela toda. controls para ativar o player do video
+e poster para colocar a thumb no vídeo-->
+
+resultado: *mostrou o video no site*
+
+
+
+
+=======ADICIONAR TODAS AS FORMATAÇÕES DE VIDEO NO SITE========
+
+
+
+<video> para abrir a tag para colocar um vídeo no site.
+
+exemplo: <video width="500" poster="imagens/gato-capa-png.jpg" controls>
+    	<source src="midia/meu-video3.m4v" type="video/mp4">
+    	<source src="midia/meu-video2.webm" type="video/webm">
+    	<source src="midia/meu-video4.ogv" type="video/ogg">
+    	<source src="midia/meu-video1.mp4" type="video/mp4">
+    	<p>Seu navegador não tem compatibilidade com reprodução de vídeos.</p>
+   	 </video>
+
+adendo: <!--width para ajustar a largura, pq sem o width o video tinha ocupado a tela toda. controls para ativar o player do video
+e poster para colocar a thumb no vídeo-->
+
+resultado: *mostrou o video no site*
+
+
+
+=======INCORPORAÇÃO DE VÍDEOS EXTERNOS DO YOUTUBE (MELHOR FORMA DE COLOCAR VIDEOS NO SITE)========
+
+
+
+é a melhor forma porque voce nao gasta dados do proprio site (não fica caro)
+voce usa os dados do youtube ou qualquer outra plataforma
+
+
+no youtube: só clicar em compartilhar o video e incorporar, copiar e colar no programa.
+
+
+
+exemplo:<h1>Inserindo vídeos do Youtube</h1>
+    	<p>Créditos para o amor da minha vida &#10084;&#65039;&#8205;&#128293;</p>
+    	<iframe width="560" height="315" src="https://www.youtube.com/embed/5ibUvWVuorc?si=EeQ_1DP8dI1t7O-9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+adendo: <!--width para ajustar a largura, pq sem o width o video tinha ocupado a tela toda. controls para ativar o player do video
+e poster para colocar a thumb no vídeo-->
+
+resultado: *mostrou o video no site*
+
+
+
+========INCORPORAÇÃO DE VÍDEOS EXTERNOS DO VIMEO (FORMA PAGA QUE PODE USAR PARA COLOCAR VÍDEOS PRIVADOS E TEM MAIS FORMAS DE EDIÇÃO)========
+
+
+
+<video> para abrir a tag para colocar um vídeo no site.
+
+exemplo: <h1>Inserindo vídeos do Vimeo</h1>
+    	<iframe src="https://player.vimeo.com/video/185871317?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="560" height="315" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Simone Cirillo - 2016 Character Animation Reel"></iframe>
+    
+
+resultado: *mostrou o video no site*
+
+
+
+======= VIDEO RESPONSIVO (iframe do YouTube) =======
+
+ 
+Existem 3 formas de deixar um iframe responsivo.
+Cada uma tem um uso diferente:
+ 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+FORMA 1 - Simples (width + max-width + height fixo)
+ 
+  Boa para iframes soltos no fluxo da pagina.
+  Facil de entender e de manter.
+ 
+    div.video > iframe {
+        display: block;
+        margin: auto;
+        width: 100%;
+        max-width: 560px;
+        height: 315px;
+    }
+ 
+  Limitacao: a altura e fixa (315px), entao em telas muito
+  pequenas o video pode ficar desproporcional.
+ 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+FORMA 2 - Aspect Ratio Hack (position relative + absolute)
+ 
+  Tecnica classica para manter a proporcao 16:9 em qualquer
+  tamanho de tela. O pai define a altura via padding-top e o
+  filho se estica para preencher todo o espaco.
+ 
+  O valor 56.25% vem da conta: 9 dividido por 16 = 0.5625
+ 
+    div.video {
+        position: relative;
+        padding-top: 56.25%;
+    }
+ 
+    div.video > iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+ 
+  Vantagem: proporcao perfeita em qualquer tamanho de tela.
+  Desvantagem: precisa de um div pai configurado, e o codigo
+  e menos intuitivo.
+ 
+  Variacao usada no projeto (com margem visual):
+    O pai usa padding-bottom em vez de padding-top, e o iframe
+    usa top: 5%, left: 5%, width: 90%, height: 90% para criar
+    um espaco ao redor do video dentro do container verde.
+ 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+FORMA 3 - Moderna (aspect-ratio)
+ 
+  A forma mais simples e atual. Uma so propriedade resolve tudo.
+  Nao precisa de div pai nem de position.
+ 
+    iframe {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+    }
+ 
+  Vantagem: codigo limpo e direto.
+  Desvantagem: navegadores muito antigos nao suportam.
+ 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+RESUMO - Quando usar cada uma:
+ 
+  Forma 1 -> projeto simples, altura fixa nao e problema
+  Forma 2 -> precisa de proporcao perfeita, suporte a navegadores antigos
+  Forma 3 -> projeto moderno, codigo limpo, uso recomendado hoje em dia
+ 
+ 
+
+=

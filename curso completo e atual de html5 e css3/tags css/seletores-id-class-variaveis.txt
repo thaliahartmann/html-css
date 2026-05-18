@@ -1,0 +1,315 @@
+--------- SELETORES ------------
+
+--------- ID ---------
+
+
+
+- é usado quando queremos alterar somente uma tag, por exemplo o h1.
+- ai voce nomeia 
+
+exemplo:
+
+html:
+
+<h1 id="principal">Criando Sites com HTML e CSS</h1>
+
+id="" o nome é da sua escolha
+
+no css fica:
+
+h1#principal {
+    text-align: center;
+    background-color: #e4ccc8ac;
+    color: #3C3375
+    }
+
+
+EXEMPLOS:
+
+
+    <h1 id="principal">Criando Sites com HTML e CSS</h1> *******************************************
+    <h1>Aprendendo HTML</h1>
+    <h2>HTML básico</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis architecto assumenda cum, sequi laboriosam dolorum laborum, eos quis quia officiis alias, adipisci sapiente qui cumque nemo repudiandae vitae. Enim, inventore!</p>
+    <h2>HTML intermediário</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus amet perferendis eveniet qui assumenda debitis voluptate? Quisquam velit perspiciatis voluptate reiciendis animi dolorem illo, ex est veritatis. Neque, enim ullam.</p>
+    <h2>HTML avançado</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda tenetur, minus fugiat recusandae numquam omnis voluptate quasi dolorem facilis cupiditate id illo dolore, quis veritatis esse repellendus veniam vitae obcaecati?</p>
+    <h1>Aprendendo CSS</h1>
+    <h2>CSS básico</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere voluptate nostrum ducimus nihil laudantium, deleniti iure minus fuga, ipsum id quibusdam dolores unde libero ipsa eius magni doloremque quasi ratione.</p>
+    <h2>CSS intermediário</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto recusandae expedita laborum at voluptate commodi molestiae consequuntur ut fuga natus culpa, ipsa, eum cum? Sed velit repellendus delectus natus optio.</p>
+    <h2>CSS avançado</h2>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis dolore rem numquam, optio vel expedita iure consequatur, magni harum, quibusdam unde tempora architecto. Culpa deserunt quaerat asperiores incidunt similique ea.</p>
+</body>
+</html>
+
+
+style
+
+@charset "UTF-8";
+
+/*
+ ID (HTML) : # (CSS)
+ CLASS (HTML) : . (CSS)
+ */
+
+body {
+    background-color:#ece9ff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    color: #3C3375;
+}
+
+h1#principal { *************************************************
+    text-align: center;
+    background-color: #e4ccc8ac;
+    color: #3C3375
+}
+
+h2 {
+    color: #9d6058;
+}
+
+
+
+--------- CLASS ---------
+
+
+
+- é usado quando queremos alterar alterar varias tags juntas.
+- pode ser usado com id e vice e versa
+- ai voce nomeia 
+
+exemplo:
+
+html:
+
+<h1 class="destaque">Aprendendo HTML</h1>
+
+class ="" o nome é da sua escolha
+
+no css fica:
+
+- não deve botar h1 antes de ".destaque" ou qualquer outra tag
+
+.destaque {
+    background-color: #cfcaa496 ;
+}
+
+resultado:
+
+- todas as tags com a class destaque ficam com tal cor de fundo
+
+
+EXEMPLOS:
+
+HTML
+
+<body>
+    <h1 id="principal" class="destaque">Criando Sites com HTML e CSS</h1>
+    <h1 class="destaque">Aprendendo HTML</h1>
+    <h2 class="basico">HTML básico</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis architecto assumenda cum, sequi laboriosam dolorum laborum, eos quis quia officiis alias, adipisci sapiente qui cumque nemo repudiandae vitae. Enim, inventore!</p>
+    <h2 class="intermediário">HTML intermediário</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus amet perferendis eveniet qui assumenda debitis voluptate? Quisquam velit perspiciatis voluptate reiciendis animi dolorem illo, ex est veritatis. Neque, enim ullam.</p>
+    <h2 class="avançado">HTML avançado</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda tenetur, minus fugiat recusandae numquam omnis voluptate quasi dolorem facilis cupiditate id illo dolore, quis veritatis esse repellendus veniam vitae obcaecati?</p>
+    <h1 class="destaque">Aprendendo CSS</h1>
+    <h2 class="basico">CSS básico</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere voluptate nostrum ducimus nihil laudantium, deleniti iure minus fuga, ipsum id quibusdam dolores unde libero ipsa eius magni doloremque quasi ratione.</p>
+    <h2 class="intermediário">CSS intermediário</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto recusandae expedita laborum at voluptate commodi molestiae consequuntur ut fuga natus culpa, ipsa, eum cum? Sed velit repellendus delectus natus optio.</p>
+    <h2 class="avançado destaque">CSS avançado</h2>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis dolore rem numquam, optio vel expedita iure consequatur, magni harum, quibusdam unde tempora architecto. Culpa deserunt quaerat asperiores incidunt similique ea.</p>
+</body>
+</html>
+
+
+CSS
+
+
+}
+
+.basico {
+    color: #3C3475
+}
+
+.intermediario {
+    color: #CAC49C;
+}
+
+.avançado {
+    color: #a19966;
+}
+
+.destaque {
+    background-color: #cfcaa496 ;
+}
+
+
+
+
+
+
+
+
+
+--------- VARIÁVEIS EM CSS ---------
+
+
+Variáveis CSS guardam valores que você usa várias vezes no
+projeto. Se precisar mudar uma cor ou fonte, muda só em um
+lugar e atualiza tudo automaticamente.
+
+
+--------- COMO DECLARAR ---------
+
+
+As variáveis são declaradas dentro de :root
+:root é o elemento raiz da página (equivale ao html)
+Toda variável começa com -- (dois traços)
+
+    :root {
+        --nome-da-variavel: valor;
+    }
+
+Exemplos:
+    :root {
+        --cor-primaria: #3498db;
+        --cor-fundo: #f0f0f0;
+        --fonte-padrao: Arial, sans-serif;
+        --tamanho-fonte: 16px;
+        --espacamento: 10px;
+    }
+
+
+---------- COMO USAR ----------
+
+
+Para usar a variável, chame com var(--nome-da-variavel)
+
+    h1 {
+        color: var(--cor-primaria);
+        font-family: var(--fonte-padrao);
+        font-size: var(--tamanho-fonte);
+    }
+
+
+---------- POR QUE USAR VARIÁVEIS? ----------
+
+
+Sem variável:
+    h1    { color: #3498db; }
+    nav   { background-color: #3498db; }
+    footer { border-color: #3498db; }
+
+    Se precisar mudar a cor → tem que trocar em 3 lugares.
+
+Com variável:
+    :root { --cor-primaria: #3498db; }
+
+    h1    { color: var(--cor-primaria); }
+    nav   { background-color: var(--cor-primaria); }
+    footer { border-color: var(--cor-primaria); }
+
+    Se precisar mudar a cor → muda só no :root.
+
+
+
+--------- TAGS DE AGRUPAMENTO + ID + CLASS + VARIÁVEIS ---------
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo</title>
+    <style>
+
+        /* VARIÁVEIS GLOBAIS */
+        :root {
+            --cor-primaria: #3498db;
+            --cor-fundo: #f0f0f0;
+            --cor-destaque: lightyellow;
+            --fonte-padrao: Arial, sans-serif;
+            --espacamento: 10px;
+        }
+
+        /* TAG */
+        body {
+            font-family: var(--fonte-padrao);
+            background-color: var(--cor-fundo);
+        }
+
+        /* ID */
+        #topo {
+            background-color: var(--cor-primaria);
+            color: white;
+            padding: var(--espacamento);
+        }
+
+        /* CLASS */
+        .menu a {
+            color: white;
+            margin-right: var(--espacamento);
+            text-decoration: none;
+        }
+
+        /* CLASS */
+        .noticia {
+            border: 1px solid var(--cor-primaria);
+            padding: var(--espacamento);
+            margin-bottom: var(--espacamento);
+        }
+
+        /* ID */
+        #principal {
+            background-color: var(--cor-destaque);
+            padding: var(--espacamento);
+        }
+
+        /* TAG */
+        footer {
+            background-color: var(--cor-primaria);
+            color: white;
+            padding: var(--espacamento);
+        }
+
+    </style>
+</head>
+<body>
+
+    <header id="topo">
+        <h1>Meu Site</h1>
+        <nav class="menu">
+            <a href="#">Home</a>
+            <a href="#">Contato</a>
+        </nav>
+    </header>
+
+    <main id="principal">
+        <section>
+            <article class="noticia">
+                <h2>Notícia 1</h2>
+                <p>Conteúdo da notícia...</p>
+            </article>
+            <article class="noticia">
+                <h2>Notícia 2</h2>
+                <p>Outro conteúdo...</p>
+            </article>
+        </section>
+        <aside>
+            <p>Publicidade</p>
+        </aside>
+    </main>
+
+    <footer>
+        <p>© 2026</p>
+    </footer>
+
+</body>
+</html>
+

@@ -1,0 +1,36 @@
+--------- ALINHAMENTO DE TEXTOS --------- 
+
+
+
+text-align + left, center, right , justify
+
+
+center: centro
+left: esquerda
+right: direita
+justify: parágrafo de redação
+indent: tamanho do parágrafo
+
+
+ <title>Alinhamentos</title>
+    <style> 
+        body {
+            font: normal 16px Arial, Verdana, serif;
+            text-align: left; ************************ esquerda
+        }
+        h1 {
+            text-align: center; *********************** centro
+
+        }
+        h2 {
+            text-align: right; ************************ direita
+        }
+        p {
+            text-align: justify; ********************** parágrafo de redação
+            text-indent: 35px;   ********************** tamanho do parágrafo
+        }
+    </style>
+</head>
+<body>
+
+

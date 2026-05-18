@@ -1,0 +1,921 @@
+(((((((((((TAGS HTML)))))))))))
+
+
+
+DICAS DO VSCODE:
+
+
+
+ctrl + L: limpa o terminal
+
+ctrl + shift + p: abre a janelinha de pesquisas
+
+crtl + espaço: abre as opções dentro de algo
+
+como abrir e COLOCAR uma tag mais rápido:
+
+ctrl + shift + p , wrapWithAbbreviation e seleciona a tag, tipo, i, ai só apertar enter
+
+Ctrl + D → seleciona a variável, ou texto qualquer que tiver o mesmo nome, seleciona todos e altera todos
+
+colocar # em uma tag que você ainda não decidiu o que vai ter dentro, é como deixar ela funcionando só que sem nada por enquanto.
+
+
+
+------------ABRIR ESTRUTURA------------
+
+
+
+! e clicar abre a estrutura ja
+
+
+
+<!D0CTYPE html> #Vou desenvolver em HTML 5
+<html lang=”pt-br”> #Linguagem
+	<head>      #configurações site
+		<meta charset=“UTF-8”> #comando que suporta acentos
+		<meta name=“viewport”> #significa que o site vai ocupar 100% da tela disponível dada ao navegador
+		content=”width=device,
+		initial-scale=1.0”>
+		<title>document</tille>
+	</head>
+	<body>      #conteúdo do site
+		<h1>Olá mundo!</h1>
+	</body>
+</html>
+
+
+
+------------COMENTÁRIO------------
+
+
+
+<!--
+
+
+
+------------ABRIR CAIXA DE OPÇÕES------------
+
+
+
+-CTRL+ESPAÇO: ABRE UMA CAIXA DE OPÇÕES NO VSCODE
+
+
+
+------------SOBRE A FORMATAÇÃO DE TEXTO------------
+
+
+
+<h1>
+<h2>
+<h3>
+<h4>
+
+quanto maior o número, menor vai ficar as letras?
+
+não é isso exatamente...
+
+Níveis hierárquicos seguem a sequência: <h1>, <h2>, <h3>, <h4>, <h5>, <h6>
+- Não deve-se pular a sequência;	
+- Não são usados para definir tamanho da letra. Isso é feito em CSS;
+
+
+
+
+------------TÍTULO------------
+
+
+
+<h1> inicia o titulo
+</h1> termina o titulo
+
+exemplo: <h1>Exemplo de título</h1>
+
+
+
+------------SUBTÍTULO------------
+
+
+
+<h2> inicia o subtítulo
+</h2> termina o subtítulo
+
+
+
+------------PARÁGRAFO------------
+
+
+
+<p> inicia o parágrafo
+</p> termina o parágrafo
+
+exemplo: <p> Exemplo de parágrafo </p>
+
+
+
+------------NEGRITO------------
+
+
+
+<b> para abrir a tag para escrever em negrito
+
+exemplo: <p>Nessa frase temos um <b>termo em negrito usando a tag B</b></p>
+
+resultado: Nessa frase temos um *termo em negrito usando a tag B* #bloco de notas não possui formatação em negrito, logo, * para representar.
+
+
+tag B é (não semantica)
+
+
+
+------------STRONG------------
+
+
+
+<strong> para abrir a tag para escrever em strong
+
+exemplo: <p>Nessa frase temos um <strong>termo em destaque usando a tag STRONG</strong></p>
+
+resultado: Nessa frase temos um *termo em destaque usando a tag STRONG* #bloco de notas não possui formatação em STRONG, logo, * para representar.
+
+faz a mesma coisa que o NEGRITO, mas com um significado diferente e com SEMANTICA, é usado para dar um sentido para a frase: "TERMO FORTE, TERMO DE DESTAQUE".
+
+
+
+------------ITÁLICO------------
+
+
+
+<i> para abrir a tag para escrever em itálico
+
+exemplo: <p>Nessa frase temos um <i>termo em destaque usando a tag I</i></p>
+
+resultado: Nessa frase temos um *termo em itálico usando a tag I.
+
+
+
+------------ENFÂSE------------
+
+
+
+<em> para abrir a tag para escrever em enfase
+
+exemplo: <p>Nessa frase temos um <em>termo em destaque usando a tag I</em></p>
+
+resultado: Nessa frase temos um *termo em destaque usando a tag I.
+
+faz a mesma coisa que o ITÁLICO, mas com um significado diferente e com SEMANTICA, é usado para dar um sentido para a frase: "dar ênfase na frase".
+
+
+
+------------MARK------------
+
+
+
+<mark> para abrir a tag para marcar uma frase (tipo marca texto)
+
+exemplo: <p>Podemos criar um texto marcado <mark>usando a tag MARK.</mark></p>
+
+resultado: Podemos criar um texto marcado *usando a tag MARK.*
+
+(semântica)
+
+
+
+Outras duas formas de usar que o Guanabara ensinou:
+
+
+Escolhendo a cor:
+
+
+exemplo: <p>Podemos criar também,<mark style="background-color:aqua"> um texto marcado</mark> usando a tag MARK.
+
+resultado: Podemos criar um texto marcado *usando a tag MARK.*finge que ta azul
+
+se passar o mouse encima de background color, aparece a roda RGB para trocar de cor.
+
+OBS: se escolher a cor em um parágrafo e querer a mesma em outro não dá, tipo, até da mas demora mais, tem um jeito muito mais fácil de deixar todos os MARKS
+iguais.
+
+
+
+Mudando a cor de todos os MARKS:
+
+
+<title>Formatação De Textos</title>
+    <style>mark {
+        background-color: coral;                *escolhe a cor que quer*
+    }
+    </style>
+</head>
+<body>
+
+
+Podemos criar também, um *texto marcado* usando a tag MARK.  *finge que as duas tão coloridas*
+
+em outro parágrafo, temos outro *texto marcado* no final.
+
+
+
+------------BIG------------
+
+
+
+<big> para abrir a tag para escrever "MAIOR"
+
+exemplo:>Estamos criando um <big>texto grande</big
+
+resultado: Estamos criando um TEXTO GRANDE.
+
+MAS ESTÁ FICANDO ABSOLETA, POIS, O TAMANHO PODE SER DEFINIDO POR CSS? TALVEZ?
+
+
+
+------------SMALL------------
+
+
+
+<small> para abrir a tag para escrever "menor". 
+
+exemplo: small>texto pequeno</small>
+
+resultado: texto pequeno
+
+Acho que small não está absoleta, pois, pode ser semântica? para definir letras pequenas em termos de contrato?
+
+
+
+------------TEXTO DELETADO------------
+
+
+
+<del> para abrir a tag para marcar como deletado (aquele risco no meio da frase)
+
+exemplo: <p>Podemos marcar <del>um texto como excluído</del> para indicar que ele deve ser lido, mas não considerado.</p>
+
+resultado: Podemos marcar um *texto como excluído* para indicar que ele deve ser lido, mas não considerado. *finge que ta riscado*
+
+
+
+------------TEXTO INSERIDO------------
+
+
+
+<ins> para abrir a tag para marcar como inserido: ____________ esse treco embaixo e o texto encima
+
+exemplo: <p>Podemos marcar <ins>um texto como inserido</ins> para dar uma enfâse e indicar que ele foi adicionado depois.</p> *finge que tem isso aqui ______________*
+
+resultado: Podemos marcar um texto como inserido para dar uma enfâse e indicar que ele foi adicionado depois.
+
+
+
+------------TEXTO SOBRESCRITO------------
+
+
+<sup> para abrir a tag para SUBIR letras/números que precisam dessa marcação, como x^2 (x elevado ao quadrado)
+
+exemplo:<p>Para inserir coisas do tipo x<sup>20</sup>+3.</p>
+
+resultado: Para inserir coisas do tipo x20+3. (Finge que deu certo)
+
+
+
+------------TEXTO SUBSCRITO------------
+
+
+
+<sub> para abrir a tag para DESCER letras/números que precisam dessa marcação, como H20 (finge que o 2 tá para baixo)
+
+exemplo:<p>Para inserir coisas do tipo H<sub>2</sub>0.</p>
+
+resultado: Para inserir coisas do tipo H20.
+
+
+
+------------LINKS-----------
+
+
+
+<a> para abrir a tag para marcar o texto selecionado como LINK.
+
+exemplo:<p>Você pode acessar o meu <a href="https://gustavoguanabara.github.io/">repositório público no GITHUB</a></p>
+
+resultado: Você pode acessar o meu repositório público no GITHUB.
+
+
+------------MARCAR LINK DE PASTA ANTERIOR-----------
+
+../
+
+<a> para abrir a tag para marcar o texto selecionado como LINK.
+
+<p>Voltar para a <a href="../index.html">primeira página</a></p>
+
+resultado: Voltar para a primeira página
+
+
+
+------------LINKS EXTERNOS (BLANK) (PARA O SEU SITE NÃO SER FECHADO AO CLICAR NO LINK)-----------
+
+
+
+<a> para abrir a tag para marcar o texto selecionado como LINK.
+
+exemplo:<p>Você pode acessar o meu <a href="https://gustavoguanabara.github.io/" target="_blank" rel="external">repositório público no GITHUB</a></p>
+
+resultado: Você pode acessar o meu repositório público no GITHUB.
+
+
+
+------------LINKS para DOWNLOAD (formato de lista)-----------
+
+
+
+<a> para abrir a tag para marcar o texto selecionado como LINK.
+
+exemplo:ul><li><a href="livro/meu livro.pdf" download="meulivro.pdf" type="aplication/pdf">Baixar o livro em PDF</a></li>
+        <li><a href="livro/meu livro.zip" download="meulivro.zip" type="aplication/zip">Livro compactado em ZIP</a></li>
+
+resultado: -Baixar o livro em PDF
+	   -Livro compactado em ZIP
+
+
+
+------------LINK PARA DEFINIR QUE ESTÁ ABRINDO UM LINK DA SUA PRÓPRIA PÁGINA-----------
+
+
+
+SELF = NA PROPRIA ABA
+
+<a> para abrir a tag para marcar o texto selecionado como LINK.
+
+<p>Você também pode acessar a <a href="noticias/pag003.html" rel="next" target="_self">nossa página de noticias</a></p>                                                    
+
+resultado: Você também pode acessar a nossa página de noticias
+
+
+
+------------LINK FOLLOW E NOFOLLOW---------------------
+
+
+
+LINK FOLLOW
+
+link normal
+passa autoridade SEO para outro site
+
+<a href="site.com.
+
+LINK NOFOLLOW
+
+não passa autoridade SEO
+
+<a href="site.com" rel="nofollow">
+
+
+
+------------DEFINIR PRIMEIRA E SEGUNDA PÁGINA-----------
+
+
+
+<a> para abrir a tag para marcar o texto selecionado como LINK.
+
+PREV
+
+exemplo:<p><a href="index.html" rel="prev">Voltar para a primeira página</a></p>
+
+NEXT
+
+<p>Está é a primeira página do site. Se você quiser acessar a minha <a href="pag002.html" rel="next">segunda página.</a></p>
+
+
+
+------------CODIGO FONTE/ PRÉ FORMATAÇÃO------------
+
+
+
+<code> para abrir a tag para alterar a fonte da frase, para ficar igual a códigos, tipo, uma visualização fiel de um código de programação.
+
+exemplo: <p>O comando <code>document.getElementById('teste')</code> é escrito em linguagem Java Script.</p>
+
+resultado: O comando document.getElementById('teste') é escrito em linguagem Java Script. (finge que saiu do jeito que era para sair)
+
+<pre> é para manter a formatação do código
+
+
+
+exemplo: 
+
+<pre>
+
+<code>
+
+&nbsp;   num = int(input('Digite um número:''))
+
+&nbsp;   if num % 2 == 0:
+
+&nbsp;      print(f'O número {num} é par.')
+
+&nbsp;   else:
+
+&nbsp;      print(f'O número {num} é ímpar.')
+
+&nbsp;   print('Fim do programa.)
+
+</code>
+
+
+resultado:
+
+ num = int(input('Digite um número:''))
+ if num % 2 == 0:
+    print(f'O número {num} é par.')
+ else:
+    print(f'O número {num} é ímpar.')
+ print('Fim do programa')
+
+
+
+------------CITAÇÃO SIMPLES------------
+
+
+
+<q> para abrir a tag para criar uma citação
+
+exemplo:<p>Como diria o pai de um amigo:<q>O computador é um burro muito rápido</q>.</p>
+
+resultado: Como diria o pai de um amigo:"O computador é um burro muito rápido".
+
+q é semântica, INDICA que é uma citação, no caso de coisas que não são citações compensa muito mais "só" mandar as aspas manualmente.
+
+
+
+
+------------CITAÇÃO COMPLETA------------
+
+
+
+<blockquote> para abrir a tag para criar uma citação completa, uma que encaixa textos maiores.
+
+cite: é para colocar a fonte de onde você tirou a citação, ela não aparece no site, mas os mecanismos de busca e o Google vai entender que você está referenciando algo.
+
+exemplo:<p>Segundo Jeff Noble, no seu livro HTML para leigos:</p>
+    <blockquote cite="https://books.google.com.br/books/about/HTML_XHTML_e_CSS_Para_Leigos.html?hl=pt-BR&id=E8ZtDwAAQBAJ&redir_esc=y">
+        A diferença entre os elementos iline e um bloco de texto é importante.
+        Os elementos HTML neste capítulo descrevem os blocos de texto.
+</blockquote> 
+
+resultado: Segundo Jeff Noble, no seu livro HTML para leigos:
+
+  A diferença entre os elementos iline e um bloco de texto é importante. Os elementos HTML neste capítulo descrevem os blocos de texto.
+  q é semântica, INDICA que é uma citação, no caso de coisas que não são citações compensa muito mais "só" mandar as aspas manualmente.
+
+
+
+------------SIGNIFICADO DA ABREVIAÇÃO------------
+
+
+
+<abbr> para abrir a tag para criar um marcador que diz o que significa tal abreviação, tipo VLW = valeu.
+
+exemplo: <p>Estou estudando <abbr title="HyperText Markup language">HTML</abbr> e <abbr title="Cascading Style Sheets">CSS</abbr>, nice demais gurizada!</p>
+
+resultado: Estou estudando HTML e CSS, nice demais gurizada! 
+
+ai quando você passa o mouse por "HTML" e "CSS", aparece o significado da sigla encima.
+
+
+
+------------TEXTO INVERTIDO------------
+
+
+
+<abbr> para abrir a tag para deixar o texto ao contrário.
+
+exemplo: <p><bdo dir="rtl">Esta tudo ao contrário!!! ANA não está, ja pinto...</bdo></p>
+
+resultado: ta ao contrario, preguiça de de escrever
+
+
+
+------------LOREM------------
+
+
+
+Sobre o atalho LOREM
+
+lorem + entender vai encher uma linguiça
+
+exemplo: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores voluptates eum inventore velit nesciunt provident, quo excepturi ea temporibus pariatur ab non cupiditate. Labore, ab animi a omnis excepturi est!
+
+Adicionando ao conteúdo: Para gerar textos, insira após a palavra Lorem um número que será referente a quantidade de palavras que você deseja. Ou seja, Lorem100 irá gerar um texto com 100 palavras. Lorem1000, 1000 palavras.
+
+------------LISTAS ORDENADAS------------
+
+
+
+<ol> para abrir a tag para criar listas que possuem ordem e sentido.
+
+<li> para escrever as listas, não precisa fazer o </li> (mas e melhor)
+
+exemplo:<ol>
+        <li>Acordar
+        <li>Se arrumar
+        <li>Arrumar o quarto
+        <li>Arrumar a casa
+        <li>Estudar até as 18h
+        <li>Tomar banho
+        <li>Jantar
+        <li>Tempo livre
+    </ol>
+
+resultado: 
+
+1.Acordar
+2.Se arrumar
+3.Arrumar o quarto
+4.Arrumar a casa
+5.Estudar até as 18h
+6.Tomar banho
+7.Jantar
+8.Tempo livre
+
+com type pode mudar a formatação da lista e escolher o número inicial.
+
+<ol type="i"><!--1,A,a,I,i-->
+        <li>Acordar
+        <li>Se arrumar
+        <li>Arrumar o quarto
+        <li>Arrumar a casa
+        <li>Estudar até as 18h
+        <li>Tomar banho
+        <li>Jantar
+        <li>Tempo livre
+    </ol>
+
+
+
+------------LISTAS NÃO ORDENADAS------------
+
+
+
+<ul> para abrir a tag para criar listas que não precisam de ordem e nem sentido.
+
+<li> para escrever as listas, não precisa fazer o </li> (mas e melhor)
+
+exemplo:<ul>
+        <li>Pão</li>
+        <li>Mandioca</li>
+        <li>Café</li>
+        <li>Paçoca</li>
+        <li>Arroz</li>
+        <li>Feijão</li>
+    </ul>
+
+resultado: 
+
+*Pão
+*Mandioca
+*Café
+*Paçoca
+*Arroz
+*Feijão
+
+com type pode mudar a formatação da lista.
+
+  <ul type="square"><!--disc, circle, square-->
+        <li>Pão</li>
+        <li>Mandioca</li>
+        <li>Café</li>
+        <li>Paçoca</li>
+        <li>Arroz</li>
+        <li>Feijão</li>
+    </ul>
+
+
+
+------------EXEMPLO DE LISTA ORDENADA E NÃO ORDENADA JUNTAS (ANINHAMENTO)------------
+
+
+
+<h2>Meus jogos favoritos</h2>
+<ol>
+    <li>PS2</li>
+    <ul type="circle">
+        <li>Bully</li>
+        <li>GTA SAN</li>
+        <li>BEN 10</li>
+    </ul>
+    <li>XBOX</li>
+    <ul type="circle">
+        <li>GTA V</li>
+        <li>Sunset Overdrive</li>
+        <li>Paladins</li>
+    </ul>
+    <li>PC</li>
+    <ul type="circle">
+        <li>THE SIMS 2</li>
+        <li>Minecraft</li>
+        <li>Stardey Valley</li>
+    </ul>
+    </ol>
+
+
+
+
+------------LISTA DE DEFINIÇÕES------------
+
+
+
+<dl> para abrir a tag para criar listas que descrevem o que significa tal termo, para o que serve e tals.
+
+<dt> para escrever o termo
+
+<dd> para escrever a descrição do termo
+
+exemplo:
+
+<dl>
+     <dl>HTML</dl>
+     <dd>Linguagem de marcação para a criação do conteúdo de um site</dd>
+     <dl>CSS</dl>
+     <dd>Linguagem de marcação para a criação do DESIGN de um site</dd>
+     <dl>Java Script</dl>
+     <dd>Linguagem de programação para a criação de interação de um site</dd>
+</dl>
+
+resultado:
+
+HTML
+Linguagem de marcação para a criação do conteúdo de um site
+CSS
+Linguagem de marcação para a criação do DESIGN de um site
+Java Script
+Linguagem de programação para a criação de interação de um site
+
+
+
+------------IMAGEM------------
+
+
+
+     origem da foto
+<img src="foto.png" alt="Exemplo de foto">
+
+alt é quando da erro, é uma forma alternativa de aparecer a foto
+
+
+
+------------IMAGENS DINAMICAS------------
+
+
+
+<picture> para abrir tag para definir imagens que se alteram dependendo do dispositivo usado
+
+<p>Tente abrir esse site em vários dispositivos diferentes ou simplesmente aumente ou diminue o tamanho do seu navegador.</p>
+    <picture>
+        <source media="(max-width: 750px)" srcset="imagens/fotop.png" type="image/png">
+        <source media="(max-width: 1050px)" srcset="imagens/fotom.png" type="image/png">
+        <img src="imagens/fotog.png" alt="Imagem flexível">
+    </picture>
+
+
+------------ÁUDIO------------
+
+
+
+<audio> para abrir a tag para criar uma tag de áudio.
+
+exemplo: <p>Vamos aprender a reproduzir audio em HTML5</p>
+    <audio src="midia/rock.mp3" controls autoplay></audio> 
+
+controls autoplay é para ativar o tocador de áudio.
+
+
+
+
+------------SE O NAVEGADOR NÃO FOR COMPATIVEL COM A FORMA TRADICIONAL DE COLOCAR AUDIO------------
+
+
+
+<audio> para abrir a tag para criar uma tag de áudio.
+
+<p>Vamos aprender a reproduzir audio em HTML5</p>
+    <audio preload="metadata" autoplay controls loop>
+        <source src="midia/guanacast-33.mp3" type="audio/mpeg"> <!--para mp3-->
+        <source src="midia/guanacast-33.ogg" type="audio/ogg">  <!--para ogg-->
+        <source src="midia/guanacast-33.wav" type="audio/wav">  <!--para wav-->
+        <p>Infelizmente seu navegador não consegue reproduzir áudio.</p> <!--Se não conseguir reproduzir áudio-->
+        <p><a href="midia/guanacast-33.mp3">Clique aqui para baixar o arquivo MP3</a>.</p>
+        ></audio>
+    </audio>
+
+
+
+========preload======== 
+
+  none → não carrega nada
+  metadata → carrega só informações do áudio (duração, etc.)
+  auto → pode carregar o arquivo inteiro
+
+
+
+========Autoplay========
+
+Faz o áudio começar automaticamente quando a página abre.
+
+⚠️ Observação importante:
+A maioria dos navegadores bloqueia autoplay com som.
+Normalmente só funciona se o áudio estiver mutado.
+
+
+========Controls========
+
+Mostra os controles do player para o usuário.
+
+Exemplo de controles:
+
+▶️ play
+
+⏸ pause
+
+🔊 volume
+
+barra de tempo
+
+Sem controls, o áudio toca mas o usuário não vê nada.
+
+
+======== loop========
+
+Faz o áudio recomeçar automaticamente quando termina.
+
+Exemplo:
+
+🎵 música acaba
+↩️ volta para o início
+🎵 toca novamente
+
+
+
+========VIDEOS========
+
+
+
+<video> para abrir a tag para colocar um vídeo no site.
+
+exemplo: <video src="midia/meu-video1.mp4" width="500" poster="imagens/gato-capa-png.jpg" controls></video>
+
+adendo: <!--width para ajustar a largura, pq sem o width o video tinha ocupado a tela toda. controls para ativar o player do video
+e poster para colocar a thumb no vídeo-->
+
+resultado: *mostrou o video no site*
+
+
+
+
+=======ADICIONAR TODAS AS FORMATAÇÕES DE VIDEO NO SITE========
+
+
+
+<video> para abrir a tag para colocar um vídeo no site.
+
+exemplo: <video width="500" poster="imagens/gato-capa-png.jpg" controls>
+    	<source src="midia/meu-video3.m4v" type="video/mp4">
+    	<source src="midia/meu-video2.webm" type="video/webm">
+    	<source src="midia/meu-video4.ogv" type="video/ogg">
+    	<source src="midia/meu-video1.mp4" type="video/mp4">
+    	<p>Seu navegador não tem compatibilidade com reprodução de vídeos.</p>
+   	 </video>
+
+adendo: <!--width para ajustar a largura, pq sem o width o video tinha ocupado a tela toda. controls para ativar o player do video
+e poster para colocar a thumb no vídeo-->
+
+resultado: *mostrou o video no site*
+
+
+
+=======INCORPORAÇÃO DE VÍDEOS EXTERNOS DO YOUTUBE (MELHOR FORMA DE COLOCAR VIDEOS NO SITE)========
+
+
+
+é a melhor forma porque voce nao gasta dados do proprio site (não fica caro)
+voce usa os dados do youtube ou qualquer outra plataforma
+
+
+no youtube: só clicar em compartilhar o video e incorporar, copiar e colar no programa.
+
+
+
+exemplo:<h1>Inserindo vídeos do Youtube</h1>
+    	<p>Créditos para o amor da minha vida &#10084;&#65039;&#8205;&#128293;</p>
+    	<iframe width="560" height="315" src="https://www.youtube.com/embed/5ibUvWVuorc?si=EeQ_1DP8dI1t7O-9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+adendo: <!--width para ajustar a largura, pq sem o width o video tinha ocupado a tela toda. controls para ativar o player do video
+e poster para colocar a thumb no vídeo-->
+
+resultado: *mostrou o video no site*
+
+
+
+========INCORPORAÇÃO DE VÍDEOS EXTERNOS DO VIMEO (FORMA PAGA QUE PODE USAR PARA COLOCAR VÍDEOS PRIVADOS E TEM MAIS FORMAS DE EDIÇÃO)========
+
+
+
+<video> para abrir a tag para colocar um vídeo no site.
+
+exemplo: <h1>Inserindo vídeos do Vimeo</h1>
+    	<iframe src="https://player.vimeo.com/video/185871317?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="560" height="315" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Simone Cirillo - 2016 Character Animation Reel"></iframe>
+    
+
+resultado: *mostrou o video no site*
+
+
+
+------------LINHA HORIZONTAL------------
+
+
+
+<hr> #cria uma linha tipo assim
+
+Olá, Mundo!
+_________________________________________________
+
+
+
+------------QUEBRAR O TEXTO------------
+
+
+
+<br> #tag usada para quebrar o texto em algum lugar especifico.
+
+exemplo:
+
+Se precisar quebrar o texto em algum lugar específico
+como esse daí, você pode usar a tag BR!.
+
+
+
+------------LT E GT------------
+
+
+
+LT E GT: para a tag <p>, </p> apareceram como texto, não como tag, mesma coisa com BR.
+
+Você pode escrever um parágrafo
+de qualquer jeito! Basta escrever
+tudo no meio do par de TAGS,&lt;p&gt;/p&gt; <!-- LT = LESS THAN = MENOR QUE e / GT = GREATER THAN = MAIOR QUE-->
+
+
+
+------------SÍMBOLOS ESPECIAIS------------
+
+
+
+https://github.com/gustavoguanabara/html-css/blob/master/aulas-pdf/05%20-%20Caracteres%2C%20parágrafos%20e%20quebras%20de%20linha.pdf
+
+
+
+------------EMOJIS------------
+
+
+
+https://emojipedia.org 
+
+exemplo: copia o código, não o emoji direto, pq nem todo navegador consegue carregar o emoji, tipo o código da caveirinha 1F480
+
+&#x1F480
+
+
+
+------------FAVICON------------
+
+O favicon fica encima do título da página
+
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> <!--só 
+clicar link + favicon que aparece-->
+
+favicon.io
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

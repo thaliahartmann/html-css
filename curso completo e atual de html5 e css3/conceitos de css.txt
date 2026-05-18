@@ -1,0 +1,16 @@
+___________CONCEITOS CSS______________
+
+
+CSS NÃO É LINGUAGEM DE PROGRAMAÇÃO
+
+CSS: FOLHA DE ESTILO EM CASCATA (Cascading Style Sheets)
+
+Serve para:
+- cores 🎨
+- tamanhos 📏
+- espaçamentos 📦
+- layout 📐
+- animações ✨
+
+HTML = estrutura (esqueleto)
+CSS = aparência (roupa)

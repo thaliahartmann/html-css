@@ -1,0 +1,69 @@
+--------- MUDAR A COR DO FUNDO ---------
+
+
+
+background-color
+
+
+
+--------- MUDAR A COR DO FUNDO DEGRADE ---------
+
+
+
+background-image: linear-gradiente
+
+
+exemplo:
+
+background-image: linear-gradient(to right, white, blue);
+
+
+
+--------- MUDAR A COR DO FUNDO DEGRADE 45 GRAUS ---------
+
+
+
+    <title>Gradiente em CSS</title>
+    <style>
+        * { 
+            height: 100%;
+         }
+        body {
+            background-image: linear-gradient(45deg, #4411cf, #8342B7, #BF328D, #EA4852, #FFDC83);
+            background-attachment: fixed;
+        }
+    </style>
+
+
+
+--------- MUDAR A COR DO FUNDO DEGRADE CIRCULO ---------
+
+
+
+<title>Gradiente em CSS</title>
+    <style>
+        * { 
+            height: 100%;
+         }
+        body {
+            background-image: radial-gradient(circle, #4411cf, #8342B7, #BF328D, #EA4852, #FFDC83);
+            background-attachment: fixed;
+        }
+    </style>
+
+
+
+--------- PARA O DEGRADE FICAR INFINITO MEMOS ROLANDO A PÁGINA ---------
+
+
+
+    <title>Gradiente em CSS</title>
+    <style>
+        * { 
+            height: 100%;
+         }
+        body {
+            background-image: linear-gradient(to bottom, #0E5981, #082738);
+            background-attachment: fixed;
+        }
+    </style>

@@ -1,0 +1,75 @@
+------------ÁUDIO------------
+
+
+
+<audio> para abrir a tag para criar uma tag de áudio.
+
+exemplo: <p>Vamos aprender a reproduzir audio em HTML5</p>
+    <audio src="midia/rock.mp3" controls autoplay></audio> 
+
+controls autoplay é para ativar o tocador de áudio.
+
+
+
+
+------------SE O NAVEGADOR NÃO FOR COMPATIVEL COM A FORMA TRADICIONAL DE COLOCAR AUDIO------------
+
+
+
+<audio> para abrir a tag para criar uma tag de áudio.
+
+<p>Vamos aprender a reproduzir audio em HTML5</p>
+    <audio preload="metadata" autoplay controls loop>
+        <source src="midia/guanacast-33.mp3" type="audio/mpeg"> <!--para mp3-->
+        <source src="midia/guanacast-33.ogg" type="audio/ogg">  <!--para ogg-->
+        <source src="midia/guanacast-33.wav" type="audio/wav">  <!--para wav-->
+        <p>Infelizmente seu navegador não consegue reproduzir áudio.</p> <!--Se não conseguir reproduzir áudio-->
+        <p><a href="midia/guanacast-33.mp3">Clique aqui para baixar o arquivo MP3</a>.</p>
+        ></audio>
+    </audio>
+
+
+
+========preload======== 
+
+  none → não carrega nada
+  metadata → carrega só informações do áudio (duração, etc.)
+  auto → pode carregar o arquivo inteiro
+
+
+
+========Autoplay========
+
+Faz o áudio começar automaticamente quando a página abre.
+
+⚠️ Observação importante:
+A maioria dos navegadores bloqueia autoplay com som.
+Normalmente só funciona se o áudio estiver mutado.
+
+
+========Controls========
+
+Mostra os controles do player para o usuário.
+
+Exemplo de controles:
+
+▶️ play
+
+⏸ pause
+
+🔊 volume
+
+barra de tempo
+
+Sem controls, o áudio toca mas o usuário não vê nada.
+
+
+======== loop========
+
+Faz o áudio recomeçar automaticamente quando termina.
+
+Exemplo:
+
+🎵 música acaba
+↩️ volta para o início
+🎵 toca novamente

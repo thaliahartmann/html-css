@@ -1,0 +1,119 @@
+--------- MEDIDAS (TAMANHOS DA LETRA) EM CSS ---------
+
+
+
+SITE PARA FONTES: https://fonts.google.com
+
+
+
+📏 MEDIDAS ABSOLUTAS
+(são fixas, não mudam dependendo da tela)
+
+px (pixels)
+→ unidade mais comum em telas
+→ representa pontos na tela
+→ MUITO usada para tamanhos
+
+cm (centímetros)
+→ unidade real de medida física (pouco usada em telas)
+
+mm (milímetros)
+→ menor que cm, também baseada em medida real
+
+in (polegada)
+→ 1 polegada = 2.54 cm
+
+pt (points)
+→ usado mais em impressão (1pt ≈ 1/72 de polegada)
+
+pc (picas)
+→ usado em tipografia (1pc = 12pt)
+
+⚠️ Observação:
+Na prática, o mais usado é:
+→ px
+
+
+
+📐 MEDIDAS RELATIVAS
+(se adaptam ao tamanho da tela ou elemento)
+
+em
+→ relativo ao tamanho da fonte do elemento pai
+→ Ex: se o pai tem 16px, 1em = 16px
+
+rem (root em)
+→ relativo ao tamanho da fonte do elemento raiz (html)
+→ mais previsível que em
+
+ex
+→ relativo à altura da letra "x" (pouco usado)
+
+vw (viewport width)
+→ relativo à largura da tela
+→ 1vw = 1% da largura da tela
+
+vh (viewport height)
+→ relativo à altura da tela
+→ 1vh = 1% da altura da tela
+
+%
+→ relativo ao tamanho do elemento pai
+
+---
+
+📌 MEDIDAS MAIS RECOMENDADAS PARA FONT-SIZE
+
+px
+→ simples e direto
+→ muito usado para iniciantes
+
+em
+→ mais flexível
+→ bom para layouts adaptáveis
+
+rem
+→ melhor controle geral
+→ muito usado profissionalmente
+
+
+
+🧠 RESUMO
+
+Medidas absolutas → tamanho fixo
+Medidas relativas → tamanho adaptável
+
+px → padrão simples
+em/rem → padrão moderno e responsivo
+
+
+QUEM É PAI?
+
+Elemento pai = elemento que envolve outro elemento (filho)
+
+Exemplo:
+
+<div>
+    <p>Texto</p>
+</div>
+
+div → pai
+p → filho
+
+---
+
+IMPORTÂNCIA:
+
+Algumas medidas dependem do pai:
+
+em → usa o tamanho do pai
+% → usa o tamanho do pai
+
+rem → NÃO usa o pai (usa o html)
+
+---
+
+RESUMO:
+
+pai = elemento de fora
+filho = elemento de dentro

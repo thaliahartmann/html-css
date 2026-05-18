@@ -1,0 +1,47 @@
+------------CITAÇÃO SIMPLES------------
+
+
+
+<q> para abrir a tag para criar uma citação
+
+exemplo:<p>Como diria o pai de um amigo:<q>O computador é um burro muito rápido</q>.</p>
+
+resultado: Como diria o pai de um amigo:"O computador é um burro muito rápido".
+
+q é semântica, INDICA que é uma citação, no caso de coisas que não são citações compensa muito mais "só" mandar as aspas manualmente.
+
+
+
+
+------------CITAÇÃO COMPLETA------------
+
+
+
+<blockquote> para abrir a tag para criar uma citação completa, uma que encaixa textos maiores.
+
+cite: é para colocar a fonte de onde você tirou a citação, ela não aparece no site, mas os mecanismos de busca e o Google vai entender que você está referenciando algo.
+
+exemplo:<p>Segundo Jeff Noble, no seu livro HTML para leigos:</p>
+    <blockquote cite="https://books.google.com.br/books/about/HTML_XHTML_e_CSS_Para_Leigos.html?hl=pt-BR&id=E8ZtDwAAQBAJ&redir_esc=y">
+        A diferença entre os elementos iline e um bloco de texto é importante.
+        Os elementos HTML neste capítulo descrevem os blocos de texto.
+</blockquote> 
+
+resultado: Segundo Jeff Noble, no seu livro HTML para leigos:
+
+  A diferença entre os elementos iline e um bloco de texto é importante. Os elementos HTML neste capítulo descrevem os blocos de texto.
+  q é semântica, INDICA que é uma citação, no caso de coisas que não são citações compensa muito mais "só" mandar as aspas manualmente.
+
+
+
+------------SIGNIFICADO DA ABREVIAÇÃO------------
+
+
+
+<abbr> para abrir a tag para criar um marcador que diz o que significa tal abreviação, tipo VLW = valeu.
+
+exemplo: <p>Estou estudando <abbr title="HyperText Markup language">HTML</abbr> e <abbr title="Cascading Style Sheets">CSS</abbr>, nice demais gurizada!</p>
+
+resultado: Estou estudando HTML e CSS, nice demais gurizada! 
+
+ai quando você passa o mouse por "HTML" e "CSS", aparece o significado da sigla encima.

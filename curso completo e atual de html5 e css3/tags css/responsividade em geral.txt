@@ -1,0 +1,430 @@
+============================================================
+RESPONSIVIDADE EM CSS
+============================================================
+
+Responsividade é fazer o site funcionar bem em qualquer
+tamanho de tela: celular, tablet e computador.
+
+
+------------------------------------------------------------
+1. META TAG OBRIGATÓRIA
+------------------------------------------------------------
+
+Sempre coloque essa linha no <head> do HTML.
+Sem ela, o celular vai encolher o site inteiro como se fosse
+uma versão miniatura do desktop.
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    width=device-width   → usa a largura real do dispositivo
+    initial-scale=1.0    → zoom padrão, sem aumentar ou diminuir
+
+
+------------------------------------------------------------
+2. UNIDADES DE MEDIDA
+------------------------------------------------------------
+
+Existem dois tipos: fixas e relativas.
+Para responsividade, as relativas são as melhores.
+
+
+FIXAS (não se adaptam):
+    px  → pixels. O tamanho nunca muda.
+          Bom para bordas finas, ícones pequenos.
+          Ruim para larguras e fontes.
+
+          h1 { font-size: 32px; }
+          → vai ser 32px no celular E no computador
+
+
+RELATIVAS (se adaptam):
+    %   → porcentagem do elemento pai
+          div { width: 80%; }
+          → ocupa 80% do espaço disponível
+
+    vw  → viewport width (largura da tela)
+          1vw = 1% da largura da tela
+          div { width: 100vw; } → ocupa a tela toda
+
+    vh  → viewport height (altura da tela)
+          1vh = 1% da altura da tela
+          div { height: 100vh; } → ocupa a tela toda
+
+    em  → relativo ao tamanho da fonte do elemento PAI
+          se o pai tem font-size: 20px
+          1em = 20px, 2em = 40px
+
+    rem → relativo ao tamanho da fonte do elemento RAIZ (html)
+          mais previsível que em, recomendado para fontes
+          padrão: 1rem = 16px
+
+
+QUANDO USAR CADA UM:
+    Larguras de container  → %  ou max-width em px
+    Fontes                 → rem
+    Espaçamentos (padding) → rem ou em
+    Altura de seções       → vh
+    Largura total da tela  → vw
+
+
+------------------------------------------------------------
+3. BOX MODEL (MODELO DE CAIXA)
+------------------------------------------------------------
+
+Todo elemento HTML é uma caixa com 4 camadas:
+
+    ┌─────────────────────────────┐
+    │           MARGIN            │  ← espaço fora da caixa
+    │   ┌─────────────────────┐   │
+    │   │       BORDER        │   │  ← borda da caixa
+    │   │  ┌───────────────┐  │   │
+    │   │  │    PADDING    │  │   │  ← espaço dentro da caixa
+    │   │  │  ┌─────────┐  │  │   │
+    │   │  │  │ CONTENT │  │  │   │  ← o conteúdo em si
+    │   │  │  └─────────┘  │  │   │
+    │   │  └───────────────┘  │   │
+    │   └─────────────────────┘   │
+    └─────────────────────────────┘
+
+    content → o conteúdo (texto, imagem...)
+    padding → espaço entre o conteúdo e a borda
+    border  → a borda do elemento
+    margin  → espaço entre esse elemento e os outros
+
+
+PROBLEMA CLÁSSICO DO BOX MODEL:
+    div {
+        width: 200px;
+        padding: 20px;
+        border: 5px solid black;
+    }
+
+    Tamanho real = 200 + 20 + 20 + 5 + 5 = 250px ❌
+    O padding e a borda aumentam o tamanho total!
+
+
+SOLUÇÃO: box-sizing: border-box
+    * {
+        box-sizing: border-box;
+    }
+
+    Com border-box o padding e a border ficam DENTRO do width.
+    div com width: 200px → vai ter 200px de verdade ✅
+
+    ⚠️ Coloque isso no início de todo projeto CSS!
+
+
+------------------------------------------------------------
+4. TEXTOS RESPONSIVOS
+------------------------------------------------------------
+
+FONTE RESPONSIVA COM rem:
+    html { font-size: 16px; }   ← base (padrão do navegador)
+
+    h1 { font-size: 2rem; }     ← 32px
+    h2 { font-size: 1.5rem; }   ← 24px
+    p  { font-size: 1rem; }     ← 16px
+
+
+FONTE QUE MUDA COM A TELA (clamp):
+    h1 {
+        font-size: clamp(1.2rem, 4vw, 3rem);
+    }
+
+    clamp(mínimo, ideal, máximo)
+    → mínimo: nunca fica menor que 1.2rem
+    → ideal:  tenta usar 4vw (4% da largura da tela)
+    → máximo: nunca fica maior que 3rem
+
+    Resultado: a fonte cresce e diminui com a tela,
+    mas nunca passa dos limites definidos.
+
+
+TEXTO QUE QUEBRA LINHA DIREITO:
+    p {
+        word-break: break-word;
+    }
+    → evita texto saindo para fora da caixa
+
+
+------------------------------------------------------------
+5. IMAGENS RESPONSIVAS
+------------------------------------------------------------
+
+FORMA MAIS USADA:
+    img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+    → a imagem ocupa o espaço disponível
+    → não passa do tamanho original
+    → não distorce
+
+
+IMAGEM OCUPANDO A TELA TODA:
+    img {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+    }
+
+    object-fit: cover;   → preenche sem distorcer (corta o excesso)
+    object-fit: contain; → mostra tudo sem cortar (pode ter espaço vazio)
+
+
+------------------------------------------------------------
+6. LAYOUTS RESPONSIVOS
+------------------------------------------------------------
+
+FLEXBOX (uma direção: linha ou coluna):
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;      ← permite quebrar linha
+        gap: 16px;            ← espaço entre os itens
+        justify-content: center;
+    }
+
+    .item {
+        flex: 1 1 200px;
+    }
+    → cada item tenta ter 200px
+    → se não couber, quebra pra baixo automaticamente
+
+
+GRID (linhas e colunas):
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 16px;
+    }
+
+    auto-fit        → cria quantas colunas couberem na tela
+    minmax(200, 1fr) → cada coluna tem no mínimo 200px
+    1fr             → divide o espaço restante igualmente
+
+    Resultado: no celular vira 1 coluna,
+               no tablet 2 ou 3,
+               no desktop quantas couberem. Automático!
+
+
+------------------------------------------------------------
+7. MEDIA QUERIES
+------------------------------------------------------------
+
+Media query é uma condição que aplica CSS só em certos tamanhos.
+É como um "se a tela for assim, muda o estilo".
+
+
+ESTRUTURA:
+    @media (condição) {
+        seletor {
+            propriedade: valor;
+        }
+    }
+
+
+EXEMPLO PRÁTICO:
+    /* estilo padrão (celular primeiro) */
+    .container {
+        flex-direction: column;
+        font-size: 1rem;
+    }
+
+    /* tablet → tela maior que 768px */
+    @media (min-width: 768px) {
+        .container {
+            flex-direction: row;
+            font-size: 1.1rem;
+        }
+    }
+
+    /* desktop → tela maior que 1024px */
+    @media (min-width: 1024px) {
+        .container {
+            font-size: 1.25rem;
+        }
+    }
+
+
+TAMANHOS DE REFERÊNCIA MAIS USADOS:
+    480px   → celular pequeno
+    768px   → tablet
+    1024px  → desktop pequeno / tablet paisagem
+    1280px  → desktop médio
+    1440px  → desktop grande
+
+
+MOBILE FIRST (recomendado):
+    Escreva o CSS para celular primeiro (sem media query).
+    Depois adicione @media (min-width) para telas maiores.
+
+    ✅ CERTO → min-width: aplica a partir desse tamanho
+    ❌ EVITAR → max-width: aplica até esse tamanho
+
+
+------------------------------------------------------------
+8. EXEMPLO COMPLETO RESPONSIVO
+------------------------------------------------------------
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Responsivo</title>
+    <style>
+
+        /* VARIÁVEIS E RESET */
+        :root {
+            --cor-primaria: #3498db;
+            --cor-fundo: #f0f0f0;
+            --espacamento: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 1rem;
+            background-color: var(--cor-fundo);
+        }
+
+        /* HEADER */
+        #topo {
+            background-color: var(--cor-primaria);
+            color: white;
+            padding: var(--espacamento);
+            text-align: center;
+        }
+
+        #topo h1 {
+            font-size: clamp(1.2rem, 4vw, 2.5rem);
+        }
+
+        /* NAV */
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        /* MAIN */
+        #principal {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--espacamento);
+            padding: var(--espacamento);
+        }
+
+        /* CARDS */
+        .noticia {
+            background: white;
+            border: 1px solid var(--cor-primaria);
+            border-radius: 8px;
+            padding: var(--espacamento);
+        }
+
+        /* IMAGEM */
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--cor-primaria);
+            color: white;
+            text-align: center;
+            padding: var(--espacamento);
+        }
+
+        /* TABLET */
+        @media (min-width: 768px) {
+            #principal {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* DESKTOP */
+        @media (min-width: 1024px) {
+            #principal {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header id="topo">
+        <h1>Meu Site</h1>
+        <nav class="menu">
+            <a href="#">Home</a>
+            <a href="#">Sobre</a>
+            <a href="#">Contato</a>
+        </nav>
+    </header>
+
+    <main id="principal">
+        <article class="noticia">
+            <img src="foto1.png" alt="Notícia 1">
+            <h2>Notícia 1</h2>
+            <p>Conteúdo da notícia...</p>
+        </article>
+        <article class="noticia">
+            <img src="foto2.png" alt="Notícia 2">
+            <h2>Notícia 2</h2>
+            <p>Outro conteúdo...</p>
+        </article>
+        <article class="noticia">
+            <img src="foto3.png" alt="Notícia 3">
+            <h2>Notícia 3</h2>
+            <p>Mais um conteúdo...</p>
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2026</p>
+    </footer>
+
+</body>
+</html>
+
+RESULTADO:
+    📱 celular  → 1 coluna
+    💻 tablet   → 2 colunas
+    🖥 desktop  → 3 colunas
+
+
+============================================================
+RESUMO GERAL
+============================================================
+
+meta viewport          → obrigatório para responsividade
+box-sizing: border-box → evita caixa crescer com padding/borda
+%  vw  vh  rem  em     → unidades relativas (se adaptam)
+px                     → unidade fixa (não se adapta)
+width: 100%            → ocupa o espaço disponível
+max-width              → limita o crescimento
+height: auto           → não distorce a imagem
+clamp(min, ideal, max) → fonte que cresce com a tela
+flex-wrap: wrap        → flex que quebra linha no celular
+grid auto-fit minmax   → grid que se adapta sozinho
+@media (min-width)     → aplica estilo a partir de um tamanho
+mobile first           → comece pelo celular, expanda depois

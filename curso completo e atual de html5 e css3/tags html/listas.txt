@@ -1,0 +1,142 @@
+------------LISTAS ORDENADAS------------
+
+
+
+<ol> para abrir a tag para criar listas que possuem ordem e sentido.
+
+<li> para escrever as listas, não precisa fazer o </li> (mas e melhor)
+
+exemplo:<ol>
+        <li>Acordar
+        <li>Se arrumar
+        <li>Arrumar o quarto
+        <li>Arrumar a casa
+        <li>Estudar até as 18h
+        <li>Tomar banho
+        <li>Jantar
+        <li>Tempo livre
+    </ol>
+
+resultado: 
+
+1.Acordar
+2.Se arrumar
+3.Arrumar o quarto
+4.Arrumar a casa
+5.Estudar até as 18h
+6.Tomar banho
+7.Jantar
+8.Tempo livre
+
+com type pode mudar a formatação da lista e escolher o número inicial.
+
+<ol type="i"><!--1,A,a,I,i-->
+        <li>Acordar
+        <li>Se arrumar
+        <li>Arrumar o quarto
+        <li>Arrumar a casa
+        <li>Estudar até as 18h
+        <li>Tomar banho
+        <li>Jantar
+        <li>Tempo livre
+    </ol>
+
+
+
+------------LISTAS NÃO ORDENADAS------------
+
+
+
+<ul> para abrir a tag para criar listas que não precisam de ordem e nem sentido.
+
+<li> para escrever as listas, não precisa fazer o </li> (mas e melhor)
+
+exemplo:<ul>
+        <li>Pão</li>
+        <li>Mandioca</li>
+        <li>Café</li>
+        <li>Paçoca</li>
+        <li>Arroz</li>
+        <li>Feijão</li>
+    </ul>
+
+resultado: 
+
+*Pão
+*Mandioca
+*Café
+*Paçoca
+*Arroz
+*Feijão
+
+com type pode mudar a formatação da lista.
+
+  <ul type="square"><!--disc, circle, square-->
+        <li>Pão</li>
+        <li>Mandioca</li>
+        <li>Café</li>
+        <li>Paçoca</li>
+        <li>Arroz</li>
+        <li>Feijão</li>
+    </ul>
+
+
+
+------------EXEMPLO DE LISTA ORDENADA E NÃO ORDENADA JUNTAS (ANINHAMENTO)------------
+
+
+
+<h2>Meus jogos favoritos</h2>
+<ol>
+    <li>PS2</li>
+    <ul type="circle">
+        <li>Bully</li>
+        <li>GTA SAN</li>
+        <li>BEN 10</li>
+    </ul>
+    <li>XBOX</li>
+    <ul type="circle">
+        <li>GTA V</li>
+        <li>Sunset Overdrive</li>
+        <li>Paladins</li>
+    </ul>
+    <li>PC</li>
+    <ul type="circle">
+        <li>THE SIMS 2</li>
+        <li>Minecraft</li>
+        <li>Stardey Valley</li>
+    </ul>
+    </ol>
+
+
+
+
+------------LISTA DE DEFINIÇÕES------------
+
+
+
+<dl> para abrir a tag para criar listas que descrevem o que significa tal termo, para o que serve e tals.
+
+<dt> para escrever o termo
+
+<dd> para escrever a descrição do termo
+
+exemplo:
+
+<dl>
+     <dl>HTML</dl>
+     <dd>Linguagem de marcação para a criação do conteúdo de um site</dd>
+     <dl>CSS</dl>
+     <dd>Linguagem de marcação para a criação do DESIGN de um site</dd>
+     <dl>Java Script</dl>
+     <dd>Linguagem de programação para a criação de interação de um site</dd>
+</dl>
+
+resultado:
+
+HTML
+Linguagem de marcação para a criação do conteúdo de um site
+CSS
+Linguagem de marcação para a criação do DESIGN de um site
+Java Script
+Linguagem de programação para a criação de interação de um site

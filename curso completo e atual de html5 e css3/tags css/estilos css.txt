@@ -1,0 +1,137 @@
+------------ESTILOS EM CSS INLINE---------
+
+
+
+O ESTILO É FEITO NA MESMA LINHA DO HTML, NÃO POSSUI ORGANIZAÇÃO, É CONFUSO E É POUCO USADO, USO MUITO ESPECIFICO.
+
+
+
+<title>Estilos Inline</title>
+</head>
+<body style="background-color: lightskyblue; font-family: Arial, Helvetica, sans-serif; font-size: 20px;">
+    <h1 style="color: mediumblue; background-color: dodgerblue; font-size: 1.5em;">Capítulo 1</h1>
+    <h2 style="color: darkred; font-size: 1.2em;">Capítulo 1.1</h2>
+    <p style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit assumenda itaque vitae optio modi quaerat aperiam perspiciatis dignissimos sit repudiandae asperiores ipsam officiis aliquid explicabo quis fuga nesciunt, esse possimus.</p>
+
+    <h2 style="color: darkred; font-size: 1.2em;">Capítulo 1.2</h2>
+    <p style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel debitis omnis illo sunt, accusantium quaerat provident quam eius consequuntur quae veritatis id alias laudantium porro natus expedita, hic et recusandae?</p>
+
+    <h1 style="color: mediumblue; font-size: 1.5em; background-color: dodgerblue;">Capítulo 2</h1>
+    <h2 style="color: darkred; font-size: 1.2em;">Capítulo 2.1</h2>
+    <p style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus blanditiis earum molestiae quasi, repellendus quis assumenda nesciunt quo, ullam animi aspernatur deserunt aliquam deleniti totam aut culpa dolorem reprehenderit facere?</p>
+</body>
+
+
+
+exemplo:<body style="background-color: aqua;"><!--Mudar a cor de fundo da página inteira -->
+
+resultado: ta ao contrario, preguiça de de escrever
+
+
+OLHA COMO FICA CONFUSO
+
+<body style="background-color: rgb(152, 147, 147);font-family: Arial, Helvetica, sans-serif;"><!--Mudar a cor de fundo da página inteira-->
+    <h1 style="color: rgb(255, 68, 0);">Capítulo 1</h1><!--Mudar a cor da frase, sim no inline tem que fazer um por 1-->
+    <h2 style="color: rgb(92, 26, 2);">Capitulo 1.1</h2>
+    <p style="text-align:justify;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat deserunt corrupti neque cupiditate nulla illo dolorum, consequatur reiciendis porro facere assumenda soluta rem cumque molestiae dolore nesciunt similique accusantium voluptate.</p>
+    <h1 style="color: rgb(255, 68, 0);">Capítulo 2</h1><!--Mudar a cor da frase, sim no inline tem que fazer um por 1-->
+    <h2 style="color: rgb(92, 26, 2);">Capítulo 2.1</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor vel aspernatur deserunt ducimus quas impedit nobis quasi itaque dignissimos totam, excepturi id ipsam in soluta asperiores consequuntur ea nemo? Optio.</p>
+</body>
+
+E OLHA QUE NEM MUDEI O TAMANHO DAS LETRAS
+
+
+
+------------ ESTILOS EM CSS INTERNO/LOCAL ---------
+
+
+
+É MELHOR QUE INLINE, MAS É PIOR QUE CSS EXTERNO, ESSA É MELHOR QUANDO VOCE VAI MODIFICAR SÓ UM DOCUMENTO, SÓ UMA PAGINA
+
+
+
+exemplo:
+
+    <title>Estilos internos/locais</title>
+    <!--o parametro que estiver dentro de style será alterado-->
+    <style>
+        body {
+            background-color: lightsteelblue;  ========================================================================================================================
+            font-family: Arial, Helvetica, sans-serif; ================================================================================================================
+            font-size: 20px; ==========================================================================================================================================
+        }   
+        h1 {
+            color:darkblue;
+            background-color:lightblue;
+        }
+        h2 {
+            color:darkred;
+        }
+        p {
+            text-align: justify;
+        }
+    </style>
+
+
+
+------------ ESTILOS EM CSS EXTERNO (DOCUMENTO ESPECIFICO PARA CSS) ---------
+
+
+
+É OTIMO PARA GUARDAR ESTILOS E USAR QUANDO QUISER, ALTERA EM TODOS AS PAGINAS, NÃO PRECISA ALTERAR UMA PAGINA POR VEZ
+
+
+
+TAG USADA NO  CSS EXTERNO:
+
+
+
+ <link rel="stylesheet" href="style.css">!--tag para definir o caminho do ARQUIVO CSS-->
+
+
+
+exemplo:
+
+
+    <title>Segunda página</title>
+    <link rel="stylesheet" href="style.css">!--tag para definir o caminho do ARQUIVO CSS-->
+</head>
+<body>
+    <h1>Segunda página</h1>
+    <h2>Teste de estilos</h2>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus soluta corporis aperiam quaerat odio totam quae, aspernatur incidunt saepe nobis quibusdam, recusandae excepturi deserunt eveniet! At animi non quibusdam ullam.</p>
+    <p><a href="index.html">Voltar</a></p>
+</body>
+</html>
+
+
+
+--------- PODE USAR CSS INTERNO, EXTERNO E INLINE JUNTOS? ---------
+
+
+
+
+SIM PODE
+
+
+
+
+ordem de prevalecimento (NÃO É ORDEM DE MELHOR)
+
+1:Inline (coisas muito especificas, alterar uma coisa MUITO MAS MUITO ESPECIFICA, USE SÓ PARA ISSO)
+2:Local/ interno (bom para quando é só uma página, mas se aumentar é so copiar e fazer um documento css)
+3:Externo (foda dms)
+
+
+
+
+
+
+
+
+
+
+
+
+
