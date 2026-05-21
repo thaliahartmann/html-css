@@ -4,9 +4,7 @@
 
 DICA DE RUBI:
 
--quando for alterar o tamanho, borda e tals, da para alterar
-no inspecionar da pagina no navegador, nao altera no arquivo original
-mt foda
+- usar o inspecionar do GOOGLE para configurar os modelos de caixa mais facilmente.
 
 Parâmetros:
 
