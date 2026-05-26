@@ -1,0 +1,319 @@
+------------ IMAGENS DE FUNDO EM CSS ---------
+
+- sites no ex 22
+
+
+=========================================
+📌 FORMAS DE APLICAR FUNDO
+=========================================
+
+🔹 TRÊS FORMAS PRINCIPAIS:
+
+background-color  → cor sólida
+background-image  → imagem ou gradiente
+ambos juntos      → cor aparece se a imagem não carregar
+
+
+
+=========================================
+EXEMPLO — COR, GRADIENTE E IMAGEM
+=========================================
+
+div#q1 {
+    background-color: skyblue;           /* cor sólida */
+}
+
+div#q2 {
+    background-image: linear-gradient(to bottom, yellow, red); /* gradiente */
+}
+
+div#q3 {
+    background-image: url(imagens/pattern003.png); /* imagem */
+}
+
+
+
+📌 IMPORTANTE:
+
+sempre coloque um background-color junto
+com background-image — se a imagem não
+carregar, a cor aparece no lugar.
+
+
+
+=========================================
+📌 BACKGROUND-SIZE
+=========================================
+
+🔹 O QUE É:
+
+define o tamanho da imagem de fundo.
+
+
+
+=========================================
+VALORES
+=========================================
+
+background-size: cover;
+
+→ cobre todo o elemento
+→ pode cortar a imagem nas bordas
+→ mais usado para fundos de página
+
+
+
+background-size: contain;
+
+→ a imagem inteira aparece dentro do elemento
+→ pode sobrar espaço nas bordas
+
+
+
+background-size: 100px 100px;
+
+→ define tamanho exato (largura altura)
+
+
+
+background-size: 100px;
+
+→ define só a largura
+→ altura se ajusta proporcionalmente
+
+
+
+=========================================
+EXEMPLOS
+=========================================
+
+/* imagem pequena repetindo como padrão */
+body {
+    background-image: url('imagens/pattern.png');
+    background-size: 100px 100px;
+    background-repeat: repeat;
+}
+
+/* imagem cobrindo a página inteira */
+body {
+    background-image: url('imagens/wallpaper.jpg');
+    background-size: cover;
+}
+
+
+
+=========================================
+📌 BACKGROUND-REPEAT
+=========================================
+
+🔹 O QUE É:
+
+define se a imagem de fundo vai se repetir.
+
+
+
+=========================================
+VALORES
+=========================================
+
+background-repeat: repeat;
+
+→ repete em todas as direções (padrão)
+→ ótimo para padrões e texturas
+
+
+
+background-repeat: no-repeat;
+
+→ imagem aparece só uma vez
+
+
+
+background-repeat: repeat-x;
+
+→ repete só na horizontal
+
+
+
+background-repeat: repeat-y;
+
+→ repete só na vertical
+
+
+
+=========================================
+📌 BACKGROUND-POSITION
+=========================================
+
+🔹 O QUE É:
+
+define onde a imagem de fundo
+vai aparecer dentro do elemento.
+
+
+
+=========================================
+VALORES
+=========================================
+
+/* palavras-chave */
+background-position: left top;
+background-position: left center;
+background-position: left bottom;
+background-position: center center;
+background-position: right top;
+background-position: right center;
+background-position: right bottom;
+
+/* valores exatos */
+background-position: 50% 50%;   /* igual a center center */
+background-position: 100px 50px;
+
+
+
+=========================================
+EXEMPLO — POSIÇÕES DIFERENTES
+=========================================
+
+div#q1 {
+    background-image: url('imagens/wallpaper.jpg');
+    background-position: left top;      /* canto superior esquerdo */
+}
+
+div#q2 {
+    background-image: url('imagens/wallpaper.jpg');
+    background-position: left center;   /* meio esquerdo */
+}
+
+div#q3 {
+    background-image: url('imagens/wallpaper.jpg');
+    background-position: right bottom;  /* canto inferior direito */
+}
+
+div#q4 {
+    background-image: url('imagens/wallpaper.jpg');
+    background-position: center center; /* centro */
+}
+
+
+
+=========================================
+📌 BACKGROUND-ATTACHMENT
+=========================================
+
+🔹 O QUE É:
+
+define se a imagem de fundo vai rolar
+junto com a página ou ficar fixa.
+
+
+
+=========================================
+VALORES
+=========================================
+
+background-attachment: scroll;
+
+→ imagem rola junto com a página (padrão)
+
+
+
+background-attachment: fixed;
+
+→ imagem fica fixa enquanto a página rola
+→ cria efeito parallax
+
+
+
+=========================================
+EXEMPLO
+=========================================
+
+body {
+    background-image: url(imagens/wallpaper.jpg);
+    background-attachment: fixed;   /* efeito parallax */
+}
+
+
+
+=========================================
+📌 SHORTHAND — BACKGROUND
+=========================================
+
+🔹 O QUE É:
+
+shorthand é uma forma de escrever todas
+as propriedades em uma linha só.
+
+
+
+📌 ORDEM:
+
+color → image → position → repeat → [size] → attachment
+
+
+
+=========================================
+EXEMPLO
+=========================================
+
+/* forma longa */
+body {
+    background-color: black;
+    background-image: url(imagens/wallpaper.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* shorthand equivalente */
+body {
+    background: black url(imagens/wallpaper.jpg) center center no-repeat cover fixed;
+}
+
+
+
+📌 IMPORTANTE:
+
+o size vem logo após o position,
+separado por barra:
+
+background: url(img.jpg) center center / cover no-repeat;
+
+
+
+=========================================
+📌 EXEMPLO COMPLETO — PÁGINA COM FUNDO
+=========================================
+
+body {
+    height: 100vh;
+    background-color: black;
+    background-image: url(imagens/wallpaper.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+main {
+    background-color: white;
+    max-width: 400px;
+    padding: 10px;
+    margin: auto;
+    border: 1px solid darkblue;
+    border-radius: 15px;
+}
+
+
+
+📌 O QUE CADA LINHA FAZ:
+
+height: 100vh          → ocupa 100% da altura da tela
+background-color: black → cor de reserva se a imagem falhar
+background-image       → define a imagem de fundo
+background-position    → centraliza a imagem
+background-repeat      → não repete
+background-size: cover → cobre a tela inteira *************************************** melhor jeito para deixar a imagem no tamanho do site sem acabar
+background-attachment  → imagem fixa (efeito parallax) ***************************************
