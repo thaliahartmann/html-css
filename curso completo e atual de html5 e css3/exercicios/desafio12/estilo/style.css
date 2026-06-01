@@ -1,0 +1,71 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'ComicNeueSansID';
+    src: url('ComicNeueSansID.ttf')
+    format('truetype');
+}
+
+:root {
+    --cor0: #000000;
+    --cor1: rgb(255, 255, 255);
+
+
+    --fonte-extra: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-título: Impact, Verdana,sans-serif;
+    --fonte-parágrafos: 'ComicNeueSansID', Arial, Verdana, Helvetica, sans-serif;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+header {
+    background-color: rgb(0, 0, 0);
+    min-height: 150px;
+    text-align: center;
+    padding-top: 40px;
+}
+
+header > h1 {
+    font-family: var(--fonte-título);
+    color: var(--cor1);
+    font-size: 4em;
+    font-weight: lighter;
+}
+
+header > p {
+    font-family: var(--fonte-extra);
+    color: var(--cor1);
+    
+}
+
+header a {
+    color: var(--cor1);
+    text-decoration: none;
+}
+
+header a:visited {
+    color: var(--cor1);
+}
+
+header a:active {
+    color: var(--cor1);
+    text-decoration: underline;
+}
+
+header a:hover {
+    color: var(--cor1);
+    text-decoration: underline;
+}
+
+.paragrafos {
+    font-family: var(--fonte-parágrafos);
+    text-align: ;
+}
+
+footer {
+    background-color: var(--cor0);
+    color: var(--cor1);
+}
