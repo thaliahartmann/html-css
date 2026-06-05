@@ -64,3 +64,22 @@ lorem + entender vai encher uma linguiça
 exemplo: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores voluptates eum inventore velit nesciunt provident, quo excepturi ea temporibus pariatur ab non cupiditate. Labore, ab animi a omnis excepturi est!
 
 Adicionando ao conteúdo: Para gerar textos, insira após a palavra Lorem um número que será referente a quantidade de palavras que você deseja. Ou seja, Lorem100 irá gerar um texto com 100 palavras. Lorem1000, 1000 palavras.
+
+
+
+
+--------- COMENTÁRIO--------
+
+
+
+/* E */
+
+
+EXEMPLO:
+
+/* text-transform: uppercase */
+
+
+
+
+
