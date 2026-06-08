@@ -1,0 +1,161 @@
+@charset "UTF-8";
+
+
+@font-face {
+    font-family: 'Sriracha';
+    src: url('fontes/Sriracha-Regular.ttf') format('truetype');
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-size: 1em;
+}
+
+
+
+:root {
+    --cor0: #000000;
+    --cor1: rgb(255, 255, 255);
+
+
+   --fonte1: Verdana, Geneva, Tahoma, sans-serif;
+   --fonte2: Impact, Verdana,sans-serif;
+   --fonte3: 'Sriracha', cursive;
+
+}
+
+html, body {
+    min-height: 100vh;
+    background-color: darkgray;
+    font-family: var(--fonte1);
+}
+
+header {
+    background-color: rgb(0, 0, 0);
+    min-height: 150px;
+    text-align: center;
+}
+
+header > h1 {
+    padding-top: 50px;
+    font-family: var(--fonte2);
+    color: var(--cor1);
+    font-size: 10vh;
+    font-weight: normal;
+    font-variant: small-caps; /*para deixar o texto TODO em maiusculo e as primeiras letras maiores
+    /* text-transform: uppercase  para deixar o texto TODO em maiusculo, anotar sobre isso*/
+}
+
+header > p {
+    font-family: var(--fonte1);
+    color: var(--cor1);
+    padding: 12px;
+    padding-bottom: 50px;
+    
+}
+
+header a {
+    color: var(--cor1);
+    text-decoration: none;
+}
+
+header a:visited {
+    color: var(--cor1);
+}
+
+header a:active {
+    color: var(--cor1);
+    text-decoration: underline;
+}
+
+header a:hover {
+    color: var(--cor1);
+    text-decoration: underline;
+}
+
+
+section {
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    line-height: 2em; /* anotar sobre isso */
+    padding-left: 30px;
+    font-family: var(--fonte3);
+    font-style: italic;
+    font-weight: bold;
+    font-size: 3.5vh;
+}
+
+section.normal {
+    background-color: white;
+    color: black;
+}
+
+section > p {
+    padding-bottom: 2em;  /* anotar sobre isso */
+}
+
+section > p:last-child {
+    padding-bottom: 0;   /* anotar sobre issoo */
+}
+
+section.imagem {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    box-shadow: inset 6px 6px 13px 0px rgba(0, 0, 0, 0.536);
+}
+
+section.imagem > p {
+    display: inline-block; /* não entendi o pq do inline-block, anotar sobre isso */
+    padding: 5px;
+    width: fit-content;
+    max-width: min(500px, 85%);
+    background-color: rgba(0, 0, 0, 0.306);
+    text-shadow: 1px 1px 0px black;  /* anotar sobre isso */
+}
+
+section#img01 {
+    background-image: url('../imagens/background001.jpg');
+    background-position: right center;
+    background-size: cover;
+    background-attachment: fixed;
+    
+}
+
+
+section#img02 {
+    background-image: url('../imagens/background002.jpg');
+    background-position: right center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+footer {
+    background-color: var(--cor0);
+    font-family: var(--fonte-extra);
+    color: rgba(255, 255, 255, 0.751);
+    text-align: center;
+    padding: 10px;
+    
+}
+
+footer a {
+    color: var(--cor1);
+    text-decoration: none;
+}
+
+footer a:visited {
+    color: var(--cor1);
+}
+
+footer a:active {
+    color: var(--cor1);
+    text-decoration: underline;
+}
+
+footer a:hover {
+    color: var(--cor1);
+    text-decoration: underline;
+}
+

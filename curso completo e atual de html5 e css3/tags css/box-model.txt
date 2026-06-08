@@ -166,6 +166,51 @@ a {               → era originalmente inline
 
 
 
+--------- display: inline-block ---------
+
+
+Para entender inline-block, precisa entender os três valores:
+
+    display: block
+    → ocupa a linha inteira (largura total)
+    → empurra o próximo elemento para baixo
+    → aceita width, height, padding, margin normalmente
+    → exemplos: div, p, h1, section
+
+        [    bloco 1 (largura total)    ]
+        [    bloco 2 (largura total)    ]
+
+
+    display: inline
+    → fica na mesma linha que outros elementos
+    → NÃO aceita width nem height
+    → exemplos: span, a, strong, em
+
+        [texto] [link] [mais texto]
+
+
+    display: inline-block
+    → fica na mesma linha (como inline)
+    → MAS aceita width, height, padding (como block)
+    → útil quando você quer controlar o tamanho
+      mas não quer que o elemento ocupe a linha toda
+
+        [bloco 1] [bloco 2] [bloco 3]
+         (com width e height funcionando)
+
+NO PROJETO:
+    section.imagem > p {
+        display: inline-block;
+        width: fit-content;
+        max-width: min(500px, 85%);
+    }
+
+    → sem inline-block, o <p> seria block e ocuparia
+      toda a largura, mesmo com width: fit-content
+    → com inline-block, o fundo escuro abraça só o texto
+      sem se esticar até a borda da tela
+
+
 --------- GROUPING TAGS (TAGS DE AGRUPAMENTO)  ---------
 
 
@@ -647,5 +692,41 @@ valores menores → menos arredondado
 
 
 
+--------- PADDING-BOTTOM EM PARÁGRAFOS E :LAST-CHILD ---------
 
 
+SITUAÇÃO:
+
+    Quando você tem vários <p> dentro de uma section e coloca
+    padding-bottom em todos, o último parágrafo acaba com
+    espaço extra embaixo, deixando o espaçamento desigual.
+
+    section > p {
+        padding-bottom: 2em;   → todos os parágrafos ganham espaço embaixo
+    }
+
+    Visualmente:
+        [parágrafo 1] ↕ 2em
+        [parágrafo 2] ↕ 2em
+        [parágrafo 3] ↕ 2em  ← esse espaço aqui é desnecessário
+
+
+SOLUÇÃO com :last-child:
+    :last-child seleciona o ÚLTIMO filho de um elemento pai.
+
+    section > p:last-child {
+        padding-bottom: 0;   → remove o espaço do último parágrafo
+    }
+
+    Resultado:
+        [parágrafo 1] ↕ 2em
+        [parágrafo 2] ↕ 2em
+        [parágrafo 3]         ← sem espaço extra
+
+
+    Outros seletores parecidos:
+        :first-child   → seleciona o primeiro filho
+        :last-child    → seleciona o último filho
+        :nth-child(2)  → seleciona o segundo filho
+        :nth-child(odd)  → seleciona os filhos ímpares (1, 3, 5...)
+        :nth-child(even) → seleciona os filhos pares (2, 4, 6...)

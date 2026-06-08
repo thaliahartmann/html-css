@@ -1,6 +1,204 @@
+------------ HTML ------------
+
+
+------------SOBRE A FORMATAÇÃO DE TEXTO------------
+
+<h1>
+<h2>
+<h3>
+<h4>
+
+quanto maior o número, menor vai ficar as letras?
+
+não é isso exatamente...
+
+Níveis hierárquicos seguem a sequência:
+
+<h1>, <h2>, <h3>, <h4>, <h5>, <h6>
+
+- Não deve-se pular a sequência;	
+- Não são usados para definir tamanho da letra. Isso é feito em CSS;
+
+
+------------TÍTULO------------
+
+<h1> inicia o titulo
+</h1> termina o titulo
+
+exemplo:
+
+<h1>Exemplo de título</h1>
+
+
+------------SUBTÍTULO------------
+
+<h2> inicia o subtítulo
+</h2> termina o subtítulo
+
+
+------------PARÁGRAFO------------
+
+<p> inicia o parágrafo
+</p> termina o parágrafo
+
+exemplo:
+
+<p> Exemplo de parágrafo </p>
+
+
+------------NEGRITO------------
+
+<b> para abrir a tag para escrever em negrito
+
+exemplo:
+
+<p>Nessa frase temos um <b>termo em negrito usando a tag B</b></p>
+
+
+------------STRONG------------
+
+<strong> para abrir a tag para escrever em strong
+
+exemplo:
+
+<p>Nessa frase temos um <strong>termo em destaque usando a tag STRONG</strong></p>
+
+
+faz a mesma coisa que o NEGRITO, mas com um significado diferente e com SEMANTICA, é usado para dar um sentido para a frase: "TERMO FORTE, TERMO DE DESTAQUE".
+
+------------ITÁLICO------------
+
+<i> para abrir a tag para escrever em itálico
+
+exemplo:
+
+<p>Nessa frase temos um <i>termo em destaque usando a tag I</i></p>
+
+
+------------ENFÂSE------------
+
+<em> para abrir a tag para escrever em enfase
+
+exemplo:
+
+<p>Nessa frase temos um <em>termo em destaque usando a tag I</em></p>
+
+
+------------MARK------------
+
+<mark> para abrir a tag para marcar uma frase
+
+exemplo:
+
+<p>Podemos criar um texto marcado <mark>usando a tag MARK.</mark></p>
+
+
+Escolhendo a cor:
+
+<mark style="background-color:aqua">
+
+
+Mudando a cor de todos os MARKS:
+
+<style>
+mark {
+    background-color: coral;
+}
+</style>
+
+
+------------BIG------------
+
+<big> para abrir a tag para escrever "MAIOR"
+
+exemplo:
+
+Estamos criando um <big>texto grande</big>
+
+
+------------SMALL------------
+
+<small> para abrir a tag para escrever "menor"
+
+exemplo:
+
+<small>texto pequeno</small>
+
+
+------------TEXTO DELETADO------------
+
+<del> para abrir a tag para marcar como deletado
+
+exemplo:
+
+<p>Podemos marcar <del>um texto como excluído</del></p>
+
+
+------------TEXTO INSERIDO------------
+
+<ins> para abrir a tag para marcar como inserido
+
+exemplo:
+
+<p>Podemos marcar <ins>um texto como inserido</ins></p>
+
+
+------------TEXTO SOBRESCRITO------------
+
+<sup> para abrir a tag para DESCER letras/números que precisam dessa marcação, como H20 (finge que o 2 tá para baixo)
+
+exemplo:
+
+<p>Para inserir coisas do tipo x<sup>20</sup>+3.</p>
+
+
+------------TEXTO SUBSCRITO------------
+
+<sub>
+
+exemplo:
+
+<p>Para inserir coisas do tipo H<sub>2</sub>0.</p>
+
+
+------------TEXTO INVERTIDO------------
+
+<bdo dir="rtl">
+
+exemplo:
+
+<p><bdo dir="rtl">Esta tudo ao contrário!!!</bdo></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------- CSS ---------
+
+
+
+
 --------- MUDAR A FONTE ---------
-
-
 
 font-family...
 
@@ -12,11 +210,125 @@ font-family...
 font- size...
 
 
+--------- FONT-VARIANT e TEXT-TRANSFORM ---------
+
+
+
+Ambos mudam a capitalização do texto, mas de formas diferentes.
+
+    font-variant: small-caps;
+    → transforma letras minúsculas em MAIÚSCULAS menores
+    → as letras que já eram maiúsculas ficam maiores
+    → resultado: visual elegante, todas maiúsculas mas com
+      hierarquia de tamanho
+
+        h1 { font-variant: small-caps; }
+        "cordel moderno" → CORDEL MODERNO (com tamanhos diferentes)
+
+
+    text-transform: uppercase;
+    → transforma TUDO em maiúsculo com o mesmo tamanho
+    → sem diferença de tamanho entre as letras
+
+        h1 { text-transform: uppercase; }
+        "cordel moderno" → CORDEL MODERNO (tudo igual)
+
+    Outros valores de text-transform:
+        text-transform: lowercase;   → tudo minúsculo
+        text-transform: capitalize;  → Primeira Letra De Cada Palavra
+
+
 
 --------- MUDAR A COR DA LETRA ---------
 
 
+
 color
+
+
+
+--------- LINE-HEIGHT (ALTURA DA LINHA) ---------
+
+
+
+Define o espaço vertical entre as linhas de um texto.
+É como o espaçamento de linha no Word.
+
+    line-height: 1;      → linhas coladas (sem espaço extra)
+    line-height: 1.5;    → espaçamento confortável para leitura
+    line-height: 2em;    → duas vezes o tamanho da fonte atual
+    line-height: 2;      → mesma coisa, sem precisar da unidade
+
+    Exemplo:
+        section {
+            font-size: 16px;
+            line-height: 2em;  → espaço entre linhas = 32px
+        }
+
+    Dica: para textos longos, line-height entre 1.5 e 2
+    melhora muito a leitura.
+
+
+
+
+--------- TEXT-SHADOW (SOMBRA NO TEXTO) ---------
+
+
+
+Adiciona sombra ao texto. A sintaxe tem 4 valores:
+
+    text-shadow: x  y  desfoque  cor;
+
+    x        → deslocamento horizontal (positivo = direita)
+    y        → deslocamento vertical   (positivo = baixo)
+    desfoque → quanto a sombra espalha (0 = sombra dura)
+    cor      → cor da sombra
+
+
+    Exemplos:
+
+    text-shadow: 1px 1px 0px black;
+    → sombra dura, 1px para direita e 1px para baixo
+    → usada para dar legibilidade em cima de imagem
+
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    → sombra suave e semitransparente
+
+    text-shadow: 0px 0px 8px white;
+    → brilho ao redor do texto (efeito neon)
+
+    text-shadow: -1px -1px 0px black;
+    → sombra para cima e para a esquerda
+
+    Múltiplas sombras (separadas por vírgula):
+    text-shadow: 1px 1px 0px black, 0px 0px 10px white;
+
+
+
+
+--------- NEGRITO, ITÁLICO, SUBLINHADO ---------
+
+
+
+-   negrito:   lighter, normal,  bold , bolder: peso das fontes, nem todas as fontes tem todos esses
+- itálico: font-style: italic;
+- sublinhado: text-decoration: underline;
+
+
+<title>Fontes em CSS</title>
+<!--font-family: Arial, Helvetica, sans-serif; 
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    body {
+        font-family: 'Work Sans', Arial, Helvetica; 
+        font-size: 1em ;
+        font-weight: bolder;
+        font-style: italic;
+        text-decoration: underline;
+    }
+</style>
+</head>
+<body>
 
 
 
@@ -32,8 +344,6 @@ só baixar a extensão:
 
 --------- CAPTURANDO FONTES USADAS EM IMAGENS --------- 
 
-
-
 sites:
 
 https://www.whatfontis.com
@@ -46,26 +356,22 @@ https://www.fontsquirrel.com/matcherator?token=d0nmwv41exr65o7n
 
 --------- COMO CARREGAR FONTES IMCOMPÁTIVEIS EM DISPOSITIVOS DIFERENTES? ---------
 
-
-
 - site para averiguar as combinações seguras de fonte
 
 https://www.w3schools.com/cssref/css_websafe_fonts.php
 
 <--NA FONT-FAMILY VAI TER 3 OPÇÕES DE FONTE, PRIMEIRO VAI CARREGAR A ARIAL, CASO, O DISPOSITIVO NÃO TENHA ARIAL, VAI CARREGAR HELVETICA E ASSIM SUCESSIVAMENTE-->
 
-  <title>Fontes em CSS</title>
-    <!--font-family: Arial, Helvetica, sans-serif; 
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif
-        }
+<title>Fontes em CSS</title>
+<!--font-family: Arial, Helvetica, sans-serif; 
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif
+    }
 
 
 
 --------- COMO CARREGAR FONTES BAIXADAS ---------
-
-
 
 - @font face + enter
 
@@ -83,67 +389,40 @@ https://www.w3schools.com/cssref/css_websafe_fonts.php
 
 
 <title>Fontes Externas</title>
-    <style>
-        @font-face {
-            font-family:'FutureTech';
-            src: url('FutureTech.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-        }
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        
-        h1 {
-            font-family: 'FutureTech', Times, serif;
-            font-size: 3em;
-        }
+<style>
+    @font-face {
+        font-family:'FutureTech';
+        src: url('FutureTech.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    h1 {
+        font-family: 'FutureTech', Times, serif;
+        font-size: 3em;
+    }
 
-    </style>
-
-
-
---------- NEGRITO, ITÁLICO, SUBLINHADO ---------
-
-
-
--   negrito:   lighter, normal,  bold , bolder: peso das fontes, nem todas as fontes tem todos esses
-- itálico: font-style: italic;
-- sublinhado: text-decoration: underline;
-
-
- <title>Fontes em CSS</title>
-    <!--font-family: Arial, Helvetica, sans-serif; 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-        body {
-            font-family: 'Work Sans', Arial, Helvetica; 
-            font-size: 1em ;
-            font-weight: bolder;
-            font-style: italic;
-            text-decoration: underline;
-        }
-    </style>
-</head>
-<body>
+</style>
 
 
 
 --------- SHORTHAND = MÃOZINHA ---------
 
-
 é uma maozinha que ao inves de usar 4 linhas voce usa só uma, mas tem que ser nessa ordem, tem varios tipos de shorthands
 
 
-    <title>Fontes em CSS</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+<title>Fontes em CSS</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-        body {
-            /* shorthand font:
-            - font-style font-weight font-size font-family */
-            font: italic bolder 1em 'Work Sans', sans-serif
-        }
-    </style>
+    body {
+        /* shorthand font:
+        - font-style font-weight font-size font-family */
+        font: italic bolder 1em 'Work Sans', sans-serif
+    }
+</style>
 </head>
 <body>
