@@ -1,0 +1,365 @@
+============================================================
+TABELAS EM HTML E CSS
+============================================================
+
+
+------------------------------------------------------------
+1. ESTRUTURA BÁSICA DE UMA TABELA SIMPLES
+------------------------------------------------------------
+
+Hierarquia:
+    TABLE       → a tabela inteira
+        TR      → Table Row (linha)
+            TD  → Table Data (célula de dado)
+            TH  → Table Header (célula de cabeçalho, negrito e centralizado)
+
+Exemplo:
+    <table>
+        <tr>
+            <td>A1</td>
+            <td>B1</td>
+            <td>C1</td>
+        </tr>
+        <tr>
+            <td>A2</td>
+            <td>B2</td>
+            <td>C2</td>
+        </tr>
+    </table>
+
+
+------------------------------------------------------------
+2. ANATOMIA DE UMA TABELA GRANDE
+------------------------------------------------------------
+
+Hierarquia completa:
+    TABLE
+        CAPTION  → título/legenda da tabela
+        THEAD    → cabeçalho da tabela
+            TR, TH
+        TBODY    → corpo da tabela
+            TR, TD
+        TFOOT    → rodapé da tabela (totais, resumos)
+            TR, TH, TD
+
+Exemplo:
+    <table>
+        <caption>População dos Estados</caption>
+        <thead>
+            <tr>
+                <th>Estado</th>
+                <th>População</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>São Paulo</td>
+                <td>45.919.049</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Total</th>
+                <td>210.147.125</td>
+            </tr>
+        </tfoot>
+    </table>
+
+Por que usar thead/tbody/tfoot?
+    → organiza o HTML semanticamente
+    → permite cabeçalho fixo com position: sticky
+    → permite efeito zebrado só no tbody
+    → o tfoot aparece visualmente embaixo mas pode vir
+      antes do tbody no HTML (o browser ajusta)
+
+
+------------------------------------------------------------
+3. CSS PARA TABELAS
+------------------------------------------------------------
+
+BORDER-COLLAPSE
+    table { border-collapse: collapse; }
+    → junta as bordas das células (remove espaço duplo)
+    → sem isso cada célula tem sua própria borda separada
+
+    border-collapse: collapse;  → bordas unidas (mais limpo)
+    border-collapse: separate;  → bordas separadas (padrão)
+
+
+BORDA NA TABELA INTEIRA
+    table { border: 5px solid red; }
+    → borda ao redor de toda a tabela
+    → diferente de td { border } que é borda de cada célula
+
+
+LARGURA E ALTURA
+    table { width: 400px; }   → largura fixa
+    table { height: 400px; }  → altura fixa
+    → a tabela divide o espaço entre as linhas
+
+
+------------------------------------------------------------
+4. ALINHAMENTO DE TEXTO NAS CÉLULAS
+------------------------------------------------------------
+
+HORIZONTAL:
+    td { text-align: left; }    → esquerda (padrão para td)
+    td { text-align: center; }  → centro
+    td { text-align: right; }   → direita
+
+    Dica: números financeiros ficam melhor alinhados à direita
+    (igual ao Excel). Use uma class para isso:
+
+        td.num { text-align: right; }
+        <td class="num">45.919.049</td>
+
+
+VERTICAL:
+    td { vertical-align: top; }     → alinhado ao topo
+    td { vertical-align: middle; }  → alinhado ao meio (padrão)
+    td { vertical-align: bottom; }  → alinhado à base
+
+
+------------------------------------------------------------
+5. COLORINDO LINHAS E CÉLULAS
+------------------------------------------------------------
+
+COLORIR UMA LINHA INTEIRA (via class no tr):
+    CSS:
+        tr.destaque { background-color: rgb(0, 21, 128); }
+
+    HTML:
+        <tr class="destaque">
+            <td>A2</td>
+            <td>B2</td>
+        </tr>
+
+
+COLORIR UMA CÉLULA ESPECÍFICA (via class no td):
+    CSS:
+        td.dado { background-color: yellow; }
+
+    HTML:
+        <td class="dado">B4</td>
+
+
+EFEITO ZEBRADO (linhas alternadas):
+    tbody > tr:nth-child(2n) {
+        background-color: lightgray;
+    }
+
+    nth-child(2n)  → seleciona linhas pares (2, 4, 6...)
+    nth-child(odd) → seleciona linhas ímpares (1, 3, 5...)
+    nth-child(even)→ seleciona linhas pares (2, 4, 6...)
+    nth-child(3)   → seleciona só a terceira linha
+
+    Dica: aplique o zebrado no tbody para não afetar
+    o thead e o tfoot.
+
+
+------------------------------------------------------------
+6. ESTILIZANDO THEAD, TBODY, TFOOT
+------------------------------------------------------------
+
+    thead, tfoot {
+        background-color: rgb(0, 129, 112);
+        color: white;
+    }
+
+    caption {
+        font-size: 1.2em;
+        font-weight: bold;
+        padding: 10px;
+        background-color: gray;
+        border: 1px solid black;
+    }
+
+
+------------------------------------------------------------
+7. MESCLAGEM DE CÉLULAS
+------------------------------------------------------------
+
+COLSPAN → mescla colunas (expande para a direita)
+    <td colspan="2">B</td>
+    → essa célula ocupa 2 colunas
+
+ROWSPAN → mescla linhas (expande para baixo)
+    <td rowspan="3">D</td>
+    → essa célula ocupa 3 linhas
+
+IMPORTANTE: ao mesclar células, as células que foram
+"absorvidas" NÃO devem aparecer no HTML.
+
+Exemplo:
+    <tr>
+        <td>A</td>
+        <td colspan="2">B</td>    ← ocupa B e C
+                                  ← não escreva C
+    </tr>
+    <tr>
+        <td rowspan="2">D</td>    ← ocupa D e G
+        <td>E</td>
+        <td rowspan="2">F</td>    ← ocupa F e I
+    </tr>
+    <tr>
+                                  ← não escreva G
+        <td>H</td>
+                                  ← não escreva I
+    </tr>
+
+
+------------------------------------------------------------
+8. SCOPE — ACESSIBILIDADE E SEMÂNTICA
+------------------------------------------------------------
+
+O atributo scope diz a qual grupo aquele cabeçalho pertence.
+Ajuda leitores de tela e melhora a semântica do HTML.
+
+    scope="col"      → cabeçalho de uma coluna
+    scope="row"      → cabeçalho de uma linha
+    scope="colgroup" → cabeçalho de um grupo de colunas
+    scope="rowgroup" → cabeçalho de um grupo de linhas
+
+Exemplos:
+    <th scope="col">Estado</th>        ← cabeçalho da coluna
+    <th scope="row">Total</th>         ← cabeçalho da linha
+    <th colspan="3" scope="colgroup">Filmes</th>  ← grupo de 3 colunas
+    <th rowspan="3" scope="rowgroup">Mulheres</th> ← grupo de 3 linhas
+
+
+------------------------------------------------------------
+9. COLGROUP E COL — ESTILIZANDO COLUNAS INTEIRAS
+------------------------------------------------------------
+
+colgroup e col permitem aplicar estilos em colunas inteiras
+sem precisar colocar class em cada célula.
+
+ESTRUTURA:
+    <table>
+        <colgroup>
+            <col class="cnome">
+            <col class="csexo">
+            <col class="cidade">
+            <col class="cprofissao">
+        </colgroup>
+        ...
+    </table>
+
+    CSS:
+        col.cnome { background-color: lightgreen; }
+
+
+SPAN NO COL (agrupa colunas):
+    <colgroup>
+        <col class="cnome">
+        <col class="cgrupo" span="3">  ← aplica em 3 colunas seguidas
+    </colgroup>
+
+    Em vez de escrever 3 col separados, o span aplica
+    o mesmo estilo nas próximas 3 colunas.
+
+
+ALTERNANDO CORES NAS COLUNAS:
+    <colgroup>
+        <col class="amarelo">
+        <col class="vermelho">
+        <col class="amarelo">
+        <col class="vermelho">
+    </colgroup>
+
+    CSS:
+        .amarelo { background-color: yellow; }
+        .vermelho { background-color: red; }
+
+
+⚠️ LIMITAÇÕES DO COL:
+    col só aceita essas propriedades CSS:
+        background-color
+        border
+        width
+        visibility
+    Não funciona com font-size, text-align, padding, etc.
+
+
+------------------------------------------------------------
+10. CABEÇALHO FIXO (STICKY HEADER)
+------------------------------------------------------------
+
+Quando a tabela é muito longa, o cabeçalho pode ficar fixo
+enquanto o usuário rola a página:
+
+    table {
+        position: relative;   ← necessário para o sticky funcionar
+    }
+
+    thead > tr > th {
+        position: sticky;
+        top: -1px;            ← fica colado ao topo da tela
+        background-color: rgb(0, 129, 112);  ← precisa de cor
+    }
+
+    ⚠️ O background-color no th é obrigatório aqui.
+    Sem ele, o conteúdo da tabela aparece atrás do cabeçalho
+    ao rolar, porque o fundo fica transparente.
+
+
+------------------------------------------------------------
+11. TABELA RESPONSIVA (SCROLL HORIZONTAL)
+------------------------------------------------------------
+
+Tabelas com muitas colunas estouram a tela no celular.
+A solução é envolver a tabela em um div com overflow-x:
+
+    HTML:
+        <div id="container">
+            <table>
+                ...
+            </table>
+        </div>
+
+    CSS:
+        div#container {
+            overflow-x: auto;
+        }
+
+    overflow-x: auto   → adiciona scroll horizontal só quando necessário
+    overflow-x: scroll → scroll horizontal sempre visível
+
+    Resultado: a página não fica larga demais. Só a tabela
+    recebe o scroll, o resto do conteúdo fica estático.
+
+
+============================================================
+RESUMO GERAL DAS TAGS
+============================================================
+
+<table>       → abre a tabela
+<caption>     → título da tabela (aparece acima)
+<thead>       → grupo do cabeçalho
+<tbody>       → grupo do corpo
+<tfoot>       → grupo do rodapé
+<tr>          → linha da tabela
+<th>          → célula de cabeçalho (negrito, centralizado)
+<td>          → célula de dado
+<colgroup>    → agrupa configurações de colunas
+<col>         → define estilo de uma coluna
+
+
+RESUMO DOS ATRIBUTOS HTML
+============================================================
+
+colspan="N"        → célula ocupa N colunas
+rowspan="N"        → célula ocupa N linhas
+scope="col/row..." → acessibilidade do cabeçalho
+span="N"           → col ocupa N colunas seguidas
+
+
+RESUMO DO CSS PARA TABELAS
+============================================================
+
+border-collapse: collapse  → bordas unidas
+text-align: right          → número alinhado à direita
+vertical-align: top/middle → alinhamento vertical
+nth-child(2n)              → linhas pares (zebrado)
+position: sticky           → cabeçalho fixo ao rolar
+overflow-x: auto           → scroll horizontal no celular
