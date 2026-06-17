@@ -72,7 +72,7 @@ Adicionando ao conteúdo: Para gerar textos, insira após a palavra Lorem um nú
 
 
 
-/* E */
+/* E */ ou <!--
 
 
 EXEMPLO:

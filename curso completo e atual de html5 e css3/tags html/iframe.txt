@@ -1,0 +1,323 @@
+============================================================
+IFRAME EM HTML
+============================================================
+
+iframe = inline frame
+Permite exibir outra página ou conteúdo dentro de uma
+"janela" embutida na página atual.
+
+
+------------------------------------------------------------
+1. ESTRUTURA BÁSICA
+------------------------------------------------------------
+
+    <iframe src="https://www.cursoemvideo.com" frameborder="0"></iframe>
+
+    src          → endereço do conteúdo a exibir
+                   pode ser URL externa ou arquivo local
+    frameborder  → borda padrão do iframe
+                   0 = sem borda | 1 = com borda
+                   ⚠️ use CSS para estilizar bordas modernamente
+
+Tamanho padrão do iframe: 300x150px
+
+exemplo:
+
+<iframe src="https://gustavoguanabara.github.io" frameborder="0" height="500" width="500"> **********************************************************************************************************************************
+
+
+⚠️ SITES QUE BLOQUEIAM IFRAME:
+
+    Nem todo site pode ser exibido em iframe.
+    Google, Facebook, etc bloqueiam por segurança.
+    Se não funcionar, é porque o site não permite.
+
+
+------------------------------------------------------------
+2. CONTEÚDO ALTERNATIVO (FALLBACK)
+------------------------------------------------------------
+
+O conteúdo dentro do <iframe> só aparece se o
+navegador NÃO suportar iframe:
+
+    <iframe src="https://www.cursoemvideo.com" frameborder="0">
+        <a href="https://www.cursoemvideo.com" target="_blank"> **********************************************************************************************************************************
+            Curso em Vídeo
+        </a>
+    </iframe>
+
+    → se o navegador suporta iframe: mostra o site
+    → se não suporta: mostra o link como alternativa
+
+
+------------------------------------------------------------
+3. TAMANHO DO IFRAME
+------------------------------------------------------------
+
+TAMANHO PADRÃO: 300x150px
+
+VIA ATRIBUTO HTML:
+    <iframe src="pagina.html" width="500" height="400"></iframe>
+
+VIA CSS (tem prioridade sobre o atributo HTML):
+    iframe {
+        width: 400px;
+        height: 400px;
+    }
+
+    ⚠️ O CSS tem prioridade sobre width e height no HTML.
+    Se definir os dois, o CSS vence.
+
+RESPONSIVO:
+    iframe {
+        width: 95vw;
+        height: 400px;
+    }
+
+
+------------------------------------------------------------
+4. ESTILIZANDO O IFRAME COM CSS
+------------------------------------------------------------
+
+    iframe {
+        width: 400px;
+        height: 400px;
+        border-radius: 15px;   ← cantos arredondados
+        display: block;        ← para centralizar
+        margin: auto;          ← centraliza horizontalmente
+    }
+
+    frameborder="0"  → remove a borda padrão do iframe
+    border-radius    → arredonda os cantos da janela
+
+
+SCROLLING:                              **********************************************************************************************************************************
+    O atributo scrolling="no" foi descontinuado e
+    não funciona mais nos navegadores modernos.
+    Para esconder o scroll use CSS no conteúdo interno
+    ou controle pelo overflow da página carregada.
+
+
+------------------------------------------------------------
+5. CARREGANDO PÁGINAS LOCAIS NO IFRAME
+------------------------------------------------------------
+
+    <iframe src="paginas-extras/pagina001.html" frameborder="0"
+            width="500" height="500">
+        <p>Seu navegador não é compatível!</p>
+    </iframe>
+
+    → o caminho é relativo ao arquivo HTML atual
+    → funciona igual ao src de imagens
+
+
+------------------------------------------------------------
+6. NAVEGAÇÃO DENTRO DO IFRAME (target)
+------------------------------------------------------------
+
+É possível fazer links abrirem dentro de um iframe
+específico usando name e target:
+
+    HTML:
+        <!-- links com target apontando para o iframe -->
+        <a href="pagina1.html" target="frame">Primeira página</a>
+        <a href="pagina2.html" target="frame">Segunda página</a>
+
+        <!-- iframe com name correspondente -->
+        <iframe id="tela" name="frame" src="pagina4.html"></iframe>
+
+    Como funciona:
+        → target="frame" diz para o link abrir dentro
+          do elemento com name="frame"
+        → o iframe com name="frame" recebe o conteúdo
+        → o src inicial é a página padrão ao carregar
+
+
+SRCDOC (descontinuado):
+    Antes era possível colocar HTML direto no iframe:
+        <iframe srcdoc="<h1>Escolha uma opção</h1>">
+
+    Hoje muitos navegadores bloqueiam por segurança.
+    Alternativa moderna: usar um arquivo .html separado
+    como src padrão do iframe.
+
+
+
+exemplo:
+
+            
+    <ul>
+        <li><a href="paginas-extras/pagina001.html"target="frame">Primeira página</a></li>
+        <li><a href="paginas-extras/pagina002.html"target="frame">Segunda página</a></li>
+        <li><a href="paginas-extras/pagina003.html"target="frame">Terceira página</a></li>
+        <li><a href="https://thaliahartmann.github.io/projeto-android/"target="frame">Quarta página</a></li>
+        <li><a href=https://thaliahartmann.github.io/projeto-cordel/ target="frame">Quinta página</a></li>
+    </ul>
+    <iframe id="tela" name=frame src="paginas-extras/pagina004.html"> **********************************************************************************************************************************
+        <p>Infelizmente seu navegador não é compatível com isso.</p>
+    </iframe>
+
+
+
+------------------------------------------------------------
+7. SEGURANÇA NO IFRAME (sandbox)
+------------------------------------------------------------
+
+
+O atributo sandbox restringe o que o conteúdo dentro
+do iframe pode fazer:
+
+    <iframe src="pagina.html" sandbox="sandbox"></iframe>
+
+    Com sandbox vazio ou="sandbox", bloqueia tudo:
+        ✗ formulários não funcionam
+        ✗ scripts JavaScript bloqueados
+        ✗ links não abrem em nova aba
+        ✗ plugins bloqueados
+
+
+LIBERANDO PERMISSÕES ESPECÍFICAS:
+    sandbox pode receber valores para liberar só o necessário:
+
+        allow-forms         → permite envio de formulários
+        allow-scripts       → permite JavaScript
+        allow-same-origin   → permite cookies e localStorage
+        allow-popups        → permite abrir novas abas
+        allow-navigation    → permite navegar para outras páginas
+
+    Exemplo:
+        <iframe src="pagina.html" sandbox="allow-forms allow-scripts">
+        </iframe>
+
+    Assim só formulários e scripts funcionam,
+    o resto continua bloqueado.
+
+
+REFERRERPOLICY:
+    Controla quais informações do usuário são enviadas
+    para o site carregado dentro do iframe.
+
+        referrerpolicy="no-referrer"
+        → o site dentro do iframe NÃO recebe dados
+          sobre a página de origem nem do usuário
+
+        referrerpolicy="strict-origin-when-cross-origin"
+        → envia origem apenas para sites seguros (https)
+        → usado nos embeds do YouTube e Google Maps
+
+
+
+exemplo:
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In inventore molestiae qui quo ex quibusdam alias fuga deleniti, voluptate sapiente non cum accusantium harum aliquid et? Ratione ipsum qui cupiditate.</p>
+    <iframe src="paginas-extras/pagina005.html" sandbox="sandbox" referrerpolicy="no-referrer"> 
+        <p>Seu navegador não é compatível</p>
+    </iframe>
+
+
+------------------------------------------------------------
+8. CONTEÚDOS EXTERNOS COMUNS EM IFRAME
+------------------------------------------------------------
+
+
+
+YOUTUBE:
+    Gerado automaticamente pelo botão "Incorporar" do YouTube.
+
+    <iframe width="560" height="315"
+        src="https://www.youtube.com/embed/ID_DO_VIDEO"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write;
+               encrypted-media; gyroscope;
+               picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+    </iframe>
+
+    allowfullscreen → permite o botão de tela cheia
+
+
+GOOGLE MAPS:
+    Gerado pelo Google Maps em Compartilhar > Incorporar.
+
+    <iframe
+        src="https://www.google.com/maps/embed?..."
+        width="600"
+        height="450"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+
+    loading="lazy" → o mapa só carrega quando
+                     o usuário rolar até ele
+                     (melhora a performance)
+
+
+WAZE:
+    <iframe
+        src="https://embed.waze.com/iframe?zoom=16&lat=...&lon=..."
+        width="600"
+        height="450"
+        allowfullscreen>
+    </iframe>
+
+
+CANVA:
+    Gerado pelo Canva em Compartilhar > Incorporar.
+    Costuma vir com estilos inline (position, overflow, etc)
+    que controlam o comportamento do embed.
+
+
+
+
+exemplo:
+
+
+    <h2>Vídeos</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/t2v4eAo4Ong?si=oFVGpuCEJXHOhUfT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <h2>Mapas do Google</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.2960433719063!2d-43.17946161328198!3d-22.902449025776797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997f58a6a00a9d%3A0x3f251d85272f76f7!2sHostnet%20Internet!5e0!3m2!1spt-BR!2sbr!4v1781651263626!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <h2>Mapas do Waze</h2>
+    <iframe src="https://embed.waze.com/iframe?zoom=16&lat=-22.902449&lon=-43.174591&ct=livemap" width="600" height="450" allowfullscreen></iframe>
+    <h2>Canva</h2>
+    <iframe loading="lazy" style="position: relative; width: 600; height: 450px; max-height: 80vh; border: none; border-radius: 8px; padding: 0; margin: 0; overflow: hidden;"
+      src="https://www.canva.com/design/DAGUMnVPKrI/RvqkZVHuEj0bg9auc7xagQ/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+    </iframe>
+    <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGUMnVPKrI&#x2F;RvqkZVHuEj0bg9auc7xagQ&#x2F;view?utm_content=DAGUMnVPKrI&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">
+
+
+
+------------------------------------------------------------
+9. TABELA RESPONSIVA DENTRO DE IFRAME
+------------------------------------------------------------
+
+Para a tabela não estourar o iframe:
+envolver em um div com overflow-x no arquivo interno.
+
+    <!-- dentro do arquivo carregado pelo iframe -->
+    <div id="container">
+        <table>...</table>
+    </div>
+
+    CSS:
+        div#container {
+            overflow-x: auto;
+        }
+
+
+------------------------------------------------------------
+10. BOAS PRÁTICAS
+------------------------------------------------------------
+
+→ Sempre use frameborder="0" e controle bordas pelo CSS
+→ Defina width e height pelo CSS (tem prioridade)
+→ Use sandbox em conteúdos de terceiros não confiáveis
+→ Use referrerpolicy="no-referrer" para proteger o usuário
+→ Prefira loading="lazy" em mapas (melhora performance)
+→ Sempre forneça um conteúdo alternativo dentro do iframe
+→ Para conteúdo padrão, use src com arquivo .html separado
+  (srcdoc foi descontinuado nos navegadores modernos)
+
