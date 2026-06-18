@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Meu primeiro formulário!</h1>
+    <form action="cadastro.php" method="POST" autocomplete="off"> 
+        
+    <!--
+    
+    se quiser tirar as sugestões que ficam no formulario é so deixar o autocomplete no off
+    
+    o cadastro.php é o arquivo onde vai armazenar os dados do formulário
+    neste curso não será ensinado isso
+        
+    o method="POST" não mostra os dados do formulário da url, mas se voce inspecionar o documento voce acha
+    
+    o method GET é melhor com informações inofensivas
+
+    o POST é melhor com informaçãos mais sensiveis, mas não tanto assim
+
+    se eu quiser trabalhar com dados e senhas tenho que aprender o https
+    -->
+    
+        <p><label for="inome">Nome:</label> <input type="text" name="nome" id="inome"></p> 
+        <!--name é mais util no php, o id no javascript e label-->
+        <p><label for="isobrenome">Sobrenome:</label> <input type="sobrenome" name="sobrenome" id="isobrenome"></p>
+        <p><input type="submit" value="Enviar"></p> <!--input do tipo submit é igual a caixinha de texto para enviar o formulario-->
+    </form>
+</body>
+</html>
