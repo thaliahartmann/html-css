@@ -1,0 +1,741 @@
+============================================================
+FORMULÁRIOS EM HTML
+============================================================
+
+
+------------------------------------------------------------
+1. ESTRUTURA BÁSICA DO FORM
+------------------------------------------------------------
+
+
+
+    <form action="cadastro.php" method="POST" autocomplete="off">
+        ...
+    </form>
+
+    action        → arquivo que vai receber e processar os dados
+                    (PHP, por exemplo — não é ensinado neste curso)
+
+    method        → como os dados são enviados (GET ou POST)
+
+    autocomplete  → liga/desliga as sugestões automáticas
+                    do navegador no formulário inteiro
+                    "on"  → mostra sugestões
+                    "off" → não mostra sugestões
+
+
+
+exemplo:
+
+    <h1>Meu primeiro formulário!</h1>
+    <form action="cadastro.php" method="POST" autocomplete="off"> 
+
+        <p><label for="inome">Nome:</label>
+	<input type="text" name="nome" id="inome"></p> 
+
+        <p><label for="isobrenome">Sobrenome:</label> 
+	<input type="sobrenome" name="sobrenome" id="isobrenome"></p>
+
+        <p><input type="submit" value="Enviar"></p>
+    </form>
+
+
+
+------------------------------------------------------------
+2. LABEL — RÓTULO DO CAMPO
+------------------------------------------------------------
+
+
+
+    <label for="inome">Nome:</label>
+    <input type="text" name="nome" id="inome">
+
+    O atributo "for" do label deve ser IGUAL ao "id" do input.
+    Isso conecta visualmente o texto ao campo — clicar no
+    texto do label foca automaticamente no input.
+
+
+exemplo:
+
+    <h1>Meu primeiro formulário!</h1>
+    <form action="cadastro.php" method="POST" autocomplete="off"> 
+
+        <p><label for="inome">Nome:</label>
+	<input type="text" name="nome" id="inome"></p> 
+
+        <p><label for="isobrenome">Sobrenome:</label> 
+	<input type="sobrenome" name="sobrenome" id="isobrenome"></p>
+
+        <p><input type="submit" value="Enviar"></p>
+    </form>
+
+
+
+------------------------------------------------------------
+3. GET vs POST
+------------------------------------------------------------
+
+
+
+GET:
+    → os dados aparecem na URL (ex: cadastro.php?nome=Thalia)
+    → bom para informações inofensivas (filtros, buscas)
+    → não usar com senhas ou dados sensíveis
+
+POST:
+    → os dados NÃO aparecem na URL
+    → mas ainda são visíveis se inspecionar o documento
+      (não é 100% seguro sozinho)
+    → melhor para informações mais sensíveis
+    → obrigatório quando usar input type="file"
+
+⚠️ Para trabalhar com senhas e dados realmente sensíveis,
+é necessário usar HTTPS (criptografia de transporte),
+o método POST sozinho não garante segurança total.
+
+
+
+------------------------------------------------------------
+4. NAME vs ID — PARA QUE SERVE CADA UM
+------------------------------------------------------------
+
+
+
+    name  → usado pelo servidor (PHP) para identificar o
+            dado enviado no formulário
+
+    id    → usado pelo CSS, JavaScript e pelo label (for)
+            para identificar o elemento na página
+
+    Resumindo:
+        name → comunicação com o backend (servidor)
+        id   → comunicação com o frontend (JS, CSS, label)
+
+
+exemplo:
+
+    <h1>Meu primeiro formulário!</h1>
+    <form action="cadastro.php" method="POST" autocomplete="off"> 
+
+        <p><label for="inome">Nome:</label>
+	<input type="text" name="nome" id="inome"></p> 
+
+        <p><label for="isobrenome">Sobrenome:</label> 
+	<input type="sobrenome" name="sobrenome" id="isobrenome"></p>
+
+        <p><input type="submit" value="Enviar"></p>
+    </form>
+
+
+
+------------------------------------------------------------
+5. INPUT TYPE="text" e ATRIBUTOS COMUNS
+------------------------------------------------------------
+
+    <input type="text" name="usu" id="iusu"
+        required
+        minlength="5"
+        maxlength="15"
+        size="30"
+        placeholder="nome do usuário"
+        autocomplete="username">
+
+    required      → campo obrigatório, não envia sem preencher
+    minlength     → quantidade mínima de caracteres
+    maxlength     → quantidade máxima de caracteres
+    size          → largura visual do campo (em caracteres)
+    placeholder   → texto de exemplo dentro do campo (sai ao digitar)
+    autocomplete  → tipo de sugestão (username, email, name, tel...)
+
+
+exemplo:
+
+
+    <h1>Teste de Formulário</h1>
+    <form action="cadastro.php" method="post" autocomplete="on">
+        <p>
+            <label for="iusu">Usuário: </label>
+            <input type="text" name="usu" id="iusu" required minlength="5" maxlength="15" size="30" placeholder="nome do usuário" autocomplete="username">
+        </p>
+
+        <p>
+            <label for="isen">Senha: </label>
+            <input type="password" name="sen" id="isen" required minlength="8" maxlength="20" size="10" placeholder="senha" autocomplete="current-password">
+        </p>
+
+        <p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar"> 
+        </p>
+    </form>
+
+
+
+------------------------------------------------------------
+6. INPUT TYPE="password"
+------------------------------------------------------------
+
+
+
+    <input type="password" name="sen" id="isen"
+        required
+        minlength="8"
+        maxlength="20"
+        autocomplete="current-password">
+
+    → mostra os caracteres como pontinhos/asteriscos
+    → autocomplete="current-password" ajuda o navegador
+      a saber que é um campo de senha de login (não de cadastro)
+
+
+exemplo:
+
+
+    <h1>Teste de Formulário</h1>
+    <form action="cadastro.php" method="post" autocomplete="on">
+        <p>
+            <label for="iusu">Usuário: </label>
+            <input type="text" name="usu" id="iusu" required minlength="5" maxlength="15" size="30" placeholder="nome do usuário" autocomplete="username">
+        </p>
+
+        <p>
+            <label for="isen">Senha: </label> **********************************************************************************************************
+            <input type="password" name="sen" id="isen" required minlength="8" maxlength="20" size="10" placeholder="senha" autocomplete="current-password"> *****************************************************
+        </p>
+
+        <p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar"> 
+        </p>
+    </form>
+
+
+
+------------------------------------------------------------
+7. BOTÕES DO FORMULÁRIO
+------------------------------------------------------------
+
+    <input type="submit" value="Enviar">
+    → envia o formulário para o "action"
+
+    <input type="reset" value="Limpar">
+    → limpa todos os campos preenchidos
+
+
+------------------------------------------------------------
+8. TIPOS NUMÉRICOS E DE DATA
+------------------------------------------------------------
+
+------------------------------------------------------------
+
+
+NÚMERO:
+    <input type="number" name="media" id="imedia"
+        min="0" max="10" step="0.5" placeholder="0 a 10">
+
+    min / max → valor mínimo e máximo permitido
+    step      → de quanto em quanto o valor pode variar
+                step="0.5" permite números decimais (ex: 7.5)
+                sem o step, só aceita números inteiros
+
+
+exemplo: 
+        <p>
+            <label for="imedia">Média</label>
+            <input type="number" name="media" id="imedia" min="0" max="10"
+            placeholder="0 a 10" step="0.5"> <!--o step é para permitir notas float-->
+        </p
+
+
+------------------------------------------------------------
+
+
+MÊS:
+    <input type="month" name="mes" id="imes" value="2026-06">
+    → seleciona mês e ano (formato AAAA-MM)
+
+
+exemplo:
+        <p>
+            <label for="imes">Período letivo</label>
+            <input type="month" name="mes" id="imes" value="2026-06"> <!--esse value é o valor padrão do mes, mas o professor disse que o javascript é mais util para isso-->
+        </p>
+
+
+------------------------------------------------------------
+
+
+DATA:
+    <input type="date" name="dia" id="idia" value="2026-06-18">
+    → seleciona dia, mês e ano (formato AAAA-MM-DD)
+
+
+exemplo:
+        <p>
+            <label for="idia">Dia da prova</label>
+            <input type="date" name="dia" id="idia" value="2026-06-18">
+        </p>
+
+
+------------------------------------------------------------
+
+
+HORA:
+    <input type="time" name="hora" id="ihora">
+    → seleciona horas e minutos
+
+    💡 O atributo "value" define um valor padrão já preenchido,
+    mas para definir isso dinamicamente (tipo "hoje") o ideal
+    é usar JavaScript, não um value fixo no HTML.
+
+exemplo:
+        <p>
+            <label for="ihora">Hora</label>
+            <input type="time" name="hora" id="ihora">
+        </p>
+
+
+adendo importante:
+
+💡 O atributo "value" define um valor padrão já preenchido,
+mas para definir isso dinamicamente (tipo "hoje") o ideal
+é usar JavaScript, não um value fixo no HTML.
+
+
+------------------------------------------------------------
+9. FIELDSET E LEGEND — AGRUPANDO CAMPOS
+------------------------------------------------------------
+
+
+    <fieldset>
+        <legend>Dados pessoais</legend>
+        <p>...</p>
+        <p>...</p>
+    </fieldset>
+
+    fieldset → cria uma moldura/grupo visual ao redor
+               de um conjunto de campos relacionados
+    legend   → título daquele grupo, aparece "preso"
+               na borda do fieldset
+
+    Útil para organizar formulários grandes em seções
+    (ex: "Dados pessoais", "Endereço", "Pagamento")
+
+
+exemplo:
+
+
+CÓDIGO:
+    <fieldset>
+        <legend>Dados pessoais</legend>
+        <p>
+            <label for="inome">Nome</label>
+            <input type="text" id="inome">
+        </p>
+        <p>
+            <label for="iemail">Email</label>
+            <input type="email" id="iemail">
+        </p>
+    </fieldset>
+
+
+COMO FICA VISUALMENTE:
+
+     ┌─ Dados pessoais ─────────────────────────┐
+     │                                           
+     │   Nome   [______________________]        
+     │                                           
+     │   Email  [______________________]        		
+     │                                           
+     └──────────────────────────────────────
+
+
+    <legend>   → fica "presa" na borda de cima,
+                 como uma etiqueta no quadro
+    <fieldset> → desenha a moldura ao redor de
+                 tudo que está dentro dele
+
+
+------------------------------------------------------------
+10. EMAIL E TELEFONE
+------------------------------------------------------------
+
+
+EMAIL:
+    <input type="email" name="email" id="iemail"
+        autocomplete="email" required>
+
+    → já valida automaticamente o formato de email
+      (precisa ter @ e domínio)
+
+exemplo:
+
+    <label for="iemail">Email</label>
+    <input type="email" name="email" id="iemail" autocomplete="email" required>
+	
+
+
+
+
+
+TELEFONE COM VALIDAÇÃO (pattern/RegEx):
+
+    <input type="tel" name="tel" id="itel"
+        autocomplete="tel"
+        pattern="^(\d{2})\d{4,5}-\d{4}$"
+        required
+        placeholder="(xx) xxxx-xxxx">
+
+    pattern → expressão regular (RegEx) que define o
+              formato exato que o valor deve seguir
+exemplo:
+         <p>
+             <label for="itel">Telefone</label>
+              <input type="tel" name="tel" id="itel" autocomplete="tel"
+              pattern="^(\d{2})\d{4,5}-\d{4}$" required placeholder="(xx) xxxx-xxxx" >
+            </p>
+
+
+    ⚠️ Validações complexas com pattern/RegEx funcionam,
+    mas o ideal é reforçar com JavaScript ou PHP no
+    backend, porque validação só no HTML pode ser burlada.
+
+    📌 Estudar mais sobre RegEx no futuro.
+
+
+------------------------------------------------------------
+11. RADIO BUTTON (escolha única)
+------------------------------------------------------------
+
+    <fieldset>
+        <legend>Sexo</legend>
+        <input type="radio" name="sexo" id="ismas">
+        <label for="ismas">Masculino</label><br>
+
+        <input type="radio" name="sexo" id="isfem">
+        <label for="isfem">Feminino</label><br>
+    </fieldset>
+
+    ⚠️ REGRA IMPORTANTE: todos os radios do mesmo grupo
+    precisam ter o MESMO "name". É isso que garante que
+    só uma opção pode ser selecionada por vez.
+
+    Cada radio tem um "id" diferente (para o label funcionar),
+    mas o "name" é compartilhado entre eles.
+
+
+------------------------------------------------------------
+12. CHECKBOX (múltipla escolha)
+------------------------------------------------------------
+
+
+    <fieldset>
+        <legend>Esportes favoritos</legend>
+        <input type="checkbox" name="esbas" id="iesbas">
+        <label for="iesbas">Basquete</label><br>
+
+        <input type="checkbox" name="esfut" id="iesfut">
+        <label for="iesfut">Futebol</label><br>
+    </fieldset>
+
+    Diferente do radio, cada checkbox tem seu PRÓPRIO name,
+    porque o usuário pode marcar várias opções ao mesmo tempo
+    (não são mutuamente exclusivas).
+
+
+------------------------------------------------------------
+13. COR, RANGE (SLIDER) E ARQUIVO
+------------------------------------------------------------
+
+
+------------------------------------------------------------
+
+
+COR:
+    <input type="color" name="cor" id="icor" value="#00ff00">
+    → abre um seletor de cores visual do navegador
+
+exemplo:
+        <p>
+            <label for="icor">Cor: </label>
+            <input type="color" name="cor" id="icor" value="#00ff00">
+        </p>
+
+
+------------------------------------------------------------
+
+
+RANGE (controle deslizante):
+    <input type="range" name="nivel" id="inivel" min="1" max="5">
+    → cria um slider/controle deslizante
+    → min e max definem o intervalo de valores
+
+exemplo:
+        <p>
+            <label for="inivel">Nível de Satisfação</label>
+            <input type="range" name="nivel" id="inivel" min="1" max="5">
+        </p>
+
+
+------------------------------------------------------------
+
+
+ARQUIVO:
+    <input type="file" name="foto" id="ifoto">
+    → permite o usuário enviar um arquivo (ex: foto)
+
+
+exemplo:
+        <p>
+            <label for="ifoto">Foto do perfil:</label>
+            <input type="file" name="foto" id="ifoto">
+        </p>
+
+
+    ⚠️ Sempre que usar type="file", o method do form
+    precisa ser POST, porque GET não suporta envio de
+    arquivos (eles não cabem numa URL) 
+
+
+------------------------------------------------------------
+14. SELECT — LISTA SUSPENSA
+------------------------------------------------------------
+
+    <select name="estado" id="iest">
+        <option value="">--- Escolha ---</option>
+        <optgroup label="Região Sudeste">
+            <option value="MG">Minas Gerais</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="SP">São Paulo</option>
+        </optgroup>
+        <optgroup label="Região Nordeste">
+            <option value="MA">Maranhão</option>
+            <option value="PE">Pernambuco</option>
+        </optgroup>
+    </select>
+
+    select    → cria a caixa de opções (dropdown)
+    option    → cada opção da lista
+    optgroup  → agrupa opções visualmente, com um
+                rótulo (label) entre elas
+
+exemplo:
+
+       <p>
+            <label for="iest">Estado</label>
+            <select name="estado" id="iest">
+                <option value="selected">--- Escolha ---</option>
+                <optgroup label="Região Sudeste">
+                    <option value="MG">Minas Gerais</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="SP">São Paulo</option>
+                </optgroup>
+
+                <optgroup label="Região Nordeste">
+                    <option value="MA">Maranhão</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                </optgroup>
+            </select>
+        </p>
+
+
+------------------------------------------------------------
+15. DATALIST — SUGESTÕES EDITÁVEIS
+------------------------------------------------------------
+
+
+    <input type="text" name="prof" id="iprof" list="lstprof">
+    <datalist id="lstprof">
+        <option value="ADM">Administrador</option>
+        <option value="CONT">Contabilista</option>
+        <option value="DEV">Desenvolvedor</option>
+    </datalist>
+
+    Diferença do select:
+        select   → só permite escolher uma opção da lista
+        datalist → o usuário pode escolher uma sugestão
+                   OU digitar qualquer outro texto livre
+
+    O input precisa do atributo "list" apontando para o
+    "id" do datalist, conectando os dois.
+
+
+
+exemplo:
+
+        <p>
+            <label for="iprof">Profissão: </label>
+            <input type="text" name="prof" id="iprof" list="lstprof">
+            <datalist id="lstprof">
+                <option value="ADM">Administrador</option>
+                <option value="CONT">Contabilista</option>
+                <option value="DEV">Desenvolvedor</option>
+                <option value="PROF">Professor</option>
+            </datalist>
+        </p>
+
+        <p>
+            <label for="imsg">Mensagem: </label>
+            <textarea name="msg" id="imsg" cols="30" rows="10"></textarea>
+        </p>
+
+
+------------------------------------------------------------
+16. TEXTAREA — CAMPO DE TEXTO LONGO
+------------------------------------------------------------
+
+	
+    <textarea name="msg" id="imsg" cols="30" rows="10"></textarea>
+
+    cols → largura do campo (em número de caracteres)
+    rows → altura do campo (em número de linhas)
+
+    Usado para mensagens, comentários, textos mais longos
+    (diferente do input type="text" que é uma linha só).
+
+
+exemplo:
+        <p>
+            <label for="imsg">Mensagem: </label>
+            <textarea name="msg" id="imsg" cols="30" rows="10"></textarea>
+        </p>
+
+
+------------------------------------------------------------
+17. OUTPUT + JAVASCRIPT — CÁLCULOS EM TEMPO REAL
+------------------------------------------------------------
+
+
+
+A tag <output> serve para exibir o resultado de um cálculo
+feito com JavaScript, atualizado em tempo real conforme o
+usuário digita.
+
+
+
+
+EXEMPLO — SOMA DE DOIS NÚMEROS:
+    <input type="number" name="n1" id="in1" min="0" max="50" required
+        oninput="isoma.innerHTML = Number(in1.value) + Number(in2.value)">
+
+    <input type="number" name="n2" id="in2" min="0" max="50" required
+        oninput="isoma.innerHTML = Number(in1.value) + Number(in2.value)">
+
+    <label for="isoma">Soma: </label>
+    <output id="isoma" name="soma">0</output>
+
+    Como funciona:
+        oninput        → evento disparado toda vez que o
+                         valor do campo muda
+        Number(x.value) → converte o valor digitado (texto)
+                         em número, para poder somar
+        isoma.innerHTML → atualiza o conteúdo do output
+                         usando o id dele diretamente
+
+    ⚠️ Sem o Number(), o JavaScript concatenaria os valores
+    como texto em vez de somar (ex: "5" + "3" = "53" e não 8).
+
+
+
+exemplo:
+        <p>
+            <label for="in1">Número 1: </label>
+            <input type="number" name="n1" id="in1" min="0" max="50" required oninput="isoma.innerHTML = Number(in1.value) + Number(in2.value )">
+        </p>
+        
+        <p>
+            <label for="in2">Número 2: </label>
+            <input type="number" name="n2" id="in2" min="0" max="50" required
+            oninput="isoma.innerHTML = Number(in1.value) + Number(in2.value )">
+
+        </p>
+
+        <p>
+            <label for="isoma">Soma: </label>
+            <output id="isoma" name="soma">0</output>
+        </p>
+
+
+
+
+
+
+
+
+EXEMPLO — SLIDER COM VALOR EM TEMPO REAL:
+    <input type="range" name="num" id="inum" min="0" max="10" value="5"
+        oninput="ival.innerHTML = Number(inum.value)">
+    <output id="ival">5</output>
+
+    → conforme o usuário arrasta o slider, o número
+      exibido no output atualiza instantaneamente
+
+
+
+exemplo:
+    <p>
+        <label for="inum">Número: </label>
+        <input type="range" name="num" id="inum" min="0" max="10" value="5"
+        oninput="ival.innerHTML = Number(inum.value)">
+        <output id="ival">5</output> 
+    </p>
+
+
+
+
+
+
+EXEMPLO — CALCULANDO IDADE COM FUNÇÃO JAVASCRIPT:
+    HTML:
+        <input type="number" name="ano" id="iano" min="1900" 
+	max="2026" oninput="calcIdade()">
+	<label for="iidade">Sua idade é: </label>
+        <output id="iidade">0</output>
+
+    JavaScript:
+        <script>
+            function calcIdade() {
+                let atual = new Date().getFullYear()
+                iidade.innerHTML = Number(atual) - Number(iano.value)
+            }
+        </script>
+
+    Diferença desse exemplo para os anteriores:
+        → em vez de colocar o cálculo direto no oninput,
+          chama uma função separada (calcIdade)
+        → essa função pega o ano atual com new Date().getFullYear()
+        → e calcula a idade subtraindo o ano de nascimento
+
+    💡 Acessar elementos pelo id direto (ex: iano.value,
+    iidade.innerHTML) funciona porque o navegador cria
+    automaticamente uma referência global para elementos
+    com id. É um atalho do JavaScript, mas em projetos
+    maiores o ideal é usar document.getElementById("iano").
+
+
+
+
+exemplo:
+    <form action="cadastro.php" method="get" autocomplete="on">
+
+        <p>
+            <label for="iano">Em que ano você nasceu?</label>
+            <input type="number" name="ano" id="iano" min="1900" max="2026" oninput="calcIdade()">
+        </p>
+        <p>
+            <label for="iidade">Sua idade é: </label>
+            <output id="iidade">0</output>
+        </p>
+        <p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </p>
+
+    </form>
+    <script>
+        function calcIdade() {
+            let atual = new Date().getFullYear()
+            iidade.innerHTML = Number(atual) - Number(iano.value)
+        }
+    </script>
