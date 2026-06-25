@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+/* Todas as demais mídias */
+
+/* Typical Device Breakpoints (2026)
+-----------------------------------
+Wearables / telas tiny : até 320px
+Celular compacto       : 320px até 480px
+Celular médio/grande   : 480px até 768px
+Tablet                 : 768px até 1024px
+Desktop                : 1024px até 1280px
+Desktop grande         : 1280px até 1400px
+Monitores / ultrawide  : acima de 1400px
+*/
+
+@media print { /* IMPRESSÃO */
+
+    body {
+        background-image: url(../imagens/back-print.jpg); /* desnecessário porque não aparece a foto quando impresso */
+        }
+    
+
+    main {
+        border: 2px solid black;
+        width: 90vw;
+    }
+
+    main h1 {
+        font-family: 'Courier New', Courier, monospace;
+        text-shadow: none;
+        color: black;
+       }
+
+    main::after {
+        content: 'Teste';
+        text-decoration: line-through;
+    }
+
+    img#phone {display: none;}
+    img#tablet {display: none;}
+    img#print {display: block;}
+    img#pc {display: none;}
+    img#tv {display: none;}
+}
+
+
+@media screen and (min-width: 768px) {  /* TABLET */
+
+    body {
+        background-image: url(../imagens/back-tablet.jpg);
+    }
+
+    img#phone {display: none;}
+    img#tablet {display: block;}
+    img#print {display: none;}
+    img#pc {display: none;}
+    img#tv {display: none;}
+}
+
+
+@media screen and (min-width: 1024px) {  /* DESKTOP */
+    body {
+        background-image: url(../imagens/back-pc.jpg);
+    }
+
+    img#phone {display: none;}
+    img#tablet {display: none;}
+    img#print {display: none;}
+    img#pc {display: block;}
+    img#tv {display: none;}
+}
+
+
+@media screen and (min-width: 1280px){  /* AINDA DESKTOP */
+
+    body {
+        background-image: url(../imagens/back-pc.jpg);
+    }
+
+    img#phone {display: none;}
+    img#tablet {display: none;}
+    img#print {display: none;}
+    img#pc {display: block;}
+    img#tv {display: none;}
+}
+
+@media screen and (min-width: 1400px){  /* ULTRAWIDE E TV? */
+
+    body {
+        background-image: url(../imagens/back-tv.jpg);
+    }
+
+
+    img#phone {display: none;}
+    img#tablet {display: none;}
+    img#print {display: none;}
+    img#pc {display: none;}
+    img#tv {display: block;}
+}
+
