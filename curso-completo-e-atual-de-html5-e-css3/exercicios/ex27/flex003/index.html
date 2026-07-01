@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexible Box</title>
+    <style>
+            /* anotações do dia 30 de junho
+            
+            ANATOMIA DO FLEX CONTAINER
+
+
+            
+            FLEX-DIRECTION (DIREÇÃO QUE A CAIXA VAI SEGUIR)
+
+             flex direction é row por padrão. ex: flex-direction: row;
+             pense em uma linha de trem (horizontal) que começa da esquerda para direta */
+
+            /* flex-direction: column; é uma coluna uma encima da outra*/
+
+            /* também tem a versão reverse do flex e do row, que deixa ao contrário
+            
+            exemplo: flex-direction: column reverse faz a coluna começar de baixo para cima
+            
+             flex-direction: row-reverse faz a linha de trem (horizontal) começar da direita para a esquerda
+
+             
+
+
+            /* anotações do dia 1 de julho 
+
+            FLEX-WRAP (QUEBRAS QUE PODEM ACONTEER COM A CAIXA)
+
+            /* flex-wrap: é nowrap por padrão. ex flex-wrap: nowrap; (sem quebra de div ou seja responsivel*/
+
+            /* flex-wrap: wrap; faz o container mais proximo do limite do pai quebrar e ir para a direção favorável do cross-axis*/
+
+            /* também tem a versão reverse do flex-wrap: wrap-reverse que faz o container mais proximo do limite do pai quebrar e ir para a direção CONTRÁRIA do cross-axis
+
+
+
+            FLEX-DIRECTION + FLEX WRAP == FLEX-FLOW (É TIPO UM SHORTHAND)
+
+            inves de fazer 
+
+            flex-direction: row;
+            flex-wrap: nowrap;
+
+            posso fazer 
+
+            flex-flow: row nowrap; 
+            
+            guanabara recomenda usar mais a shorthand
+            
+            
+            
+            FLEX AUTO
+
+            flex: auto;
+            não permite que tenha espaços em branco dentro do elemento pai
+
+            
+            */
+            
+
+            
+            
+        div.conteiner {
+            background-color: lightsalmon;
+
+            display: flex;
+            flex-flow: row nowrap;
+        }
+
+        div.item {
+            background-color: lightskyblue;
+            border: 1px solid black;
+            text-align: center;
+            flex: auto;
+        }
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="conteiner"> <!--pai-->
+        <div class="item">Exemplo de bloco A</div> <!--filho-->
+        <div class="item">Exemplo de bloco B</div> <!--filho-->
+        <div class="item">Exemplo de bloco C</div> <!--filho-->
+        <div class="item">Exemplo de bloco D</div> <!--filho-->
+        <div class="item">Exemplo de bloco E</div> <!--filho-->
+        <div class="item">Exemplo de bloco F</div> <!--filho-->
+        <div class="item">Exemplo de bloco G</div> <!--filho-->
+    </div>
+</body>
+</html>

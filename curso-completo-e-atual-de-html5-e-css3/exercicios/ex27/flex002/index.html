@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexible Box</title>
+    <style>
+
+
+            /* flex direction é row por padrão. ex: flex-direction: row;*/
+            /* pense em uma linha de trem (horizontal) que começa da esquerda para direta */
+
+            /* flex-direction: column; é uma coluna uma encima da outra*/
+
+            /* também tem a versão reverse do flex, que deixa ao contrário, exemplo: flex-direction: column reverse e flex-direction: row-reverse, direita para esquerda, e de baixo para cima*/
+            
+        div.conteiner {
+            background-color: lightsalmon;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        div.item {
+            background-color: lightskyblue;
+            border: 1px solid black;
+            text-align: center;
+            padding: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="conteiner"> <!--pai-->
+        <div class="item">A</div> <!--filho-->
+        <div class="item">B</div> <!--filho-->
+        <div class="item">C</div> <!--filho-->
+        <div class="item">D</div> <!--filho-->
+        <div class="item">E</div> <!--filho-->
+        <div class="item">F</div> <!--filho-->
+        <div class="item">G</div> <!--filho-->
+    </div>
+</body>
+</html>
