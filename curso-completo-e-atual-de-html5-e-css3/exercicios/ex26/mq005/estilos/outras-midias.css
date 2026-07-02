@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+
+@media screen and (min-width: 768px) {  /* tablet */
+      
+    
+    header {
+        background-color: rgb(0, 255, 34);
+    }
+
+}
+
+
+
+@media screen and (min-width: 1024px) {  /* desktop */
+      
+
+    header {
+        background-color: rgb(255, 0, 136);
+    }
+
+}
+
+
+
+@media screen and (min-width: 1400px) {  
+    
+
+    header {
+        background-color: rgb(157, 157, 157);
+        padding: 20px;
+    }
+
+}
+
+
+
+
+

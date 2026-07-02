@@ -1,0 +1,125 @@
+@charset "UTF-8";
+
+/* Versão Mobile First */
+
+
+/* CONFIGURAÇÕES GERAIS */
+
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+
+}
+
+
+
+body, html {
+    background-color: rgb(192, 192, 192);
+}
+
+
+
+
+
+/* MENU HAMBURGUER (anotar isso) */ 
+
+
+span#burguer {
+    background-color: rgb(47, 46, 46);
+    color: white;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+span#burguer:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+
+
+
+
+
+
+
+/* HEADER */
+
+header {
+    background-color: rgb(157, 157, 157);
+}
+
+
+header > h1 {
+    text-align: center;
+    font-size: 3em;
+}
+
+
+
+
+/* ÁREA DE NAVEGAÇÃO */
+
+
+
+
+nav {
+    display: none; /*para sumir os links e só aparecer o icone do menu hamburguer, tenho que deixar o display block nas outras midias */
+}
+
+
+nav > ul {
+    list-style-type: none;
+}
+
+
+nav a {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    background-color: rgb(93, 93, 93);
+    border-top: 2px solid gray;
+}
+
+nav a:hover {
+    background-color: gray;
+}
+
+
+
+
+
+/* ÁREA MAIN */
+
+
+main {
+    width: 90vw; /* ← era 400px fixo, agora responsivo */
+    background-color: white;
+    margin: auto;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* ÁREA ARTICLE */
+
+
+article > h2 {
+    padding-bottom: 20px;
+
+
+}
+
+
+article > p {
+    text-align: justify;
+    text-indent: 40px;
+    line-height: 1.5em;
+    margin-bottom: 20px;
+}
