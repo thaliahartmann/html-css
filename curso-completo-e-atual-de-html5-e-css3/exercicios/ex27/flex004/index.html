@@ -33,9 +33,9 @@
 
             FLEX-WRAP (QUEBRAS QUE PODEM ACONTECER COM A CAIXA)
 
-             flex-wrap: é nowrap por padrão. ex flex-wrap: nowrap; (sem quebra de div ou seja responsivel, ao inves de quebrar cria uma barra de rolagem
+            /* flex-wrap: é nowrap por padrão. ex flex-wrap: nowrap; (sem quebra de div ou seja responsivel*/
 
-             flex-wrap: wrap; faz o container mais proximo do limite do pai quebrar e ir para a direção favorável do cross-axis*/
+            /* flex-wrap: wrap; faz o container mais proximo do limite do pai quebrar e ir para a direção favorável do cross-axis*/
 
             /* também tem a versão reverse do flex-wrap: wrap-reverse que faz o container mais proximo do limite do pai quebrar e ir para a direção CONTRÁRIA do cross-axis
 
@@ -58,10 +58,51 @@
             
             FLEX AUTO NO ELEMENTO PAI
 
-            flex: auto; 
+            flex: auto;
             não permite que tenha espaços em branco dentro do elemento pai
 
-        
+            
+
+
+            anotações do dia 6 de julho 
+
+
+
+            anotar sobre os justify
+
+            alinhamento no main
+
+
+            justify-content: flex-start
+            justify-content: center
+            justify-content: flex-end
+            justify-content: flex-between
+            justify-content: space-evenly
+            justify-content: flex-around
+
+
+
+            anotar sobre os align-items
+
+            alinhamento no main
+
+
+            align-items: flex-start
+            align-items: flex-center
+            align-items: flex-end
+            align-items: stretch
+
+
+
+
+
+
+
+
+
+
+
+
             */
             
 
@@ -69,16 +110,16 @@
             
         div.conteiner {
             background-color: lightsalmon;
-
+            height: 300px;
             display: flex;
             flex-flow: row nowrap;
+            justify-content: space-evenly;
         }
 
         div.item {
             background-color: lightskyblue;
             border: 1px solid black;
             text-align: center;
-            flex: auto;
         }
 
 
@@ -90,13 +131,13 @@
 </head>
 <body>
     <div class="conteiner"> <!--pai-->
-        <div class="item">Exemplo de bloco A</div> <!--filho-->
-        <div class="item">Exemplo de bloco B</div> <!--filho-->
-        <div class="item">Exemplo de bloco C</div> <!--filho-->
-        <div class="item">Exemplo de bloco D</div> <!--filho-->
-        <div class="item">Exemplo de bloco E</div> <!--filho-->
-        <div class="item">Exemplo de bloco F</div> <!--filho-->
-        <div class="item">Exemplo de bloco G</div> <!--filho-->
+        <div class="item">A</div> <!--filho-->
+        <div class="item">B</div> <!--filho-->
+        <div class="item">C</div> <!--filho-->
+        <div class="item">D</div> <!--filho-->
+        <div class="item">E</div> <!--filho-->
+        <div class="item">F</div> <!--filho-->
+        <div class="item">G</div> <!--filho-->
     </div>
 </body>
 </html>
