@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexible Box</title>
+    <style>
+        div.conteiner {
+            background-color: lightsalmon;
+            display: flex;
+            flex-flow: row nowrap;
+        }
+
+        div.item {
+            background-color: lightskyblue;
+            border: 1px solid black;
+            text-align: center;
+            flex-basis: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="conteiner"> <!--pai-->
+        <div class="item">A</div> <!--filho-->
+        <div class="item">Testando o flex-basis auto</div> <!--filho-->
+        <div class="item">C</div> <!--filho-->
+        <div class="item">D</div> <!--filho-->
+        <div class="item">E</div> <!--filho-->
+        <div class="item">F</div> <!--filho-->
+        <div class="item">Gremiooooooooo</div> <!--filho-->
+    </div>
+</body>
+</html>
