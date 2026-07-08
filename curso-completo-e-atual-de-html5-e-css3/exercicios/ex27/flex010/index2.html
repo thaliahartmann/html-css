@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexible Box</title>
+    <style>
+        div.conteiner {
+            background-color: lightsalmon;
+            display: flex;
+            flex-flow: row wrap;
+        }
+
+        div.item {
+            background-color: lightskyblue;
+            border: 1px solid black;
+            flex-basis: 250px;
+            text-align: center;
+            flex-shrink: 1; 
+            flex-grow: 1; /* SE a QUEBRA estiver ATIVADA ele vai QUEBRAR quando diminui só que vai AUMENTAR ATÉ O TAMANHO MAXIMO DO EIXO MAIN AXIS? */
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="conteiner"> <!--pai-->
+        <div class="item">A</div> <!--filho-->
+        <div class="item">B</div> <!--filho-->
+        <div class="item">C</div> <!--filho-->
+    </div>
+</body>
+</html>

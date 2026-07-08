@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexible Box</title>
+    <style>
+        div.conteiner {
+            background-color: lightsalmon;
+            display: flex;
+            flex-flow: row nowrap;
+        }
+
+        div.item {
+            background-color: lightskyblue;
+            border: 1px solid black;
+            flex-basis: 250px;
+            text-align: center;
+            flex-shrink: 0; /* se tiver ligado ele diminui normalmente, mas se estiver DESLIGADO e ser um conteiner NOWRAP ele vaza quando atinge o tamanho minimo*/
+            flex-grow: 1; /*aumenta ate o maximo do eixo main axis? */
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="conteiner"> <!--pai-->
+        <div class="item">A</div> <!--filho-->
+        <div class="item">B</div> <!--filho-->
+        <div class="item">C</div> <!--filho-->
+    </div>
+</body>
+</html>
