@@ -1,0 +1,304 @@
+============================================================
+MEDIA QUERIES
+============================================================
+
+Media Query = Media Type + Media Features
+→ define QUAL estilo aplicar dependendo do dispositivo
+  ou característica da tela
+
+
+------------------------------------------------------------
+1. O QUE É MEDIA QUERY
+------------------------------------------------------------
+
+Media Query é uma condição que aplica CSS só quando
+certas características da tela/dispositivo são verdadeiras.
+
+    Media Type    → tipo de mídia (screen, print, all...)
+    Media Feature → característica (largura, orientação...)
+
+    @media screen and (min-width: 768px) {
+        /* CSS aplicado só em telas com 768px ou mais */
+    }
+
+    @media    → abre a media query
+    screen    → media type (tipo de mídia)
+    and       → operador lógico (E)
+    (min-width: 768px) → media feature (característica)
+
+
+------------------------------------------------------------
+2. FORMAS DE USAR MEDIA QUERIES
+------------------------------------------------------------
+
+FORMA 1 — via <link> no HTML (arquivo CSS separado):
+    <link rel="stylesheet" href="tela.css" media="screen">
+    <link rel="stylesheet" href="impressora.css" media="print">
+    <link rel="stylesheet" href="retrato.css" media="screen and (orientation: portrait)">
+    <link rel="stylesheet" href="paisagem.css" media="screen and (orientation: landscape)">
+
+    → cada mídia tem seu próprio arquivo CSS
+    → bom para projetos grandes onde cada CSS fica organizado
+    → o navegador só carrega o CSS da mídia ativa
+
+
+FORMA 2 — @media dentro do <style> no HTML:
+    <style>
+        @media screen and (orientation: portrait) {
+            body { background-image: url(retrato.jpg); }
+        }
+        @media screen and (orientation: landscape) {
+            body { background-image: url(paisagem.jpg); }
+        }
+    </style>
+
+    → tudo em um só lugar no HTML
+    → prático para projetos pequenos
+
+
+FORMA 3 — @media dentro do arquivo CSS:
+    /* no arquivo style.css */
+    @media screen and (orientation: portrait) {
+        body { background-image: url(retrato.jpg); }
+    }
+    @media screen and (orientation: landscape) {
+        body { background-image: url(paisagem.jpg); }
+    }
+
+    → a forma mais comum em projetos reais
+    → tudo organizado dentro do próprio CSS
+
+
+FORMA 4 — @media all como container:
+    @media all {
+        /* estilos gerais para todos os dispositivos */
+        * { margin: 0; padding: 0; }
+
+        @media screen and (orientation: portrait) {
+            body { background-image: url(retrato.jpg); }
+        }
+    }
+
+    @media all → vale para TODOS os tipos de mídia
+    → o media all pode servir de container para
+      organizar os estilos gerais junto com as queries
+
+
+------------------------------------------------------------
+3. MEDIA TYPES (TIPOS DE MÍDIA)
+------------------------------------------------------------
+
+    screen  → telas em geral (celular, tablet, desktop, TV)
+    print   → impressoras e visualização de impressão
+    all     → todos os tipos de mídia
+
+
+------------------------------------------------------------
+4. MEDIA FEATURES (CARACTERÍSTICAS)
+------------------------------------------------------------
+
+LARGURA DA TELA:
+    min-width   → a partir de X pixels (mobile first)
+    max-width   → até X pixels (desktop first)
+
+ORIENTAÇÃO:
+    orientation: portrait   → aparelho em pé (vertical)
+    orientation: landscape  → aparelho deitado (horizontal)
+
+OPERADORES LÓGICOS:
+    and → todas as condições precisam ser verdadeiras
+    ,   → funciona como OR (qualquer uma pode ser verdadeira)
+
+
+------------------------------------------------------------
+5. VERSÃO PARA IMPRESSORA (@media print)
+------------------------------------------------------------
+
+    @media print {
+        menu { display: none; }      /* esconde navegação */
+
+        article {
+            width: 100%;             /* ocupa a página toda */
+        }
+
+        article::after {
+            content: 'Impresso via www.cursoemvideo.com';
+        }
+    }
+
+    Boas práticas para impressão:
+    → esconder menus, anúncios, elementos desnecessários
+    → usar fonte serifada (mais legível impressa)
+    → aumentar font-size e line-height
+    → remover backgrounds e sombras (economiza tinta)
+    → usar ::after para adicionar texto de rodapé automático
+    → imagens de fundo (background-image) não aparecem
+      na impressão por padrão
+
+
+------------------------------------------------------------
+6. ORIENTAÇÃO DO DISPOSITIVO
+------------------------------------------------------------
+
+    /* via link no HTML */
+    <link rel="stylesheet" href="retrato.css"
+          media="screen and (orientation: portrait)">
+    <link rel="stylesheet" href="paisagem.css"
+          media="screen and (orientation: landscape)">
+
+    /* ou via @media no CSS */
+    @media screen and (orientation: portrait) {
+        body { background-image: url(cev-portrait.jpg); }
+    }
+
+    @media screen and (orientation: landscape) {
+        body { background-image: url(cev-landscape.jpg); }
+    }
+
+    portrait  → mais alto que largo  (celular em pé)
+    landscape → mais largo que alto  (celular deitado)
+
+    Útil para:
+    → trocar imagem de fundo dependendo da orientação
+    → reorganizar layout (ex: coluna vira linha no landscape)
+
+
+------------------------------------------------------------
+7. MOBILE FIRST COM BREAKPOINTS
+------------------------------------------------------------
+
+A abordagem mobile first escreve o CSS base para celular
+e vai adicionando estilos para telas maiores com min-width.
+
+ESTRUTURA DOS DOIS ARQUIVOS CSS:
+
+    style.css       → estilos base (celular / mobile first)
+    media-query.css → todos os breakpoints e mídias especiais
+
+    <link rel="stylesheet" href="estilos/style.css" media="all">
+    <link rel="stylesheet" href="estilos/media-query.css">
+
+
+ARQUIVO STYLE.CSS (mobile first):
+    * {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1em;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: black url(back-phone.jpg) no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    main {
+        width: 90%;          /* responsivo */
+        max-width: 400px;    /* limite máximo */
+        margin: auto;
+        border-radius: 10px;
+        padding: 10px;
+        background-color: rgba(255, 255, 255, 0.572);
+    }
+
+    h1 {
+        font-size: clamp(1.2rem, 5vw, 2rem);
+        /* clamp(mínimo, ideal, máximo)
+           nunca fica menor que 1.2rem
+           tenta usar 5vw (5% da largura da tela)
+           nunca passa de 2rem                    */
+    }
+
+    img { display: block; margin: auto; max-width: 100%; }
+
+    /* base: mostra só o ícone de celular */
+    img#phone  { display: block; }
+    img#tablet { display: none; }
+    img#print  { display: none; }
+    img#pc     { display: none; }
+    img#tv     { display: none; }
+
+
+ARQUIVO MEDIA-QUERY.CSS (breakpoints):
+
+    /* Typical Device Breakpoints (2026)
+    -----------------------------------
+    Wearables / telas tiny : até 320px
+    Celular compacto       : 320px até 480px
+    Celular médio/grande   : 480px até 768px
+    Tablet                 : 768px até 1024px
+    Desktop                : 1024px até 1280px
+    Desktop grande         : 1280px até 1400px
+    Monitores / ultrawide  : acima de 1400px
+    */
+
+    @media print {
+        /* estilos de impressão */
+        img#print { display: block; }
+        img#phone { display: none; }
+        /* ... */
+    }
+
+    @media screen and (min-width: 768px) {   /* TABLET */
+        body { background-image: url(back-tablet.jpg); }
+        img#phone  { display: none; }
+        img#tablet { display: block; }
+        /* ... */
+    }
+
+    @media screen and (min-width: 1024px) {  /* DESKTOP */
+        body { background-image: url(back-pc.jpg); }
+        img#tablet { display: none; }
+        img#pc     { display: block; }
+        /* ... */
+    }
+
+    @media screen and (min-width: 1280px) {  /* DESKTOP GRANDE */
+        body { background-image: url(back-pc.jpg); }
+        img#pc { display: block; }
+        /* ... */
+    }
+
+    @media screen and (min-width: 1400px) {  /* ULTRAWIDE / TV */
+        body { background-image: url(back-tv.jpg); }
+        img#pc { display: none; }
+        img#tv { display: block; }
+    }
+
+
+------------------------------------------------------------
+8. BOAS PRÁTICAS
+------------------------------------------------------------
+
+→ Sempre use mobile first (min-width em vez de max-width)
+→ Separe o CSS base do CSS de media queries em arquivos
+  diferentes para projetos maiores
+→ Declare os breakpoints em ordem crescente de tamanho
+→ Coloque o @media print sempre antes dos @media screen
+→ Use clamp() para fontes em vez de redefinir em cada
+  breakpoint (evita repetição de código)
+→ background-image não aparece na impressão — não adianta
+  definir imagem de fundo no @media print
+→ No @media print, esconda menus, anúncios e elementos
+  visuais desnecessários com display: none
+→ Use ::after com content para adicionar texto automático
+  na versão impressa (URL, aviso, etc)
+
+
+============================================================
+RESUMO
+============================================================
+
+@media screen          → estilos para telas
+@media print           → estilos para impressão
+@media all             → estilos para todos os tipos
+orientation: portrait  → aparelho em pé
+orientation: landscape → aparelho deitado
+min-width              → a partir de X px (mobile first)
+max-width              → até X px (desktop first)
+and                    → operador E (todas as condições)
+,                      → operador OU (qualquer condição)
+clamp(min, ideal, max) → fonte fluida sem media query
+::after + content      → texto automático na impressão
