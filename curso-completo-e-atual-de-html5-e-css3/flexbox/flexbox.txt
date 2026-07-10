@@ -1,0 +1,377 @@
+============================================================
+FLEXBOX
+============================================================
+
+Flexbox é um sistema de layout que distribui e alinha
+elementos dentro de um container de forma flexível.
+
+Funciona com dois papéis:
+    PAI  → flex container (onde display: flex é declarado)
+    FILHO → flex item (elementos dentro do container)
+
+
+============================================================
+PARTE 1 — FLEX CONTAINER (PROPRIEDADES DO PAI)
+============================================================
+
+
+------------------------------------------------------------
+1. ATIVANDO O FLEXBOX
+------------------------------------------------------------
+
+    div.conteiner {
+        display: flex;
+    }
+
+    → todos os filhos diretos viram flex items automaticamente
+    → por padrão os itens ficam em linha (row) sem quebrar
+
+
+------------------------------------------------------------
+2. FLEX-DIRECTION — DIREÇÃO DOS ITENS
+------------------------------------------------------------
+
+Define o sentido do main-axis (eixo principal).
+Pense numa linha de trem — os itens seguem esse trilho.
+
+    flex-direction: row;            (PADRÃO)
+    → linha horizontal, da esquerda para direita →
+    → main-axis = horizontal | cross-axis = vertical
+
+    flex-direction: row-reverse;
+    → linha horizontal, da direita para esquerda ←
+    → main-axis = horizontal invertido
+
+    flex-direction: column;
+    → coluna vertical, de cima para baixo ↓
+    → main-axis = vertical | cross-axis = horizontal
+
+    flex-direction: column-reverse;
+    → coluna vertical, de baixo para cima ↑
+    → main-axis = vertical invertido
+
+
+EIXOS E PONTOS DE REFERÊNCIA:
+    main-start → onde o main-axis começa
+    main-end   → onde o main-axis termina
+    cross-start → onde o cross-axis começa
+    cross-end   → onde o cross-axis termina
+
+    row:
+        main-start = esquerda  | main-end = direita
+        cross-start = topo     | cross-end = baixo
+
+    row-reverse:
+        main-start = direita   | main-end = esquerda
+        cross-start = topo     | cross-end = baixo
+
+    column:
+        main-start = topo      | main-end = baixo
+        cross-start = esquerda | cross-end = direita
+
+    column-reverse:
+        main-start = baixo     | main-end = topo
+        cross-start = esquerda | cross-end = direita
+
+
+------------------------------------------------------------
+3. FLEX-WRAP — QUEBRA DE LINHA
+------------------------------------------------------------
+
+Define se os itens quebram para a próxima linha quando
+não cabem mais no container.
+
+    flex-wrap: nowrap;       (PADRÃO)
+    → sem quebra
+    → os itens encolhem para caber, ou criam scroll
+    → responsivo no sentido de encolher, mas pode vazar
+
+    flex-wrap: wrap;
+    → o item que não couber quebra para a próxima linha
+    → a quebra vai na direção FAVORÁVEL do cross-axis
+    → (ex: em row, quebra para baixo)
+
+    flex-wrap: wrap-reverse;
+    → igual ao wrap, mas a quebra vai na direção CONTRÁRIA
+    → (ex: em row, quebra para cima)
+
+
+------------------------------------------------------------
+4. FLEX-FLOW — SHORTHAND (ATALHO)
+------------------------------------------------------------
+
+Combina flex-direction + flex-wrap em uma só linha.
+Guanabara recomenda usar a shorthand.
+
+    /* versão longa */
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    /* versão shorthand */
+    flex-flow: row nowrap;
+
+    Outros exemplos:
+        flex-flow: row wrap;
+        flex-flow: column nowrap;
+        flex-flow: row-reverse wrap-reverse;
+
+
+------------------------------------------------------------
+5. JUSTIFY-CONTENT — ALINHAMENTO NO MAIN-AXIS
+------------------------------------------------------------
+
+Controla como os itens são distribuídos no eixo principal.
+
+    justify-content: flex-start;    (PADRÃO)
+    → itens agrupados no início do main-axis
+
+    justify-content: center;
+    → itens centralizados no main-axis
+
+    justify-content: flex-end;
+    → itens agrupados no final do main-axis
+
+    justify-content: space-between;
+    → primeiro item no início, último no fim
+    → espaço igual ENTRE os itens (sem espaço nas bordas)
+
+    justify-content: space-around;
+    → espaço ao redor de cada item
+    → as bordas têm metade do espaço que o meio
+
+    justify-content: space-evenly;
+    → espaço igual em todos os lados, inclusive bordas
+
+
+RESUMO VISUAL (em row):
+    flex-start   → [A][B][C]·········
+    center       → ····[A][B][C]····
+    flex-end     → ·········[A][B][C]
+    space-between→ [A]····[B]····[C]
+    space-around → ·[A]··[B]··[C]·
+    space-evenly → ··[A]··[B]··[C]··
+
+
+------------------------------------------------------------
+6. ALIGN-ITEMS — ALINHAMENTO NO CROSS-AXIS (1 LINHA)
+------------------------------------------------------------
+
+Controla como os itens se posicionam no eixo secundário.
+Funciona quando os itens estão em UMA só linha.
+
+    align-items: stretch;       (PADRÃO)
+    → itens se esticam para preencher o cross-axis
+    → (os itens ficam com a mesma altura do container)
+
+    align-items: flex-start;
+    → itens alinhados no cross-start (topo em row)
+
+    align-items: center;
+    → itens centralizados no cross-axis
+
+    align-items: flex-end;
+    → itens alinhados no cross-end (baixo em row)
+
+⚠️ O container precisa ter height definido para que
+align-items tenha efeito visível!
+
+
+------------------------------------------------------------
+7. ALIGN-CONTENT — ALINHAMENTO NO CROSS-AXIS (MÚLTIPLAS LINHAS)
+------------------------------------------------------------
+
+Funciona igual ao justify-content, mas no cross-axis
+e SOMENTE quando há múltiplas linhas (flex-wrap: wrap).
+
+    align-content: flex-start;
+    → linhas agrupadas no cross-start
+
+    align-content: center;
+    → linhas centralizadas no cross-axis
+
+    align-content: flex-end;
+    → linhas agrupadas no cross-end
+
+    align-content: space-between;
+    align-content: space-around;
+    align-content: space-evenly;
+    align-content: stretch;       (PADRÃO)
+
+⚠️ align-content só funciona com flex-wrap: wrap
+e quando o container tem height definido.
+
+
+------------------------------------------------------------
+8. CENTRALIZANDO COM FLEXBOX
+------------------------------------------------------------
+
+Para centralizar um elemento nos dois eixos:
+
+    main {
+        display: flex;
+        justify-content: center;  /* centraliza no main-axis */
+        align-items: center;      /* centraliza no cross-axis */
+        height: 100vh;
+        width: 100vw;
+    }
+
+    Por que usar main em vez de body?
+    O Guanabara prefere usar o main como container flex
+    para ter mais controle semântico do layout.
+    Ao usar main com height: 100vh e width: 100vw,
+    ele "substitui" o body como referência de tamanho.
+
+
+============================================================
+PARTE 2 — FLEX ITEM (PROPRIEDADES DO FILHO)
+============================================================
+
+
+------------------------------------------------------------
+9. ORDER — ORDEM DE EXIBIÇÃO
+------------------------------------------------------------
+
+Reordena visualmente os itens sem mudar o HTML.
+
+    div#item { order: 0; }    (PADRÃO de todo item)
+
+    → o CSS reordena os itens em ordem CRESCENTE
+    → números negativos vêm antes do zero
+    → itens com mesmo order mantêm a ordem do HTML
+
+    Exemplo:
+        div#i7 { order: -4; }   ← aparece primeiro
+        div#i2 { order: -2; }   ← aparece segundo
+        div#i1 { order: 0; }    ← terceiro
+        div#i6 { order: 0; }    ← quarto (mesmo order, segue HTML)
+        div#i5 { order: 2; }    ← quinto
+        div#i3 { order: 4; }    ← sexto
+        div#i4 { order: 8; }    ← aparece por último
+
+
+------------------------------------------------------------
+10. ALIGN-SELF — ALINHAMENTO INDIVIDUAL NO CROSS-AXIS
+------------------------------------------------------------
+
+Sobrescreve o align-items do container para um item
+específico.
+
+    align-self: auto;       (PADRÃO — herda do container)
+    align-self: flex-start; → vai para o cross-start
+    align-self: center;     → centraliza no cross-axis
+    align-self: flex-end;   → vai para o cross-end
+    align-self: stretch;    → se estica até o cross-end
+
+    Exemplo:
+        div#i3 { align-self: flex-end; }   ← só esse vai pro fim
+        div#i5 { align-self: center; }     ← só esse centraliza
+        div#i7 { align-self: stretch; }    ← só esse estica
+
+
+------------------------------------------------------------
+11. FLEX-BASIS — TAMANHO BASE DO ITEM
+------------------------------------------------------------
+
+Define o tamanho inicial do item no main-axis
+(largura em row, altura em column) antes de crescer
+ou encolher.
+
+    flex-basis: auto;    (PADRÃO — usa width/height do item)
+    flex-basis: 150px;   → tamanho base de 150px
+    flex-basis: 250px;
+
+    ⚠️ flex-basis é o ponto de PARTIDA, não o tamanho final.
+    O tamanho final depende do flex-grow e flex-shrink.
+
+
+------------------------------------------------------------
+12. FLEX-GROW — CRESCIMENTO DO ITEM
+------------------------------------------------------------
+
+Define o quanto um item pode CRESCER para ocupar o
+espaço sobrando no container.
+
+    flex-grow: 0;    (PADRÃO — não cresce)
+    flex-grow: 1;    → cresce proporcionalmente
+    flex-grow: 2;    → cresce o dobro em relação ao flex-grow: 1
+
+    Com flex-wrap: wrap → cresce até o limite do main-axis
+    e depois quebra para a próxima linha.
+
+    Exemplo com 3 itens:
+        div#cxA { flex-grow: 0; }   ← não cresce
+        div#cxB { flex-grow: 2; }   ← cresce o dobro
+        div#cxC { flex-grow: 1; }   ← cresce normal
+
+
+------------------------------------------------------------
+13. FLEX-SHRINK — ENCOLHIMENTO DO ITEM
+------------------------------------------------------------
+
+Define o quanto um item pode ENCOLHER quando não há
+espaço suficiente no container.
+
+    flex-shrink: 1;    (PADRÃO — encolhe proporcionalmente)
+    flex-shrink: 0;    → NÃO encolhe nunca
+    flex-shrink: 2;    → encolhe o dobro em relação ao 1
+
+    Com flex-wrap: nowrap + flex-shrink: 0
+    → o item NÃO encolhe e VAI VAZAR do container
+      quando atingir o tamanho mínimo.
+
+    Com flex-wrap: nowrap + flex-shrink: 1
+    → o item encolhe para tentar caber no container.
+
+    Exemplo com 3 itens:
+        div#cxA { flex-shrink: 1; }   ← encolhe normal
+        div#cxB { flex-shrink: 0; }   ← nunca encolhe
+        div#cxC { flex-shrink: 2; }   ← encolhe o dobro
+
+
+------------------------------------------------------------
+14. FLEX: AUTO — SHORTHAND DO ITEM
+------------------------------------------------------------
+
+    flex: auto;
+    → equivale a flex-grow: 1, flex-shrink: 1, flex-basis: auto
+    → não permite espaços em branco dentro do container
+    → os itens crescem para preencher todo o espaço disponível
+
+
+============================================================
+RESUMO — PROPRIEDADES DO CONTAINER (PAI)
+============================================================
+
+display: flex           → ativa o flexbox
+flex-direction          → direção do main-axis
+flex-wrap               → quebra de linha
+flex-flow               → shorthand direction + wrap
+justify-content         → alinhamento no main-axis
+align-items             → alinhamento no cross-axis (1 linha)
+align-content           → alinhamento no cross-axis (várias linhas)
+
+
+RESUMO — PROPRIEDADES DO ITEM (FILHO)
+============================================================
+
+order                   → ordem de exibição (padrão: 0)
+align-self              → alinhamento individual no cross-axis
+flex-basis              → tamanho base no main-axis
+flex-grow               → quanto pode crescer (padrão: 0)
+flex-shrink             → quanto pode encolher (padrão: 1)
+flex                    → shorthand grow + shrink + basis
+
+
+VALORES PADRÃO RESUMIDOS
+============================================================
+
+flex-direction: row
+flex-wrap: nowrap
+flex-flow: row nowrap
+justify-content: flex-start
+align-items: stretch
+align-content: stretch
+order: 0
+flex-grow: 0
+flex-shrink: 1
+flex-basis: auto
