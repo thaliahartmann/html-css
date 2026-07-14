@@ -1,0 +1,2 @@
+O Box Model é a estrutura fundamental de cada elemento individual (define seu tamanho e espaçamento), 
+enquanto o Flexbox é um sistema de layout (que controla o alinhamento e a distribuição espacial de vários elementos dentro de um contêiner)
