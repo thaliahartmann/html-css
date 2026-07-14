@@ -2,12 +2,23 @@
 FLEXBOX
 ============================================================
 
-Flexbox é um sistema de layout que distribui e alinha
-elementos dentro de um container de forma flexível.
 
-Funciona com dois papéis:
-    PAI  → flex container (onde display: flex é declarado)
-    FILHO → flex item (elementos dentro do container)
+QUEM É O PAI E QUEM É O FILHO?
+
+pode ser assim:
+
+    <div> <!--ELEMENTO PAI (O QUE ESTÁ FORA)-->
+        <h2></h2>  <!--ELEMENTO FILHO (O QUE ESTÁ DENTRO DO PAI)-->
+    </div>
+
+e assim tambem:
+
+    <div> <!--ELEMENTO PAI (O QUE ESTÁ FORA)-->
+        <div> <!--ELEMENTO PAI E FILHO AO MESMO TEMPO, POIS ESTÁ DENTRO DE UM PAI)-->
+            <h2></h2>  <!--ELEMENTO FILHO (O QUE ESTÁ DENTRO DO PAI)-->
+        </div>
+    </div>
+
 
 
 ============================================================
@@ -177,7 +188,7 @@ align-items tenha efeito visível!
 
 
 ------------------------------------------------------------
-7. ALIGN-CONTENT — ALINHAMENTO NO CROSS-AXIS (MÚLTIPLAS LINHAS)
+7. ALIGN-CONTENT — ALINHAMENTO NO CROSS-AXIS (QUEBRAS)
 ------------------------------------------------------------
 
 Funciona igual ao justify-content, mas no cross-axis
@@ -337,41 +348,3 @@ espaço suficiente no container.
     → não permite espaços em branco dentro do container
     → os itens crescem para preencher todo o espaço disponível
 
-
-============================================================
-RESUMO — PROPRIEDADES DO CONTAINER (PAI)
-============================================================
-
-display: flex           → ativa o flexbox
-flex-direction          → direção do main-axis
-flex-wrap               → quebra de linha
-flex-flow               → shorthand direction + wrap
-justify-content         → alinhamento no main-axis
-align-items             → alinhamento no cross-axis (1 linha)
-align-content           → alinhamento no cross-axis (várias linhas)
-
-
-RESUMO — PROPRIEDADES DO ITEM (FILHO)
-============================================================
-
-order                   → ordem de exibição (padrão: 0)
-align-self              → alinhamento individual no cross-axis
-flex-basis              → tamanho base no main-axis
-flex-grow               → quanto pode crescer (padrão: 0)
-flex-shrink             → quanto pode encolher (padrão: 1)
-flex                    → shorthand grow + shrink + basis
-
-
-VALORES PADRÃO RESUMIDOS
-============================================================
-
-flex-direction: row
-flex-wrap: nowrap
-flex-flow: row nowrap
-justify-content: flex-start
-align-items: stretch
-align-content: stretch
-order: 0
-flex-grow: 0
-flex-shrink: 1
-flex-basis: auto
