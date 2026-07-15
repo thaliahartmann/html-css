@@ -1,7 +1,7 @@
------------- HTML ------------
-
-
 ------------SOBRE A FORMATAÇÃO DE TEXTO------------
+
+
+
 
 <h1>
 <h2>
@@ -20,7 +20,12 @@ Níveis hierárquicos seguem a sequência:
 - Não são usados para definir tamanho da letra. Isso é feito em CSS;
 
 
+
+
 ------------TÍTULO------------
+
+
+
 
 <h1> inicia o titulo
 </h1> termina o titulo
@@ -30,13 +35,24 @@ exemplo:
 <h1>Exemplo de título</h1>
 
 
+
+
 ------------SUBTÍTULO------------
+
+
+
 
 <h2> inicia o subtítulo
 </h2> termina o subtítulo
 
 
+
+
+
 ------------PARÁGRAFO------------
+
+
+
 
 <p> inicia o parágrafo
 </p> termina o parágrafo
@@ -46,7 +62,13 @@ exemplo:
 <p> Exemplo de parágrafo </p>
 
 
+
+
+
 ------------NEGRITO------------
+
+
+
 
 <b> para abrir a tag para escrever em negrito
 
@@ -55,7 +77,13 @@ exemplo:
 <p>Nessa frase temos um <b>termo em negrito usando a tag B</b></p>
 
 
+
+
+
 ------------STRONG------------
+
+
+
 
 <strong> para abrir a tag para escrever em strong
 
@@ -66,7 +94,13 @@ exemplo:
 
 faz a mesma coisa que o NEGRITO, mas com um significado diferente e com SEMANTICA, é usado para dar um sentido para a frase: "TERMO FORTE, TERMO DE DESTAQUE".
 
+
+
+
 ------------ITÁLICO------------
+
+
+
 
 <i> para abrir a tag para escrever em itálico
 
@@ -75,7 +109,13 @@ exemplo:
 <p>Nessa frase temos um <i>termo em destaque usando a tag I</i></p>
 
 
+
+
+
 ------------ENFÂSE------------
+
+
+
 
 <em> para abrir a tag para escrever em enfase
 
@@ -84,7 +124,13 @@ exemplo:
 <p>Nessa frase temos um <em>termo em destaque usando a tag I</em></p>
 
 
+
+
+
 ------------MARK------------
+
+
+
 
 <mark> para abrir a tag para marcar uma frase
 
@@ -107,7 +153,13 @@ mark {
 </style>
 
 
+
+
+
 ------------BIG------------
+
+
+
 
 <big> para abrir a tag para escrever "MAIOR"
 
@@ -116,7 +168,13 @@ exemplo:
 Estamos criando um <big>texto grande</big>
 
 
+
+
+
 ------------SMALL------------
+
+
+
 
 <small> para abrir a tag para escrever "menor"
 
@@ -125,7 +183,13 @@ exemplo:
 <small>texto pequeno</small>
 
 
+
+
+
 ------------TEXTO DELETADO------------
+
+
+
 
 <del> para abrir a tag para marcar como deletado
 
@@ -134,7 +198,13 @@ exemplo:
 <p>Podemos marcar <del>um texto como excluído</del></p>
 
 
+
+
+
 ------------TEXTO INSERIDO------------
+
+
+
 
 <ins> para abrir a tag para marcar como inserido
 
@@ -143,7 +213,13 @@ exemplo:
 <p>Podemos marcar <ins>um texto como inserido</ins></p>
 
 
+
+
+
 ------------TEXTO SOBRESCRITO------------
+
+
+
 
 <sup> para abrir a tag para DESCER letras/números que precisam dessa marcação, como H20 (finge que o 2 tá para baixo)
 
@@ -152,7 +228,12 @@ exemplo:
 <p>Para inserir coisas do tipo x<sup>20</sup>+3.</p>
 
 
+
+
 ------------TEXTO SUBSCRITO------------
+
+
+
 
 <sub>
 
@@ -161,7 +242,13 @@ exemplo:
 <p>Para inserir coisas do tipo H<sub>2</sub>0.</p>
 
 
+
+
+
 ------------TEXTO INVERTIDO------------
+
+
+
 
 <bdo dir="rtl">
 
@@ -172,6 +259,147 @@ exemplo:
 
 
 
+
+------------CODIGO FONTE/ PRÉ FORMATAÇÃO------------
+
+
+
+<code> para abrir a tag para alterar a fonte da frase, para ficar igual a códigos, tipo, uma visualização fiel de um código de programação.
+
+exemplo: <p>O comando <code>document.getElementById('teste')</code> é escrito em linguagem Java Script.</p>
+
+resultado: O comando document.getElementById('teste') é escrito em linguagem Java Script. (finge que saiu do jeito que era para sair)
+
+<pre> é para manter a formatação do código
+
+
+
+exemplo: 
+
+<pre>
+
+<code>
+
+&nbsp;   num = int(input('Digite um número:''))
+
+&nbsp;   if num % 2 == 0:
+
+&nbsp;      print(f'O número {num} é par.')
+
+&nbsp;   else:
+
+&nbsp;      print(f'O número {num} é ímpar.')
+
+&nbsp;   print('Fim do programa.)
+
+</code>
+
+
+resultado:
+
+ num = int(input('Digite um número:''))
+ if num % 2 == 0:
+    print(f'O número {num} é par.')
+ else:
+    print(f'O número {num} é ímpar.')
+ print('Fim do programa')
+
+
+
+------------CITAÇÃO SIMPLES------------
+
+
+
+<q> para abrir a tag para criar uma citação
+
+exemplo:<p>Como diria o pai de um amigo:<q>O computador é um burro muito rápido</q>.</p>
+
+resultado: Como diria o pai de um amigo:"O computador é um burro muito rápido".
+
+q é semântica, INDICA que é uma citação, no caso de coisas que não são citações compensa muito mais "só" mandar as aspas manualmente.
+
+
+
+
+------------CITAÇÃO COMPLETA------------
+
+
+
+<blockquote> para abrir a tag para criar uma citação completa, uma que encaixa textos maiores.
+
+cite: é para colocar a fonte de onde você tirou a citação, ela não aparece no site, mas os mecanismos de busca e o Google vai entender que você está referenciando algo.
+
+exemplo:<p>Segundo Jeff Noble, no seu livro HTML para leigos:</p>
+    <blockquote cite="https://books.google.com.br/books/about/HTML_XHTML_e_CSS_Para_Leigos.html?hl=pt-BR&id=E8ZtDwAAQBAJ&redir_esc=y">
+        A diferença entre os elementos iline e um bloco de texto é importante.
+        Os elementos HTML neste capítulo descrevem os blocos de texto.
+</blockquote> 
+
+resultado: Segundo Jeff Noble, no seu livro HTML para leigos:
+
+  A diferença entre os elementos iline e um bloco de texto é importante. Os elementos HTML neste capítulo descrevem os blocos de texto.
+  q é semântica, INDICA que é uma citação, no caso de coisas que não são citações compensa muito mais "só" mandar as aspas manualmente.
+
+
+
+------------SIGNIFICADO DA ABREVIAÇÃO------------
+
+
+
+<abbr> para abrir a tag para criar um marcador que diz o que significa tal abreviação, tipo VLW = valeu.
+
+exemplo: <p>Estou estudando <abbr title="HyperText Markup language">HTML</abbr> e <abbr title="Cascading Style Sheets">CSS</abbr>, nice demais gurizada!</p>
+
+resultado: Estou estudando HTML e CSS, nice demais gurizada! 
+
+ai quando você passa o mouse por "HTML" e "CSS", aparece o significado da sigla encima.
+
+
+
+------------ TAG <SPAN> ---------
+
+
+É UMA TAG HTML INLINE, SERVE PARA MARCAR UMA PEQUENA PARTE DO TEXTO, NORMALMENTE UMA PALAVRA OU TRECHO, PARA DEPOIS ESTILIZAR COM CSS.
+
+
+
+exemplo:
+
+<p>Eu gosto de <span>Android</span>.</p>
+
+
+
+resultado:
+
+A palavra Android fica separada do restante do texto para receber estilo.
+
+
+
+EXEMPLO COM CLASS:
+
+<p>Eu gosto de <span class="destaque">Android</span>.</p>
+
+<style>
+    .destaque {
+        color: green;
+        font-weight: bold;
+    }
+</style>
+
+
+
+resultado:
+
+A palavra Android ficará verde e em negrito.
+
+
+
+QUANDO USAR:
+
+✔ destacar palavra
+✔ colorir parte do texto
+✔ aplicar class em trecho pequeno
+✔ aplicar id em palavra específica
 
 
 
@@ -447,20 +675,3 @@ https://www.w3schools.com/cssref/css_websafe_fonts.php
 
 
 
---------- SHORTHAND = MÃOZINHA ---------
-
-é uma maozinha que ao inves de usar 4 linhas voce usa só uma, mas tem que ser nessa ordem, tem varios tipos de shorthands
-
-
-<title>Fontes em CSS</title>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-    body {
-        /* shorthand font:
-        - font-style font-weight font-size font-family */
-        font: italic bolder 1em 'Work Sans', sans-serif
-    }
-</style>
-</head>
-<body>

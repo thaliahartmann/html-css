@@ -2,6 +2,8 @@
 
 
 
+
+
 <video> para abrir a tag para colocar um vídeo no site.
 
 exemplo: <video src="midia/meu-video1.mp4" width="500" poster="imagens/gato-capa-png.jpg" controls></video>
@@ -14,7 +16,11 @@ resultado: *mostrou o video no site*
 
 
 
+
+
 =======ADICIONAR TODAS AS FORMATAÇÕES DE VIDEO NO SITE========
+
+
 
 
 
@@ -35,7 +41,11 @@ resultado: *mostrou o video no site*
 
 
 
+
+
 =======INCORPORAÇÃO DE VÍDEOS EXTERNOS DO YOUTUBE (MELHOR FORMA DE COLOCAR VIDEOS NO SITE)========
+
+
 
 
 
@@ -58,7 +68,11 @@ resultado: *mostrou o video no site*
 
 
 
+
+
 ========INCORPORAÇÃO DE VÍDEOS EXTERNOS DO VIMEO (FORMA PAGA QUE PODE USAR PARA COLOCAR VÍDEOS PRIVADOS E TEM MAIS FORMAS DE EDIÇÃO)========
+
+
 
 
 
@@ -72,7 +86,12 @@ resultado: *mostrou o video no site*
 
 
 
+
+
 ======= VIDEO RESPONSIVO (iframe do YouTube) =======
+
+
+
 
  
 Existem 3 formas de deixar um iframe responsivo.
@@ -153,4 +172,111 @@ RESUMO - Quando usar cada uma:
  
  
 
-=
+
+
+
+=------------ÁUDIO------------
+
+
+
+
+
+<audio> para abrir a tag para criar uma tag de áudio.
+
+exemplo: <p>Vamos aprender a reproduzir audio em HTML5</p>
+    <audio src="midia/rock.mp3" controls autoplay></audio> 
+
+controls autoplay é para ativar o tocador de áudio.
+
+
+
+
+
+
+------------SE O NAVEGADOR NÃO FOR COMPATIVEL COM A FORMA TRADICIONAL DE COLOCAR AUDIO------------
+
+
+
+
+
+<audio> para abrir a tag para criar uma tag de áudio.
+
+<p>Vamos aprender a reproduzir audio em HTML5</p>
+    <audio preload="metadata" autoplay controls loop>
+        <source src="midia/guanacast-33.mp3" type="audio/mpeg"> <!--para mp3-->
+        <source src="midia/guanacast-33.ogg" type="audio/ogg">  <!--para ogg-->
+        <source src="midia/guanacast-33.wav" type="audio/wav">  <!--para wav-->
+        <p>Infelizmente seu navegador não consegue reproduzir áudio.</p> <!--Se não conseguir reproduzir áudio-->
+        <p><a href="midia/guanacast-33.mp3">Clique aqui para baixar o arquivo MP3</a>.</p>
+        ></audio>
+    </audio>
+
+
+
+
+
+========preload======== 
+
+
+
+
+  none → não carrega nada
+  metadata → carrega só informações do áudio (duração, etc.)
+  auto → pode carregar o arquivo inteiro
+
+
+
+
+
+
+========Autoplay========
+
+
+
+
+Faz o áudio começar automaticamente quando a página abre.
+
+⚠️ Observação importante:
+A maioria dos navegadores bloqueia autoplay com som.
+Normalmente só funciona se o áudio estiver mutado.
+
+
+
+
+
+========Controls========
+
+
+
+
+Mostra os controles do player para o usuário.
+
+Exemplo de controles:
+
+▶️ play
+
+⏸ pause
+
+🔊 volume
+
+barra de tempo
+
+Sem controls, o áudio toca mas o usuário não vê nada.
+
+
+
+
+
+======== loop========
+
+
+
+
+
+Faz o áudio recomeçar automaticamente quando termina.
+
+Exemplo:
+
+🎵 música acaba
+↩️ volta para o início
+🎵 toca novamente

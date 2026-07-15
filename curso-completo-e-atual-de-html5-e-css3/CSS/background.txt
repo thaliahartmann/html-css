@@ -1,6 +1,182 @@
------------- IMAGENS DE FUNDO EM CSS ---------
+--------- MUDAR A COR DO FUNDO ---------
+
+
+
+
+
+background-color
+
+
+
+
+
+--------- MUDAR A COR DO FUNDO DEGRADE ---------
+
+
+
+
+
+background-image: linear-gradiente
+
+
+exemplo:
+
+background-image: linear-gradient(to right, white, blue);
+
+
+
+
+
+--------- MUDAR A COR DO FUNDO DEGRADE 45 GRAUS ---------
+
+
+
+
+
+    <title>Gradiente em CSS</title>
+    <style>
+        * { 
+            height: 100%;
+         }
+        body {
+            background-image: linear-gradient(45deg, #4411cf, #8342B7, #BF328D, #EA4852, #FFDC83);
+            background-attachment: fixed;
+        }
+    </style>
+
+
+
+
+
+--------- MUDAR A COR DO FUNDO DEGRADE CIRCULO ---------
+
+
+
+
+
+<title>Gradiente em CSS</title>
+    <style>
+        * { 
+            height: 100%;
+         }
+        body {
+            background-image: radial-gradient(circle, #4411cf, #8342B7, #BF328D, #EA4852, #FFDC83);
+            background-attachment: fixed;
+        }
+    </style>
+
+
+
+
+
+--------- PARA O DEGRADE FICAR INFINITO MEMOS ROLANDO A PÁGINA ---------
+
+
+
+    <title>Gradiente em CSS</title>
+    <style>
+        * { 
+            height: 100%;
+         }
+        body {
+            background-image: linear-gradient(to bottom, #0E5981, #082738);
+            background-attachment: fixed;
+        }
+    </style>
+
+
+
+
+
+--------- IMAGEM SIMPLES ---------
+
+
+
+
+<img src="foto.png" alt="Exemplo de foto">
+
+src  → caminho da imagem
+alt  → texto que aparece se a imagem não carregar
+       também ajuda leitores de tela (acessibilidade)
+
+
+
+
+
+
+--------- IMAGEM SIMPLES RESPONSIVA ---------
+
+
+
+
+
+A forma mais usada para imagem se adaptar à tela:
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    width: 100%  → ocupa todo o espaço disponível
+    height: auto → a altura se ajusta sozinha (não distorce)
+
+
+LIMITAR O TAMANHO MÁXIMO:
+    img {
+        width: 100%;
+        max-width: 800px;
+        height: auto;
+    }
+    → a imagem cresce até no máximo 800px, depois para
+
+
+
+
+
+--------- FORMAS DE CENTRALIZAR IMAGEM ---------
+
+
+
+
+
+JEITO MAIS USADO:
+    img {
+        display: block;
+        margin: auto;
+    }
+    → centraliza horizontalmente
+
+
+COM TAMANHO FIXO:
+    img {
+        display: block;
+        width: 300px;
+        margin: auto;
+    }
+    → centraliza e fixa a largura em 300px
+
+
+COM FLEXBOX (centraliza nos dois sentidos):
+    body {
+        display: flex;
+        justify-content: center;  ← horizontal
+        align-items: center;      ← vertical
+        height: 100vh;
+    }
+
+
+
+
+
+------------ IMAGENS DE FUNDO DE SITE ---------
+
+
+
+
+
 
 - sites no ex 22
+
 
 
 =========================================

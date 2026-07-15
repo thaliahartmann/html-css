@@ -1,0 +1,677 @@
+------------SOBRE A FORMATAÇÃO DE TEXTO------------
+
+
+
+
+<h1>
+<h2>
+<h3>
+<h4>
+
+quanto maior o número, menor vai ficar as letras?
+
+não é isso exatamente...
+
+Níveis hierárquicos seguem a sequência:
+
+<h1>, <h2>, <h3>, <h4>, <h5>, <h6>
+
+- Não deve-se pular a sequência;	
+- Não são usados para definir tamanho da letra. Isso é feito em CSS;
+
+
+
+
+------------TÍTULO------------
+
+
+
+
+<h1> inicia o titulo
+</h1> termina o titulo
+
+exemplo:
+
+<h1>Exemplo de título</h1>
+
+
+
+
+------------SUBTÍTULO------------
+
+
+
+
+<h2> inicia o subtítulo
+</h2> termina o subtítulo
+
+
+
+
+
+------------PARÁGRAFO------------
+
+
+
+
+<p> inicia o parágrafo
+</p> termina o parágrafo
+
+exemplo:
+
+<p> Exemplo de parágrafo </p>
+
+
+
+
+
+------------NEGRITO------------
+
+
+
+
+<b> para abrir a tag para escrever em negrito
+
+exemplo:
+
+<p>Nessa frase temos um <b>termo em negrito usando a tag B</b></p>
+
+
+
+
+
+------------STRONG------------
+
+
+
+
+<strong> para abrir a tag para escrever em strong
+
+exemplo:
+
+<p>Nessa frase temos um <strong>termo em destaque usando a tag STRONG</strong></p>
+
+
+faz a mesma coisa que o NEGRITO, mas com um significado diferente e com SEMANTICA, é usado para dar um sentido para a frase: "TERMO FORTE, TERMO DE DESTAQUE".
+
+
+
+
+------------ITÁLICO------------
+
+
+
+
+<i> para abrir a tag para escrever em itálico
+
+exemplo:
+
+<p>Nessa frase temos um <i>termo em destaque usando a tag I</i></p>
+
+
+
+
+
+------------ENFÂSE------------
+
+
+
+
+<em> para abrir a tag para escrever em enfase
+
+exemplo:
+
+<p>Nessa frase temos um <em>termo em destaque usando a tag I</em></p>
+
+
+
+
+
+------------MARK------------
+
+
+
+
+<mark> para abrir a tag para marcar uma frase
+
+exemplo:
+
+<p>Podemos criar um texto marcado <mark>usando a tag MARK.</mark></p>
+
+
+Escolhendo a cor:
+
+<mark style="background-color:aqua">
+
+
+Mudando a cor de todos os MARKS:
+
+<style>
+mark {
+    background-color: coral;
+}
+</style>
+
+
+
+
+
+------------BIG------------
+
+
+
+
+<big> para abrir a tag para escrever "MAIOR"
+
+exemplo:
+
+Estamos criando um <big>texto grande</big>
+
+
+
+
+
+------------SMALL------------
+
+
+
+
+<small> para abrir a tag para escrever "menor"
+
+exemplo:
+
+<small>texto pequeno</small>
+
+
+
+
+
+------------TEXTO DELETADO------------
+
+
+
+
+<del> para abrir a tag para marcar como deletado
+
+exemplo:
+
+<p>Podemos marcar <del>um texto como excluído</del></p>
+
+
+
+
+
+------------TEXTO INSERIDO------------
+
+
+
+
+<ins> para abrir a tag para marcar como inserido
+
+exemplo:
+
+<p>Podemos marcar <ins>um texto como inserido</ins></p>
+
+
+
+
+
+------------TEXTO SOBRESCRITO------------
+
+
+
+
+<sup> para abrir a tag para DESCER letras/números que precisam dessa marcação, como H20 (finge que o 2 tá para baixo)
+
+exemplo:
+
+<p>Para inserir coisas do tipo x<sup>20</sup>+3.</p>
+
+
+
+
+------------TEXTO SUBSCRITO------------
+
+
+
+
+<sub>
+
+exemplo:
+
+<p>Para inserir coisas do tipo H<sub>2</sub>0.</p>
+
+
+
+
+
+------------TEXTO INVERTIDO------------
+
+
+
+
+<bdo dir="rtl">
+
+exemplo:
+
+<p><bdo dir="rtl">Esta tudo ao contrário!!!</bdo></p>
+
+
+
+
+
+------------CODIGO FONTE/ PRÉ FORMATAÇÃO------------
+
+
+
+<code> para abrir a tag para alterar a fonte da frase, para ficar igual a códigos, tipo, uma visualização fiel de um código de programação.
+
+exemplo: <p>O comando <code>document.getElementById('teste')</code> é escrito em linguagem Java Script.</p>
+
+resultado: O comando document.getElementById('teste') é escrito em linguagem Java Script. (finge que saiu do jeito que era para sair)
+
+<pre> é para manter a formatação do código
+
+
+
+exemplo: 
+
+<pre>
+
+<code>
+
+&nbsp;   num = int(input('Digite um número:''))
+
+&nbsp;   if num % 2 == 0:
+
+&nbsp;      print(f'O número {num} é par.')
+
+&nbsp;   else:
+
+&nbsp;      print(f'O número {num} é ímpar.')
+
+&nbsp;   print('Fim do programa.)
+
+</code>
+
+
+resultado:
+
+ num = int(input('Digite um número:''))
+ if num % 2 == 0:
+    print(f'O número {num} é par.')
+ else:
+    print(f'O número {num} é ímpar.')
+ print('Fim do programa')
+
+
+
+------------CITAÇÃO SIMPLES------------
+
+
+
+<q> para abrir a tag para criar uma citação
+
+exemplo:<p>Como diria o pai de um amigo:<q>O computador é um burro muito rápido</q>.</p>
+
+resultado: Como diria o pai de um amigo:"O computador é um burro muito rápido".
+
+q é semântica, INDICA que é uma citação, no caso de coisas que não são citações compensa muito mais "só" mandar as aspas manualmente.
+
+
+
+
+------------CITAÇÃO COMPLETA------------
+
+
+
+<blockquote> para abrir a tag para criar uma citação completa, uma que encaixa textos maiores.
+
+cite: é para colocar a fonte de onde você tirou a citação, ela não aparece no site, mas os mecanismos de busca e o Google vai entender que você está referenciando algo.
+
+exemplo:<p>Segundo Jeff Noble, no seu livro HTML para leigos:</p>
+    <blockquote cite="https://books.google.com.br/books/about/HTML_XHTML_e_CSS_Para_Leigos.html?hl=pt-BR&id=E8ZtDwAAQBAJ&redir_esc=y">
+        A diferença entre os elementos iline e um bloco de texto é importante.
+        Os elementos HTML neste capítulo descrevem os blocos de texto.
+</blockquote> 
+
+resultado: Segundo Jeff Noble, no seu livro HTML para leigos:
+
+  A diferença entre os elementos iline e um bloco de texto é importante. Os elementos HTML neste capítulo descrevem os blocos de texto.
+  q é semântica, INDICA que é uma citação, no caso de coisas que não são citações compensa muito mais "só" mandar as aspas manualmente.
+
+
+
+------------SIGNIFICADO DA ABREVIAÇÃO------------
+
+
+
+<abbr> para abrir a tag para criar um marcador que diz o que significa tal abreviação, tipo VLW = valeu.
+
+exemplo: <p>Estou estudando <abbr title="HyperText Markup language">HTML</abbr> e <abbr title="Cascading Style Sheets">CSS</abbr>, nice demais gurizada!</p>
+
+resultado: Estou estudando HTML e CSS, nice demais gurizada! 
+
+ai quando você passa o mouse por "HTML" e "CSS", aparece o significado da sigla encima.
+
+
+
+------------ TAG <SPAN> ---------
+
+
+É UMA TAG HTML INLINE, SERVE PARA MARCAR UMA PEQUENA PARTE DO TEXTO, NORMALMENTE UMA PALAVRA OU TRECHO, PARA DEPOIS ESTILIZAR COM CSS.
+
+
+
+exemplo:
+
+<p>Eu gosto de <span>Android</span>.</p>
+
+
+
+resultado:
+
+A palavra Android fica separada do restante do texto para receber estilo.
+
+
+
+EXEMPLO COM CLASS:
+
+<p>Eu gosto de <span class="destaque">Android</span>.</p>
+
+<style>
+    .destaque {
+        color: green;
+        font-weight: bold;
+    }
+</style>
+
+
+
+resultado:
+
+A palavra Android ficará verde e em negrito.
+
+
+
+QUANDO USAR:
+
+✔ destacar palavra
+✔ colorir parte do texto
+✔ aplicar class em trecho pequeno
+✔ aplicar id em palavra específica
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------- CSS ---------
+
+
+
+
+--------- MUDAR A FONTE ---------
+
+font-family...
+
+
+
+--------- MUDAR O TAMANHO DA FONTE ---------
+
+
+font- size...
+
+
+--------- FONT-VARIANT e TEXT-TRANSFORM ---------
+
+
+
+Ambos mudam a capitalização do texto, mas de formas diferentes.
+
+    font-variant: small-caps;
+    → transforma letras minúsculas em MAIÚSCULAS menores
+    → as letras que já eram maiúsculas ficam maiores
+    → resultado: visual elegante, todas maiúsculas mas com
+      hierarquia de tamanho
+
+        h1 { font-variant: small-caps; }
+        "cordel moderno" → CORDEL MODERNO (com tamanhos diferentes)
+
+
+    text-transform: uppercase;
+    → transforma TUDO em maiúsculo com o mesmo tamanho
+    → sem diferença de tamanho entre as letras
+
+        h1 { text-transform: uppercase; }
+        "cordel moderno" → CORDEL MODERNO (tudo igual)
+
+    Outros valores de text-transform:
+        text-transform: lowercase;   → tudo minúsculo
+        text-transform: capitalize;  → Primeira Letra De Cada Palavra
+
+
+
+
+--------- ALINHAMENTO DE TEXTOS --------- 
+
+
+
+text-align + left, center, right , justify
+
+
+center: centro
+left: esquerda
+right: direita
+justify: parágrafo de redação
+indent: tamanho do parágrafo
+
+
+ <title>Alinhamentos</title>
+    <style> 
+        body {
+            font: normal 16px Arial, Verdana, serif;
+            text-align: left; ************************ esquerda
+        }
+        h1 {
+            text-align: center; *********************** centro
+
+        }
+        h2 {
+            text-align: right; ************************ direita
+        }
+        p {
+            text-align: justify; ********************** parágrafo de redação
+            text-indent: 35px;   ********************** tamanho do parágrafo
+        }
+    </style>
+</head>
+<body>
+
+
+
+--------- MUDAR A COR DA LETRA ---------
+
+
+
+color
+
+
+
+--------- LINE-HEIGHT (ALTURA DA LINHA) ---------
+
+
+
+Define o espaço vertical entre as linhas de um texto.
+É como o espaçamento de linha no Word.
+
+    line-height: 1;      → linhas coladas (sem espaço extra)
+    line-height: 1.5;    → espaçamento confortável para leitura
+    line-height: 2em;    → duas vezes o tamanho da fonte atual
+    line-height: 2;      → mesma coisa, sem precisar da unidade
+
+    Exemplo:
+        section {
+            font-size: 16px;
+            line-height: 2em;  → espaço entre linhas = 32px
+        }
+
+    Dica: para textos longos, line-height entre 1.5 e 2
+    melhora muito a leitura.
+
+
+
+
+--------- TEXT-SHADOW (SOMBRA NO TEXTO) ---------
+
+
+
+Adiciona sombra ao texto. A sintaxe tem 4 valores:
+
+    text-shadow: x  y  desfoque  cor;
+
+    x        → deslocamento horizontal (positivo = direita)
+    y        → deslocamento vertical   (positivo = baixo)
+    desfoque → quanto a sombra espalha (0 = sombra dura)
+    cor      → cor da sombra
+
+
+    Exemplos:
+
+    text-shadow: 1px 1px 0px black;
+    → sombra dura, 1px para direita e 1px para baixo
+    → usada para dar legibilidade em cima de imagem
+
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    → sombra suave e semitransparente
+
+    text-shadow: 0px 0px 8px white;
+    → brilho ao redor do texto (efeito neon)
+
+    text-shadow: -1px -1px 0px black;
+    → sombra para cima e para a esquerda
+
+    Múltiplas sombras (separadas por vírgula):
+    text-shadow: 1px 1px 0px black, 0px 0px 10px white;
+
+
+
+
+--------- NEGRITO, ITÁLICO, SUBLINHADO ---------
+
+
+
+-   negrito:   lighter, normal,  bold , bolder: peso das fontes, nem todas as fontes tem todos esses
+- itálico: font-style: italic;
+- sublinhado: text-decoration: underline;
+
+
+<title>Fontes em CSS</title>
+<!--font-family: Arial, Helvetica, sans-serif; 
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    body {
+        font-family: 'Work Sans', Arial, Helvetica; 
+        font-size: 1em ;
+        font-weight: bolder;
+        font-style: italic;
+        text-decoration: underline;
+    }
+</style>
+</head>
+<body>
+
+
+
+--------- CAPTURANDO FONTES USADAS EM SITES ---------
+
+
+
+só baixar a extensão:
+
+-https://chromewebstore.google.com/detail/fonts-ninja/eljapbgkmlngdpckoiiibecpemleclhh
+
+
+
+--------- CAPTURANDO FONTES USADAS EM IMAGENS --------- 
+
+sites:
+
+https://www.whatfontis.com
+
+https://www.myfonts.com/pt/pages/whatthefont
+
+https://www.fontsquirrel.com/matcherator?token=d0nmwv41exr65o7n
+
+
+
+--------- COMO CARREGAR FONTES IMCOMPÁTIVEIS EM DISPOSITIVOS DIFERENTES? ---------
+
+- site para averiguar as combinações seguras de fonte
+
+https://www.w3schools.com/cssref/css_websafe_fonts.php
+
+<--NA FONT-FAMILY VAI TER 3 OPÇÕES DE FONTE, PRIMEIRO VAI CARREGAR A ARIAL, CASO, O DISPOSITIVO NÃO TENHA ARIAL, VAI CARREGAR HELVETICA E ASSIM SUCESSIVAMENTE-->
+
+<title>Fontes em CSS</title>
+<!--font-family: Arial, Helvetica, sans-serif; 
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif
+    }
+
+
+
+--------- COMO CARREGAR FONTES BAIXADAS ---------
+
+- @font face + enter
+
+- é o parametro criado para permitir fontes baixadas
+
+- tipos de format()
+ - opentype (otf)
+ - truetype (ttf)
+ - embedded - opentype
+ - truetype-aat (Apple Advanced Typography)
+ - svg
+
+ - todos os nomes da fonte devem ser iguais
+ - se quando baixar, vier mais um arquivo, coloque a url dos dois arquivos
+
+
+<title>Fontes Externas</title>
+<style>
+    @font-face {
+        font-family:'FutureTech';
+        src: url('FutureTech.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    h1 {
+        font-family: 'FutureTech', Times, serif;
+        font-size: 3em;
+    }
+
+</style>
+
+
+
