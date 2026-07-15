@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+@media screen and (max-width: 596px) { /* vai ficar com o menu em colunas ate no maximo 596px*/
+    
+    header {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    nav {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-between;
+        align-items: end;
+        gap: 8px;
+    }
+}
