@@ -2,6 +2,10 @@
 FLEXBOX
 ============================================================
 
+- pense assim:
+o pai manda no filho, mas não manda no neto
+
+e
 
 QUEM É O PAI E QUEM É O FILHO?
 

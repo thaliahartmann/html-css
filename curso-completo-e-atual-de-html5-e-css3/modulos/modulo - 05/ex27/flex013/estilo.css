@@ -29,12 +29,10 @@ header {
 
 header > h1 {
     color: white;
-    border: 1px dotted black;
 }
 
 
 nav {
-    border: 1px dotted black;
 
     display: flex;
     flex-flow: row wrap;

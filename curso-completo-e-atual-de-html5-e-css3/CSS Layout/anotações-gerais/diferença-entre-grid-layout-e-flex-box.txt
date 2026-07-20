@@ -1,0 +1,56 @@
+GRID LAYOUT vs FLEXBOX
+=======================
+
+
+O QUE É GRID LAYOUT
+--------------------
+
+Grid é um sistema de layout bidimensional — trabalha com
+LINHAS e COLUNAS ao mesmo tempo.
+
+    .container {
+        display: grid;
+    }
+
+
+DIFERENÇA PRINCIPAL
+--------------------
+
+FLEXBOX → UMA dimensão
+    → trabalha com UMA direção por vez
+    → ou linha (row) OU coluna (column)
+    → bom para menus, cards em linha, itens em sequência
+
+    [ A ][ B ][ C ][ D ]   ← flexbox em row
+    ou
+    [ A ]
+    [ B ]                   ← flexbox em column
+    [ C ]
+
+
+GRID → DUAS dimensões
+    → trabalha com LINHAS e COLUNAS ao mesmo tempo
+    → bom para layouts de página inteira, galerias,
+      estruturas complexas
+
+    [ A ][ B ][ C ]
+    [ D ][ E ][ F ]         ← grid: linhas E colunas
+    [ G ][ H ][ I ]
+
+
+QUANDO USAR CADA UM
+--------------------
+
+Use FLEXBOX quando:
+    → os itens seguem uma direção só (menu, botões)
+    → o layout é simples e linear
+    → você quer distribuir espaço entre itens em sequência
+
+Use GRID quando:
+    → você precisa controlar linhas E colunas juntas
+    → o layout tem estrutura de grade (galeria, dashboard)
+    → você quer posicionar elementos em áreas específicas
+
+    💡 Na prática os dois são complementares:
+    Grid para o layout da página,
+    Flexbox para os componentes dentro do layout.
