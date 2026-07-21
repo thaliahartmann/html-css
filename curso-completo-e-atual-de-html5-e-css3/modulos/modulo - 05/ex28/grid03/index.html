@@ -9,24 +9,20 @@
         .container {
             display: grid;
             border: 3px solid rgb(0, 72, 255);
-            height: 250px; /* altura do container */
-            width: 1500px;
 
-            /* colunas e linhas */
-            grid-template-columns: auto auto auto;  
-            grid-template-rows: auto auto auto;
-
+            /*  shorthamd colunas e linhas */
+            grid-template: repeat(3, 80px) / repeat(3, auto); /* rows e dps columns*/
+            grid-auto-rows: 80px;
+            grid-auto-columns: auto;
+            grid-auto-flow: column;
             /* espaçamento dos itens*/
+
             gap: 10px;
 
-            /* vertical*/
-            align-items: normal;
-            align-content: normal;
+            /* shorthands align e justify */
 
-            /* horizontal */
-            justify-items: normal; 
-            justify-content: normal;
-
+            place-items: normal normal; /* align (vertical) + justify (horizontal) */
+            place-content: normal normal; /* align (vertical) + justify (horizontal) */
         }
 
         .item {
@@ -45,6 +41,10 @@
         <div class="item">E</div>
         <div class="item">F</div>
         <div class="item">G</div>
+        <div class="item">H</div>
+        <div class="item">I</div>
+        <div class="item">J</div>
+        <div class="item">K</div>
         
     </div>
 </body>

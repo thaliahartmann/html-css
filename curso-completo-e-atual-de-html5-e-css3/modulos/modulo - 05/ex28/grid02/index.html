@@ -10,23 +10,18 @@
             display: grid;
             border: 3px solid rgb(0, 72, 255);
             height: 250px; /* altura do container */
-            width: 1500px;
 
-            /* colunas e linhas */
-            grid-template-columns: auto auto auto;  
-            grid-template-rows: auto auto auto;
+            /*  shorthamd colunas e linhas */
+            grid-template: repeat(3, auto)/ repeat(3, auto); /* rows e dps columns*/
 
             /* espaçamento dos itens*/
+
             gap: 10px;
 
-            /* vertical*/
-            align-items: normal;
-            align-content: normal;
+            /* shorthands align e justify */
 
-            /* horizontal */
-            justify-items: normal; 
-            justify-content: normal;
-
+            place-items: start center; /* align (vertical) + justify (horizontal) */
+            place-content: space-between end; /* align (vertical) + justify (horizontal) */
         }
 
         .item {
