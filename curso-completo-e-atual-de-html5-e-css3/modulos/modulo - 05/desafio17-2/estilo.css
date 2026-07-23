@@ -1,0 +1,65 @@
+/* fazendo com o auxilio e correções do professor */
+
+* {
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* #container {
+    display: grid;
+    grid-template-rows: 100px 80px 150px 95px 75px;
+    grid-template-columns: 200px 150px;
+    gap: 10px;
+
+    estava assim antes, nada responsivo
+}
+
+*/
+
+#container {
+    width: 100vw;  /* relativo a largura da tela */
+    height: 100vh; /* relativo a altura da tela */
+
+    display: grid;
+    grid-template-rows: 80px 40px 1fr 40px;
+    grid-template-columns: 1fr 150px; /* 1fr fica responsivo e só funciona na primeira coluna (e a linha tambem) que está o conteúdo principal */
+    gap: 10px;
+}
+
+.caixa {
+    padding: 10px;
+
+}
+
+
+#caixa1 {
+    background-color: brown;
+    grid-area: 1 / 1 / 2 / -1;
+    text-align: center;
+}
+
+#caixa2{
+    background-color: rgb(73, 42, 165);
+    grid-area: 2 / 1 / 4 / -1;
+    text-align: center;
+    height: 80px;
+}
+
+#caixa3{
+    background-color: rgb(42, 165, 118);
+    grid-area: 3 / 1 / -2 / 2;
+    text-align: center;
+}
+
+#caixa4{
+    background-color: rgb(165, 42, 151);
+    grid-area: 3 / -2 / -2 / -1;
+    text-align: center;
+}
+
+#caixa5{
+    background-color: rgb(78, 78, 78);
+    grid-area: -2 / 1 / -1 / -1;
+    text-align: center;
+}
